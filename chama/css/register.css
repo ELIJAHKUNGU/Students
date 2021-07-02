@@ -1,0 +1,123 @@
+*{
+
+    box-sizing: border-box;
+}
+body{
+    background-color: #f7f8fc;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #141c2c;
+}
+a{
+    color: #2762eb;
+    text-decoration: none;
+}
+.container{
+    background-color: white;
+    border-radius: 3px;
+    width: 1000px;
+    max-width: 100%;
+    display: flex;
+    box-shadow:0 4px 5px rgba(0,0,0,0.1) ;
+
+}
+form{
+    border-right: 1px solid #ecf2ff;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.form-control{
+    margin: 10px 0;
+    width: 100%;
+}
+label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input:not([type='checkbox']){
+    background-color: transparent;
+    border: 2px solid #ecf2ff;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+.checkbox-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.checkbox-container label{
+    color: #7e7a8c;
+    font-weight: normal;
+}
+.checkbox-container a{
+    margin-left: auto;
+}
+.btn{
+    background-color:  #141c2c;
+    border: 2px solid #141c2c;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px 0;
+    width: 100%;
+    cursor: pointer;
+}
+.btn img{
+    margin-right: 5px;
+    width: 20px;
+}
+.btn-ghost{
+    background-color: transparent;
+    border-color: #ecf2ff;
+    color: #141c2c;
+}
+.features{
+    flex: 1.5;
+    padding: 40px;
+}
+.feature{
+    padding-left:30px ;
+    position: relative;
+    margin: 40px 0;
+}
+.feature i{
+    color: deepskyblue;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.feature h3{
+    margin: 0;
+}
+.feature p{
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+@media (max-width:768px ) {
+    .container{
+        flex-direction: column;
+    }
+    .form{
+        border-right: 0;
+    }
+}

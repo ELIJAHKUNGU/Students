@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8d710e4-ff82-42be-8893-42eb47cb4c49" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="ProjectId" id="1ZFHUxcw9ZrQJJwTnpS4faKZvvw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8d710e4-ff82-42be-8893-42eb47cb4c49" name="Default Changelist" comment="" />
+      <created>1560150102764</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560150102764</updated>
+      <workItem from="1560150104518" duration="7732000" />
+      <workItem from="1560235478203" duration="3619000" />
+      <workItem from="1560241066457" duration="7486000" />
+      <workItem from="1560319365420" duration="12881000" />
+      <workItem from="1560491388776" duration="8370000" />
+      <workItem from="1560500160383" duration="3719000" />
+      <workItem from="1560746902527" duration="1804000" />
+      <workItem from="1560923492596" duration="788000" />
+      <workItem from="1560925298280" duration="4190000" />
+      <workItem from="1561366210897" duration="31000" />
+      <workItem from="1561366489538" duration="4076000" />
+      <workItem from="1562133610853" duration="2682000" />
+      <workItem from="1562147013281" duration="3924000" />
+      <workItem from="1562217533436" duration="1275000" />
+      <workItem from="1572601292538" duration="815000" />
+      <workItem from="1572627258006" duration="5912000" />
+      <workItem from="1572979226293" duration="1122000" />
+      <workItem from="1572981192882" duration="599000" />
+      <workItem from="1575904766660" duration="661000" />
+      <workItem from="1584443756213" duration="3376000" />
+      <workItem from="1584477849097" duration="694000" />
+      <workItem from="1584732675527" duration="716000" />
+      <workItem from="1584735275398" duration="885000" />
+      <workItem from="1584768644073" duration="1059000" />
+      <workItem from="1584770077167" duration="2609000" />
+      <workItem from="1584816794873" duration="168000" />
+      <workItem from="1584817636509" duration="592000" />
+      <workItem from="1584821713258" duration="1143000" />
+      <workItem from="1585594905455" duration="661000" />
+      <workItem from="1585605422697" duration="2385000" />
+      <workItem from="1585636025339" duration="2934000" />
+      <workItem from="1585730390226" duration="612000" />
+      <workItem from="1585806555305" duration="4209000" />
+      <workItem from="1586001240162" duration="70000" />
+      <workItem from="1587410144661" duration="953000" />
+      <workItem from="1587455859584" duration="1417000" />
+      <workItem from="1587661357882" duration="1190000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="579" y="171" key="FileChooserDialogImpl" timestamp="1584769061154">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="579" y="171" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584769061154" />
+    <state x="495" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1585636101247">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="495" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585636101247" />
+  </component>
+</project>
