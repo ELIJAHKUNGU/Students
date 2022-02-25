@@ -36,3 +36,21 @@
 #next {
     display: none;
 }
+
+.products .col-sm-4 {
+    max-width: 350px;
+    margin-left: 20px;
+}
+
+.products .col-sm-4:hover {
+    background: rgb(2, 122, 2);
+}
+
+.products .col-sm-4:hover h1 {
+    color: #fff;
+}
+
+.products .col-sm-4 h1 {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
