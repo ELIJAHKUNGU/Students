@@ -1,131 +1,38 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
-.user-img{
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    border: 2px solid #000;
-    font-size: 4rem;
-    background-color: #000;
-    color: green;
+.question {
+    font-weight: 600;
 }
-.dashboard .row .col-sm-3{
-    background-color: rgb(238, 232, 232);
-    height: 100vh;
-    max-width: 230px;
+
+.answers {
+    margin-bottom: 20px;
 }
-.dashboard-links a{
-    text-decoration: none;
+
+.answers label {
+    display: block;
 }
-.dashboard-links a .fas{
-    color: #000;
-}
-.dashboard-links a li{
-    background-color: green;
+
+
+/* #submit {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #279;
     color: #fff;
-    margin-top: 10px;
-    height: 40px;
-    list-style: none;
-    padding-left: 10px;
-    border-radius: 10px;
-    padding-top: 5px;
-}
-.dashboard-links a li span{
-    padding-left: 30px;
-}
-.col-sm-9 .employees{
-
-}
-.col-sm-9 .employees h1{
-    text-transform: uppercase;
-}
-.col-sm-9 .employees table,.col-sm-9 .pay table {
-    width: 100%;
-}
-.col-sm-9 .employees table tr th,.col-sm-9 .pay table tr th{
-    padding: 10px;
-    text-align: center;
-}
-.col-sm-9 .employees table tr,.col-sm-9 .pay table tr{
-    border-bottom:2px solid greenyellow ;
-}
-.col-sm-9 .employees table tr td:last-child{
-padding: 2px;
-text-align:left !important;
-width: 200px;
-}
-
-.col-sm-9 .employees table tr td{
-    padding-bottom: 10px;
-    padding-top: 5px;
-    padding-left: 2px;
-    text-align: center;
-   
-  
-}
-.card-body .form input{
-    margin-left: 4px;
-}
-
-.card-body .form input button{
-    color: #fff;
-    width: 70%;
-}
-
-.col-sm-9 .pay table tr td{
-    padding-left: 20px;
-    text-align: center;
-    padding-bottom: 10px;
-    padding-bottom: 5px;
-   
-}
-.col-sm-9 .row .col-sm-3{
-    margin-top: 20px;
-    max-width: 200px;
-    margin-left: 20px;
-    height:100%;
-}
-
-.col-sm-9 .row .col-sm-3 .background-white{
-    background-color: #fff;
-    margin-top: 70px;
+    border: 0px;
+    border-radius: 3px;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-.col-sm-9 .row .home{
-    background-color: lightblue;
-    color: #fff;
-    border-radius: 10px;
-    border: 2px solid lightblue;;
+    cursor: pointer;
+    margin-bottom: 20px;
+} */
 
+#submit:hover {
+    background-color: #38a;
 }
-.col-sm-9 .row .employee{
-    background-color: yellow;
-    color: #fff;
-    border-radius: 10px;
-    border: 2px solid  yellow;;
 
-}
-.col-sm-9 .row .addemployees{
-    background-color: rgb(96, 93, 105);
-    color: #fff;
-    border-radius: 10px;
-    border: 2px solid  rgb(96, 93, 105);;
-
-}
-.col-sm-9 .row .paymets{
-    background-color: green;
-    color: #fff;
-    border-radius: 10px;
-    border: 2px solid green;
+#next {
+    display: none;
 }
