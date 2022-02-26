@@ -25,12 +25,16 @@
                 <h1 class="text-center">CHOOSE PRODUCTS</h1>
                 <div class="row pb-5">
                     <div class="col-sm-4 mt-5 shadow">
+                        <input id="myCheck" onclick="myFunction()" name="" id="">
+
                         <div class="p-5">
                             <img src="./assets/Analytics-cuate.svg" class="img-fluid" alt="" srcset="">
                         </div>
                         <h1 class="text-center text-success">FUEL FIELD</h1>
                     </div>
                     <div class="col-sm-4 mt-5 shadow">
+                        <input id="checked" type="checkbox" name="" id="">
+
                         <div class="p-5">
                             <img src="./assets/Analytics-cuate.svg" class="img-fluid" alt="" srcset="">
                         </div>
@@ -39,15 +43,20 @@
 
                     </div>
                     <div class="col-sm-4 mt-5 shadow">
+                        <input id="myCheck" onclick="myFunction()" name="" id="">
                         <div class="p-5">
                             <img src="./assets/Analytics-cuate.svg" class="img-fluid" alt="" srcset="">
                         </div>
                         <h1 class="text-center text-success">TIMBER</h1>
                     </div>
                     <div class="col-sm-4 mt-5 shadow">
+                        <input id="myCheck" onclick="myFunction()" name="" id="">
+
                         <div class="p-5">
                             <img src="./assets/Analytics-cuate.svg" class="img-fluid" alt="" srcset="">
                         </div>
+                        <h1 class="text-center text-success">TIMBER</h1>
+
                     </div>
 
                 </div>
@@ -69,4 +78,17 @@
 
 
 <script>
+    function myFunction() {
+        // Get the checkbox
+        var checkBox = document.getElementById("myCheck");
+        // Get the output text
+        var col = document.getElementsByClassName("col-sm-4");
+
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true) {
+            text.style.background = "green";
+        } else {
+            text.style.display = "none";
+        }
+    }
 </script>

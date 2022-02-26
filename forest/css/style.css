@@ -47,10 +47,17 @@
 }
 
 .products .col-sm-4:hover h1 {
-    color: #fff;
+    color: #fff !important;
 }
 
 .products .col-sm-4 h1 {
     font-size: 20px;
     padding-bottom: 20px;
+}
+
+#myCheck {
+    height: 350px;
+    position: absolute;
+    width: 300px;
+    border: none;
 }
