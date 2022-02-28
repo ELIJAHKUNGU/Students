@@ -1,11 +1,11 @@
 <?php
-if (isset($_POST["password"])) {
-    require "DB.php";
+if (isset($_POST["register"])) {
+    require "db.php";
     extract($_POST);
-    $sql = "INSERT INTO users(`user_id`, `names`, `email`, `password`) 
-                      VALUES (null,'$username','$email','$password')";
+    $sql = "INSERT INTO `users`(`username`, `email`, `phoneNumber`, `wphoneNumber`, `address`, `password`) 
+    VALUES ('$name','$email','$phoneNumber','$wphoneNumber','$address','$password')";
     mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    header('location:show.php');
+    header('location:home.php');
 }
 ?>
 
@@ -48,12 +48,12 @@ if (isset($_POST["password"])) {
                             </div>
                             <div class="form-group">
                                 <label for="title">Work PhoneNumber</label>
-                                <input type="email" class="form-control pt-4 pb-4" name="wphoneNumber" required>
+                                <input type="text" class="form-control pt-4 pb-4" name="wphoneNumber" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Address</label>
-                                <input type="email" class="form-control pt-4 pb-4" name="address" required>
+                                <input type="text" class="form-control pt-4 pb-4" name="address" required>
                             </div>
 
 
@@ -63,7 +63,7 @@ if (isset($_POST["password"])) {
                             </div>
 
                             <div class="d-flex">
-                                <button style="text-transform: uppercase;" class="btn btn-success  mr-3 ">Register</button>
+                                <button style="text-transform: uppercase;" name="register" class="btn btn-success  mr-3 ">Register</button>
 
 
                         </form>
