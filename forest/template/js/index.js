@@ -58,7 +58,7 @@ const message_info = document.getElementsByClassName('message-info');
             const selector = `input[name=question${questionNumber}]:checked`;
             var checkRadio = document.querySelector(`input[question${questionNumber}]:checked`);
             if (answerContainer)
-                const userAnswer = (answerContainer.querySelector(selector) && answerContainer.querySelector(selector) != null).value;
+                var userAnswer = (answerContainer.querySelector(selector) && answerContainer.querySelector(selector) != null).value;
 
             if (checkRadio != null) {
                 message_info.style.display = block;

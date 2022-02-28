@@ -1,13 +1,36 @@
 <?php
 if (isset($_POST["register"])) {
-    require "db.php";
+    require 'db.php';
     extract($_POST);
-    $sql = "INSERT INTO `users`(`username`, `email`, `phoneNumber`, `wphoneNumber`, `address`, `password`) 
-    VALUES ('$name','$email','$phoneNumber','$wphoneNumber','$address','$password')";
-    mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    header('location:home.php');
+    $email = $_POST['email'];
+    $sql2 = "SELECT * FROM users where email = '$email'";
+    $result = mysqli_query($conn,$sql2);
+
+    if (mysqli_num_rows($result) > 0){
+        header("Location:register.php?error=The Email Address exist login");
+       
+    }else{
+        $sql = "INSERT INTO `users`(`username`, `email`, `phoneNumber`, `wphoneNumber`, `address`, `password`) 
+        VALUES ('$name','$email','$phoneNumber','$wphoneNumber','$address','$password')";
+        $result2 =  mysqli_query($conn, $sql);
+        if ($result2){
+            $info = mysqli_fetch_assoc($result2);
+
+            session_start();
+            $_SESSION["info"] = $info;
+            header("location:login.php?success=Your account has been  successfully created login  ");
+
+        }else{
+            header("location:register.php?error=unknown error occurred&$email");
+        }
+
+    }
+
+
 }
+
 ?>
+
 
 
 <!doctype html>
@@ -17,7 +40,7 @@ if (isset($_POST["register"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register user</title>
+    <title>Forest Management Register user</title>
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
@@ -33,7 +56,16 @@ if (isset($_POST["register"])) {
                         </h2>
                     </div>
                     <div class="card-body">
-                        <form action="#" method="post">
+                    <form action="register_user.php"  method="post"  enctype="submit">
+                        <?php
+
+                        if (isset($_GET['error'])) { ?>
+                        <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                        <?php } ?>
+
+                        <?php if (isset($_GET['success'])) { ?>
+                        <p class="text-success"><?php echo $_GET['success']; ?></p>
+                        <?php } ?>
                             <div class="form-group">
                                 <label for="title">Full Name</label>
                                 <input type="text" placeholder="JOHN DOE" class="form-control pt-4 pb-4" name="name" required>
@@ -63,7 +95,7 @@ if (isset($_POST["register"])) {
                             </div>
 
                             <div class="d-flex">
-                                <button style="text-transform: uppercase;" name="register" class="btn btn-success  mr-3 ">Register</button>
+                                <button style="text-transform: uppercase;" type="submit" name="register" class="btn btn-success  mr-3 ">Register</button>
 
 
                         </form>
@@ -72,6 +104,9 @@ if (isset($_POST["register"])) {
 
 
                     </div>
+                   
+
+                    
                 </div>
             </div>
             <div class="col-sm-6">

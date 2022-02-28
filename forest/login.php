@@ -1,3 +1,28 @@
+<?php
+
+if (isset($_POST["save"])) {
+    require "db.php";
+    extract($_POST);
+    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) ==TRUE){
+        //success
+
+        $info = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION["info"] = $info;
+        header("location:home.php?success=You are  succesfully logged");
+        exit();
+    }else{
+        header("location:login.php?error= Wrong Email Address or Password");
+
+
+    }
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -5,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign In</title>
+    <title>Forest Management Sign In</title>
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
@@ -21,7 +46,16 @@
                         </h2>
                     </div>
                     <div class="card-body">
-                        <form action="login.php" method="post">
+                        <form action="#" method="post">
+                        <?php
+
+                            if (isset($_GET['error'])) { ?>
+                            <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                            <?php } ?>
+
+                            <?php if (isset($_GET['success'])) { ?>
+                            <p class="text-success"><?php echo $_GET['success']; ?></p>
+                            <?php } ?>
 
                             <div class="form-group">
                                 <label for="title">Email</label>
@@ -34,11 +68,11 @@
                             </div>
 
                             <div class="d-flex">
-                                <button style="text-transform: uppercase;" class="btn btn-success mr-3 ">Sign in</button>
+                                <button style="text-transform: uppercase;" name="save" class="btn btn-success mr-3 ">Sign in</button>
 
 
                         </form>
-                        <a style="text-transform: uppercase;" href="./register.html">Register</a>
+                        <a style="text-transform: uppercase;" href="./register.php">Register</a>
                         </div>
 
 

@@ -10,21 +10,34 @@
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.css">
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.min.css">
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/style.css">
-    <title>Payroll System</title>
+    <title>FOREST MANAGEMENT SYSTEM</title>
 </head>
 
 <body>
     <header>
+    <?php
+        if(isset($_GET['success'])){?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php
+                echo $_GET['success'];
+                ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+        }
+        ?>
         <link rel="stylesheet" class="nav-item" class="nav-item" href="css/bootstrap.css">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" class="nav-item" class="nav-item" href="show.php">Payroll System</a>
+            <a class="navbar-brand" class="nav-item" class="nav-item" href="show.php">FOREST MANAGEMENT SYSTEM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <?//=$_SESSION["info"]["names"]?>
+                    <a class="nav-link text-white" href="#">
+                        <?echo $_SESSION["info"]["names"]?>
                     </a>
                 </li>
                 <li class="nav-item">
