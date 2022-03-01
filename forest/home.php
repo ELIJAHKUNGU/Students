@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+
+print_r($_SESSION["info"] = $info);
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">

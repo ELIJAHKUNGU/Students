@@ -2,6 +2,7 @@ const submitButton = document.getElementById('submit');
 const btnNext = document.getElementById('next');
 const message_info = document.getElementsByClassName('message-info');
 // const evaluation_complete = document.getElementsById("evaluation-complete")
+// const evaluate = document.getElementsByClassId("evaluate")
 // message_info.style.display = "none";
 
 (function() {
@@ -88,21 +89,11 @@ const message_info = document.getElementsByClassName('message-info');
 
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-        var anevaluation = parseFloat(numCorrect * 100 / myQuestions.length).toFixed(2);
-        resultContainers.innerHTML = `${anevaluation}%`;
-        evalaution_results.style.display = "none"
-
-
-
-
-
     }
-    const evalaution_results = document.getElementById('evalaution_results');
-    const resultContainers = document.getElementById("resultContainers")
+
     const quizContainer = document.getElementById('quiz');
     const resultsContainer = document.getElementById('results');
     const submitButton = document.getElementById('submit');
-    const eveluatedresults = document.getElementById("results_evaluated")
     const myQuestions = [{
             question: "Who invented JavaScript?",
             answers: {

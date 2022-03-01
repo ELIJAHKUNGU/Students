@@ -12,8 +12,7 @@ if (isset($_POST["save"])) {
         $info = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION["info"] = $info;
-        header("location:home.php?success=You are  succesfully logged");
-        exit();
+        header("location:quiz.php?success=You are  succesfully logged");
     }else{
         header("location:login.php?error= Wrong Email Address or Password");
 

@@ -74,6 +74,7 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/chechboxcheck.js"></script>
 </body>
 
 </html>
@@ -96,13 +97,24 @@
 </script>
 <script>
     $(document).ready(function() {
-        $("#but").click(function() {
-            if ($("input[type=checkbox]").is(
-                    ":checked")) {
-                alert("Check box in Checked");
-            } else {
-                alert("Check box is Unchecked");
-            }
-        });
+        var mycheck = document.getElementById("myCheck");
+
+
+        if ($("input[type=checkbox]").is(
+                ":checked")) {
+            mycheck.style.display = "block";
+        } else {
+            mycheck.style.display = "none";
+        }
+
+
+        // $("#but").click(function() {
+        //     if ($("input[type=checkbox]").is(
+        //             ":checked")) {
+        //         alert("Check box in Checked");
+        //     } else {
+        //         alert("Check box is Unchecked");
+        //     }
+        // });
     });
 </script>

@@ -60,6 +60,10 @@
     position: absolute;
     width: 300px;
     border: none;
-    /* display: none;  */
-    background-color: none;
+    background-color: transparent;
+}
+
+.resultContainers {
+    font-size: 5rem;
+    text-align: center;
 }
