@@ -112,3 +112,36 @@ body {
 .col-sm-9 .banner-image {
     position: relative;
 }
+
+.resultContainers {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.container #forms .register .col-sm-6 {
+    max-width: 550px;
+    margin-left: 20px;
+}
+
+.table-responsive-lg table {
+    width: 100%;
+}
+
+.table-responsive-lg table th {
+    padding: 10px;
+    text-align: center;
+}
+
+.table-responsive-lg table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid green;
+}
+
+.summmary-text table td {
+    font-size: 1.3rem;
+}
+
+.summmary-text table .prices-total {
+    color: green;
+}
