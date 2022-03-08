@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foodies</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/fontawesome-free-5.0.1/css/fontawesome-all.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Book Management System</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./owl-carousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./owl-carousel/css/owl.theme.default.min.css">
 </head>
@@ -19,7 +19,9 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="title">
-                        <h6>BOOKIE 😊</h6>
+                        <a href="./index.php">
+                            <h6>BOOKIE 😊</h6>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -31,16 +33,26 @@
                 <div class="col-sm-4">
                     <div class="d-flex">
 
-                        <a href="" class="nav-link">Sign Up</a>
-                        <a href="" class="nav-link">Register user</a>
+                        <a href="./login.php" class="nav-link">Sign Up</a>
+                        <a href="./login.php" class="nav-link">Register user</a>
                         <i class="fa fa-chevron-down pt-3"></i>
 
-                        <i class="fa fa-bell ml-3 pt-3"></i>
+                        <i class="fa fa-shopping-basket ml-3 pt-3"></i>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="container mb-5">
+        <?php
+
+        if (isset($_GET['error'])) { ?>
+        <p class="text-danger"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
+
+        <?php if (isset($_GET['success'])) { ?>
+        <p class="text-success"><?php echo $_GET['success']; ?></p>
+        <?php } ?>
             <div class="row">
                 <div class="col-sm-3">
 
@@ -128,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="banner-image">
-                                <img src="./banner1.jpg" alt="">
+                                <img src="./images/banner1.jpg" alt="">
                             </div>
                         </div>
                         <div class="item">
@@ -142,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="banner-image">
-                                <img src="./banner2.jpg" alt="">
+                                <img src="./images/banner1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -271,14 +283,6 @@
             </div>
         </div>
     </div>
-</body>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/index.js"></script>
-<script src="./owl-carousel/js/owl.carousel.min.js"></script>
-
-
-
-
-
-</html>
+<?php
+include 'footer.php';
+?>

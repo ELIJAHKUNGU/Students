@@ -23,21 +23,6 @@
         .resultContainers{
             margin-top:20rem;
         }
-    </style>
-
-    <div class="container">
-            <div class="container">
-            <?php
-        if(isset($_GET['success'])){?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <?php
-                echo $_GET['success'];
-                ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php
         }
         ?>
                 <div class="row">

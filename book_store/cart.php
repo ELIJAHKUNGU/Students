@@ -1,79 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+include 'header.php';
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Management System</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/all.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="./owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./owl-carousel/css/owl.theme.default.min.css">
-</head>
-
-<body>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="title">
-                    <a href="./index.html">
-                        <h6>BOOKIE 😊</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-2">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Browser Categories
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#"> Biographies</a></li>
-                        <li><a class="dropdown-item" href="#">Business & Money</a></li>
-                        <li><a class="dropdown-item" href="#">Calendars</a></li>
-                        <li><a class="dropdown-item" href="#"> Biographies</a></li>
-                        <li><a class="dropdown-item" href="#">Children's Books</a></li>
-                        <li><a class="dropdown-item" href="#">Comics</a></li>
-                        <li><a class="dropdown-item" href="#"> Performance Filters</a></li>
-                        <li><a class="dropdown-item" href="#">Cookbooks</a></li>
-                        <li><a class="dropdown-item" href="#">Accessories</a></li>
-                        <li><a class="dropdown-item" href="#"> Education</a></li>
-                        <li><a class="dropdown-item" href="#">More Categories</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="col-sm-4">
-                <div class="search-bar">
-                    <input type="search" placeholder="search entire store here" />
-
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="d-flex">
-
-                    <a href="./login.html" class="nav-link">Sign Up</a>
-                    <a href="./login.html" class="nav-link">Register user</a>
-                    <i class="fa fa-chevron-down pt-3"></i>
-
-                    <a href="./cart.html"> <i class="fa fa-shopping-basket ml-3 pt-3"></i></a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_carts"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["id"])
+			{
+				unset($_SESSION["shopping_carts"][$keys]);
+				echo '<script>alert("Item Removed")</script>';
+				echo '<script>window.location="cart.php"</script>';
+			}
+		}
+	}
+}
+?>
+            
     <div class="container">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
+        <img src="./assets/Inventor-1-PB-324x486.png" alt="" srcset="">
         <h3>Shopping Cart</h3>
-        <div class="table-responsive-lg">
+        <div class="table-responsive">
+				<table class="table table-bordered">
+					<tr>
+                        <th width="40%">Product Image</th>
+						<th width="40%">Product name</th>
+						<th width="10%">Quantity</th>
+						<th width="20%">Price</th>
+						<th width="15%">Total</th>
+						<th width="5%">Action</th>
+					</tr>
+					<?php
+					if(!empty($_SESSION["shopping_carts"]))
+					{
+						$total = 0;
+                        print_r($_SESSION["shopping_carts"]);
+						foreach($_SESSION["shopping_carts"] as $keys => $values)
+						{
+					?>
+                            <tr>
+                                 
+                                 <td><img src="<?php echo $values["item-image"]; ?>" style="height:100px" class="img-fluid" /><br /></td>
+                                <td><?php echo $values["item-image"]; ?></td>
+                                <td><?php echo $values["item_quantity"]; ?></td>
+                                <td>KSH <?php echo $values["item_price"]; ?></td>
+                                <td>KSH <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+                                <td><a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
+                            </tr>
+                            <?php
+                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                                }
+                            ?>
+                            <tr>
+                                <td colspan="3" align="right">Total</td>
+                                <td colspan="2"  align="right">KSH <?php echo number_format($total, 2); ?></td>
+                                <td></td>
+                            </tr>
+					<?php
+					}else{
+                
+                        ?>
+                  <h1 class="text-center">YOUR CART IS EMPTY</h1>
+
+                        <?php
+
+                    }
+					?>
+						
+				</table>
+			</div>
+        <!-- <div class="table-responsive-lg">
             <table class="table-bordered">
                 <tr>
                     <th></th>
@@ -100,7 +104,7 @@
                     <td>9000.00</td>
                 </tr>
             </table>
-        </div>
+        </div> -->
         <div class="container mt-5">
             <div class="summmary-text">
                 <div class="row">
@@ -145,12 +149,12 @@
                         <div class="border p-5">
                             <table>
                                 <tr class="d-flex justify-content-md-between">
-                                    <td>Sub Total</td>
-                                    <td class="prices-total">KSH 9000.00</td>
+                                    <td>VAT Total</td>
+                                    <td class="prices-total">KSH 00.00</td>
                                 </tr>
                                 <tr class="d-flex justify-content-md-between">
-                                    <td>Sub Total</td>
-                                    <td class="prices-total pl-5">KSH 9000.00</td>
+                                    <td>Discount Total</td>
+                                    <td class="prices-total pl-5">KSH 00.00</td>
                                 </tr>
 
 
@@ -159,14 +163,15 @@
 
                                 <tr class="d-flex justify-content-between">
                                     <td>Grand Total</td>
-                                    <td class="prices-total pl-5">KSH 9000.00</td>
+                                   
+                                    <td colspan="2" class="prices-total pl-5"  align="right">KSH <?php echo number_format($total, 2); ?></td>
                                 </tr>
                             </table>
                         </div>
                         <div class="d-flex p-3 justify-content-end">
-                            <button class="btn btn-outline-secondary">Continue Shopping</button>
-                            <button class="btn ml-3 btn-success">Check Out</button>
-
+                            <a href="./products.php"><button class="btn btn-outline-primary">Continue Shopping</button></a>
+                            <a href="./checkout.php"><button class="btn ml-3 btn-success">Check Out</button>
+                                            </a>
                         </div>
                     </div>
                 </div>
@@ -182,6 +187,8 @@
 <script src="./js/bootstrap.js"></script>
 <script src="./owl-carousel/js/owl.carousel.min.js"></script>
 <script src="./js/index.js"></script>
+<script src="./bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 

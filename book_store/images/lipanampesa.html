@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:5500');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append("Authorization", "Bearer cFJZcjZ6anEwaThMMXp6d1FETUxwWkIzeVBDa2hNc2M6UmYyMkJmWm9nMHFRR2xWOQ==");
+    fetch("https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials", {
+            headers
+        })
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+</script>

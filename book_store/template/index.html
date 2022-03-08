@@ -278,9 +278,44 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/index.js"></script>
 <script src="./owl-carousel/js/owl.carousel.min.js"></script>
+<script src="./bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 
 
 
 </html>
+
+
+<!-- <form method="post" action="products.php?action=add&id=<?php echo $row["product_id"]; ?>">
+					<div align="center">
+						<img src="<?php echo $row["product_image"]; ?>" class="img-fluid" /><br />
+
+                        <h5 class="text-center mt-2"><?php echo $row["product_name"]; ?></h5>
+
+						
+
+						<input type="text" name="quantity" value="1" class="form-control" />
+                        <div class="d-flex ml-2">
+                                <div class="price-1">
+                                    <strike>
+                                    <h4 class=""> KSH<?php echo $row["product_price"]; ?></h4>
+                                </strike>
+                                </div>
+                                <div class="price-2 ml-2">
+
+                                <h4 class="">KSH <?php echo $row["product_sprice"]; ?></h4>
+
+                                </div>
+                            </div>
+						<input type="hidden" name="hidden_name" value="<?php echo $row["product_name"]; ?>" />
+                        <input type="hidden" name="hidden_image" value="<?php echo $row["product_image"]; ?>" />
+
+						<input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>" />
+                        <div class="d-flex mt-3 justify-content-center">
+                                <button  type="submit" name="add_to_cart" style="background-color: green;" class="btn btn-success">Add to Cart <i class="fa fa-shopping-basket"></i> </button>
+                            </div>
+
+					</div>
+				</form> -->

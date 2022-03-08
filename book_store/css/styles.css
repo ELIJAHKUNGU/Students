@@ -49,26 +49,36 @@ body {
     text-decoration: none;
 }
 
-.my-card {
+.menu-show .col-sm-3 {
+    max-width: 250px;
+    margin-left: 10px;
+}
+
+
+/* .my-card {
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     transition: all 0.3s linear ease-out;
-}
+} */
 
-.my-card:hover {
-    transform: scale(1.1)
+
+/* .my-card:hover {
+    transform: scale(1.1);
+    object-fit: cover;
 }
 
 .my-card>img {
-    height: 50px;
-    width: 50px;
-}
+    /* height: 200px;
+    width: 200px; */
 
-.menu-item-icon {}
+
+/* } */
+
+*/ .menu-item-icon {}
 
 .menu-item-icon>h6,
 .menu-item-icons>h6 {
@@ -144,4 +154,14 @@ body {
 
 .summmary-text table .prices-total {
     color: green;
+}
+
+.product-banner .row .col-sm-6 img {
+    /* min-height: ; */
+    object-fit: contain;
+    /* min-width: 500px; */
+}
+
+.fa-star {
+    color: yellow;
 }

@@ -1,12 +1,19 @@
 <?php
 
-if (isset($_GET['id']))
-{
-    $id =$_GET["id"];
-    require 'DB.php';
-    $sql ="DELETE FROM `refugees` WHERE  r_id = $id";
-    //echo  $sql;
-    mysqli_query($conn, $sql);
-    header("location:portalrefugee.php"); //redirect to show.php
 
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["id"])
+			{
+				unset($_SESSION["shopping_cart"][$keys]);
+				echo '<script>alert("Item Removed")</script>';
+				echo '<script>window.location="cart.php"</script>';
+			}
+		}
+	}
 }
+?>
