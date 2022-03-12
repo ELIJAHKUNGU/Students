@@ -52,11 +52,32 @@
             </div>
             <div class="col-sm-4">
                 <div class="d-flex">
+                    <?php
+                    session_start();
+                    if(!empty($_SESSION["info"])){
+                     ?>
+                    <a href="./logout.php" class="nav-link">Logout</a>
+                    <a href="./cart.php"> <i class="fa fa-shopping-basket ml-3 pt-3"></i></a>
+                   
+                        <?php
+
+
+                    }else{
+                        ?>
+                      
+                    
+
+                   
                     <a href="./login.php" class="nav-link">Sign Up</a>
                     <a href="./login.php" class="nav-link">Register user</a>
-                    <i class="fa fa-chevron-down pt-3"></i>
-
                     <a href="./cart.php"> <i class="fa fa-shopping-basket ml-3 pt-3"></i></a>
+                    <?php
+
+                    }
+
+
+                        ?>
+                    
                 </div>
             </div>
         </div>

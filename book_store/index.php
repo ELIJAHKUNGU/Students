@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Management System</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/all.min.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./owl-carousel/css/owl.theme.default.min.css">
-</head>
-
-<body>
     <div class="main-page">
-        <div class="container mt-4">
+        <!-- <div class="container mt-4">
             <div class="row">
                 <div class="col-sm-2">
                     <div class="title">
@@ -41,10 +26,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <?php
+        include 'header.php';
+
+        ?>
         
         <div class="container mb-5">
         <?php
+        session_start();
+        echo $user_id =  $info ['user_id'];
+      
 
         if (isset($_GET['error'])) { ?>
         <p class="text-danger"><?php echo $_GET['error']; ?></p>
