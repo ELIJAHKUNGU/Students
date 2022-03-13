@@ -10,8 +10,8 @@ if (isset($_POST["register"])) {
         header("Location:register.php?error=The Email Address exist login");
        
     }else{
-        $sql = "INSERT INTO `users`(`username`, `email`, `phoneNumber`, `wphoneNumber`, `address`, `password`) 
-        VALUES ('$name','$email','$phoneNumber','$wphoneNumber','$address','$password')";
+        $sql = "INSERT INTO `users`(`username`,`company_name`, `email`, `phoneNumber`, `wphoneNumber`, `address`, `password`) 
+        VALUES ('$name','$company_name','$email','$phoneNumber','$wphoneNumber','$address','$password')";
         $result2 =  mysqli_query($conn, $sql);
         if ($result2){
             // $info = mysqli_fetch_assoc($result2);

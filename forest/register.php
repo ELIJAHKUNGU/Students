@@ -1,7 +1,3 @@
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -9,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Forest Management Register user</title>
+    <title>Register user</title>
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
@@ -25,36 +21,27 @@
                         </h2>
                     </div>
                     <div class="card-body">
-                    <form action="register_user.php"  method="post"  enctype="submit">
-                        <?php
-
-                        if (isset($_GET['error'])) { ?>
-                        <p class="text-danger"><?php echo $_GET['error']; ?></p>
-                        <?php } ?>
-
-                        <?php if (isset($_GET['success'])) { ?>
-                        <p class="text-success"><?php echo $_GET['success']; ?></p>
-                        <?php } ?>
+                        <form action="register_user.php" method="post">
                             <div class="form-group">
                                 <label for="title">Full Name</label>
                                 <input type="text" placeholder="JOHN DOE" class="form-control pt-4 pb-4" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Company Name</label>
+                                <input type="text" placeholder="REMAKEN HOLDING LIMITED" class="form-control pt-4 pb-4" name="company_name" required>
                             </div>
                             <div class="form-group">
                                 <label for="title">Email</label>
                                 <input type="email" placeholder="johndoe@gmail.com" class="form-control pt-4 pb-4" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="title">Primary Phone Number</label>
-                                <input type="number" class="form-control pt-4 pb-4" name="phoneNumber" required>
+                                <label for="title">Phone Number</label>
+                                <input type="number" placeholder="+2547 330 000" class="form-control pt-4 pb-4" name="phoneNumber" required>
                             </div>
-                            <div class="form-group">
-                                <label for="title">Work PhoneNumber</label>
-                                <input type="text" class="form-control pt-4 pb-4" name="wphoneNumber" required>
-                            </div>
-
+                            
                             <div class="form-group">
                                 <label for="title">Address</label>
-                                <input type="text" class="form-control pt-4 pb-4" name="address" required>
+                                <input type="text" placeholder="00900-KIAMBU" class="form-control pt-4 pb-4" name="address" required>
                             </div>
 
 
@@ -64,7 +51,7 @@
                             </div>
 
                             <div class="d-flex">
-                                <button style="text-transform: uppercase;" type="submit" name="register" class="btn btn-success  mr-3 ">Register</button>
+                                <button style="text-transform: uppercase;" name="register" class="btn btn-success  mr-3 ">Register</button>
 
 
                         </form>
@@ -73,9 +60,6 @@
 
 
                     </div>
-                   
-
-                    
                 </div>
             </div>
             <div class="col-sm-6">

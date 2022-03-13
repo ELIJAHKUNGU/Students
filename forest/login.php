@@ -9,10 +9,10 @@ if (isset($_POST["save"])) {
     if (mysqli_num_rows($result) ==TRUE){
         //success
 
-        $info = mysqli_fetch_assoc($result);
+        $user_details = mysqli_fetch_assoc($result);
         session_start();
-        $_SESSION["info"] = $info;
-        header("location:quiz.php?success=You are  succesfully logged");
+        $_SESSION["user_details"] = $user_details;
+        header("location:customerdashboard.php?success=You are  succesfully logged in");
     }else{
         header("location:login.php?error= Wrong Email Address or Password");
 
@@ -46,7 +46,7 @@ if (isset($_POST["save"])) {
                     </div>
                     <div class="card-body">
                         <form action="#" method="post">
-                        <?php
+                            <?php
 
                             if (isset($_GET['error'])) { ?>
                             <p class="text-danger"><?php echo $_GET['error']; ?></p>
