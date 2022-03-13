@@ -1,22 +1,8 @@
 <?php
 session_start();
+
 include 'header.php';
 
-if(isset($_GET["action"]))
-{
-	if($_GET["action"] == "delete")
-	{
-		foreach($_SESSION["shopping_carts"] as $keys => $values)
-		{
-			if($values["item_id"] == $_GET["id"])
-			{
-				unset($_SESSION["shopping_carts"][$keys]);
-				echo '<script>alert("Item Removed")</script>';
-				echo '<script>window.location="cart.php"</script>';
-			}
-		}
-	}
-}
 ?>
             
     <div class="container">
@@ -26,45 +12,85 @@ if(isset($_GET["action"]))
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
+        
         <h3>Shopping Cart</h3>
+         <?php
+                    if(isset($_GET['error'])){?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <?php
+                            echo $_GET['error'];
+                            ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['success'])){?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <?php
+                            echo $_GET['success'];
+                            ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php
+                    }
+                    ?>
         <div class="table-responsive">
 				<table class="table table-bordered">
 					<tr>
-                        <th width="30%">Product Image</th>
-						<th width="30%">Product name</th>
+                        <th width="40%">Product Image</th>
+						<th width="40%">Product name</th>
 						<th width="10%">Quantity</th>
 						<th width="20%">Price</th>
-						<th width="20%">Total</th>
+						<th width="15%">Total</th>
 						<th width="5%">Action</th>
 					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_carts"]))
-					{
-						$total = 0;
-                        // print_r($_SESSION["shopping_carts"]);
-						foreach($_SESSION["shopping_carts"] as $keys => $values)
-						{
-					?>
+                    <?php
+                    require 'db.php';
+                    require_once 'security.php';
+                     $user_id =  $info ['user_id'];
+
+                    $qry = "SELECT * FROM `cart`  WHERE user_id = '$user_id' ";
+                    $result = mysqli_query($conn, $qry);
+                    if(mysqli_num_rows($result) > 0)
+				{
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
                             <tr>
-                                 
-                                 <td>
-                                 <a href="./product.php?item_id=<?php echo $values["item_id"];  ?> " style="text-decoration:none; color:white">
-					               <div class="d-flex justify-content-center">
-                                   <img src="<?php echo $values["item_image"]; ?>" style="height:80px" class="img-fluid" /><br />
-                                   </div>
-					             </a>    
-                                     
-                                    </td>
-                                <td><?php echo $values["item_name"]; ?></td>
-                                <td><?php echo $values["item_quantity"]; ?></td>
-                                <td>KSH <?php echo $values["item_price"]; ?></td>
-                                <td>KSH <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-                                <td><a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger text-center">
-                                    <i class="fa fa-trash"></i>
-                                </span></a></td>
-                            </tr>
                             <?php
-                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                                require 'db.php';
+                                $product_id = $row['product_id'];
+                                $qry2 = "SELECT * FROM `product` WHERE product_id = '$product_id'";
+                                $results2 = $conn->query($qry2);
+                                while ($row2 = $results2->fetch_assoc()) {
+                                ?>
+
+                                 
+                                 <td> <img src="<?php echo $row2['product_image'] ?>" style="height: 100px;" class="img-fluid" alt="" srcset=""></td>
+                                <td><?php echo $row2["product_name"]; ?></td>
+                                <td><?php echo $row["quanity"]; ?></td>
+                                <td>KSH <?php echo $row2["product_price"]; ?></td>
+                                <?php
+                                $subtotal = $row["quanity"] * $row2["product_price"];
+
+                                ?>
+                                <td>KSH <?php echo number_format($subtotal, 2);?></td>
+                                <td> <a href="deletecart.php?cart_id=<?php echo $row['cart_id']; ?>">
+                                             <i class="fas fa-trash-alt mb-1 mr-2"></i>
+                                        </a></td>
+                            </tr>
+                             <?php
+                                        }
+                                    
+                                        ?>
+
+                            <?php
+                                    $total = $total + ($subtotal);
                                 }
                             ?>
                             <tr>
@@ -72,22 +98,56 @@ if(isset($_GET["action"]))
                                 <td colspan="2"  align="right">KSH <?php echo number_format($total, 2); ?></td>
                                 <td></td>
                             </tr>
-					<?php
-					}else{
-                
-                        ?>
-                  <tr>
-                      <td colspan="6"><h1 class="text-center">YOUR CART IS EMPTY</h1></td>
-                  </tr>
+					
+                  <!-- <h1 class="text-center">YOUR CART IS EMPTY</h1> -->
+                 
+                  <?php
+                }else {
+                    ?>
 
-                        <?php
+                    <tr>
+                        <td colspan="6" class="text-center"><h1>Your Cart is Empty</h1></td>
+                    </tr>
 
-                    }
-					?>
+
+                <?php
+
+
+                }
+
+                  ?>
+                      
 						
 				</table>
 			</div>
-        
+        <!-- <div class="table-responsive-lg">
+            <table class="table-bordered">
+                <tr>
+                    <th></th>
+                    <th>IMAGE</th>
+                    <th>PRODUCT NAME</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-trash"></i></td>
+                    <td><img src="./images/citems.jpg" style="height: 80px;" class="img-fluid" alt=""></td>
+                    <td>Rinosin Glasses</td>
+                    <td>KSH 899.00</td>
+                    <td>4</td>
+                    <td>9000.00</td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-trash"></i></td>
+                    <td><img src="./images/citems.jpg" style="height: 80px;" class="img-fluid" alt=""></td>
+                    <td>Rinosin Glasses</td>
+                    <td>KSH 899.00</td>
+                    <td>4</td>
+                    <td>9000.00</td>
+                </tr>
+            </table>
+        </div> -->
         <div class="container mt-5">
             <div class="summmary-text">
                 <div class="row">
@@ -96,7 +156,6 @@ if(isset($_GET["action"]))
                       
                         <div class="row">
                         <?php
-                        require 'db.php';
                                 $query = "SELECT * FROM product ORDER BY Rand()  LIMIT 2 ";
                                 $result = mysqli_query($conn, $query);
                                 

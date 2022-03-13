@@ -1,160 +1,116 @@
-<?php
-if (isset($_POST["save"])) {
-    require 'DB.php';
-    extract($_POST);
-    
-        $sql = "INSERT INTO `orders`(`order_id`, `order_name`, `order_q`, `order_price`) 
-		VALUES ('null','$order_name','$order_q','$order_price')";
-        mysqli_query($conn, $sql);
-        header("location:orders.php");
-
-
-}
+<?php 
+// Include the configuration file 
+require_once 'config.php'; 
+ 
+// Initialize shopping cart class 
+include_once 'Cart.class.php'; 
+$cart = new Cart; 
+ 
+// If the cart is empty, redirect to the products page 
+if($cart->total_items() <= 0){ 
+    header("Location: index.php"); 
+} 
+ 
+// Get posted form data from session 
+$postData = !empty($_SESSION['postData'])?$_SESSION['postData']:array(); 
+unset($_SESSION['postData']); 
+ 
+// Get status message from session 
+$sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:''; 
+if(!empty($sessData['status']['msg'])){ 
+    $statusMsg = $sessData['status']['msg']; 
+    $statusMsgType = $sessData['status']['type']; 
+    unset($_SESSION['sessData']['status']); 
+} 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Foodies</title>
-		<link rel="stylesheet" href="./css/bootstrap.min.css" />
-		<link rel="stylesheet" href="./fontawesome-free-5.0.1/css/fontawesome-all.css"
-		/>
-		<link rel="stylesheet" href="./css/styles.css" />
-	</head>
+<head>
+<title>Checkout - PHP Shopping Cart Tutorial</title>
+<meta charset="utf-8">
 
-	<body>
-		<div class="main-page">
-			<div class="top-bar">
-				<div class="title">
-					<h6>Foodies 😊</h6>
-				</div>
-				<div class="search-bar">
-					<input
-						type="text"
-						placeholder="look for the latest delivery"
-					/>
-					<i class="fa fa-search"></i>
-				</div>
-				<div class="right-bar">
-					<div class="user-icon">
-						<img src="./images//lapt-keys.jpg" alt="" />
-						<i class="fa fa-chevron-down"></i>
-					</div>
-					<i class="fa fa-bell ml-3"></i>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-		<div class="row">
-				<div class="col-sm-6 m-0">
-					<div class="">
-						<div class="">
-							<img src="./images/f1.png" alt="" />
-						</div>
-						<div class="">
-							<a href="./index.php">
-								<div class="menu-item-icon">
-									<i class="fa fa-home"></i>
-									<h6>Home</h6>
-								</div>
-							</a>
-							<a href="./orders.php">
-								<div class="menu-item-icon">
-									<i class="fa fa-shopping-cart"></i>
-									<h6>Orders</h6>
-								</div>
-							</a>
-							<a href="">
-								<div class="menu-item-icon">
-									<i class="fa fa-truck"></i>
-									<h6>Delivery</h6>
-								</div>
-							</a>
-							
-							<a href="">
-								<div class="menu-item-icon">
-									<i class="fa fa-user"></i>
-									<h6>Accounts</h6>
-								</div>
-							</a>
-							<a href="">
-								<div class="menu-item-icon">
-									<i class="fa fa-cogs"></i>
-									<h6>Settings</h6>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom style -->
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>CHECKOUT</h1>
+    <div class="col-12">
+        <div class="checkout">
+            <div class="row">
+                <?php if(!empty($statusMsg) && ($statusMsgType == 'success')){ ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success"><?php echo $statusMsg; ?></div>
+                </div>
+                <?php }elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
+                <div class="col-md-12">
+                    <div class="alert alert-danger"><?php echo $statusMsg; ?></div>
+                </div>
+                <?php } ?>
 				
-               <div class="col-sm-6 m-0">
-					<div class="">
-						<table class="table table-bordered p-3 shadow">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Item Name</th>
-									<th>Quantity</th>
-									<th>Price </th>
-									<th>Delete</th>
-									<th>Allocate</th>
-								</tr>
-
-								</thead>
-								<tbody>
-								<?php
-								require 'DB.php';
-								$sql="SELECT * FROM `orders`  order by order_id desc";
-								$results=mysqli_query($conn,$sql);
-								while ($row =mysqli_fetch_assoc($results))
-								{
-									extract($row);
-									echo "<tr>
-									        
-											<td>$order_id</td> 
-											<td>$order_name</td> 
-											<td>$order_q</td>
-											<td>$order_price</td>
-											
-											<td> <a href='delete.php?id=$order_id' class='btn btn-danger'>Delete</a> </td>
-											<td> <a href='deliverdetails.php?id=$order_id' class='btn btn-success'>Deliver</a> </td>
-										</tr>";
-								
-							?>
-							<?php } ?>
-							</tbody>
-						</table>	
-					<div class=" pr-5 pl-5 pb-5">
-						<h4>Place Orders</h4>
-										
-						<form action="#" method="post" enctype="multipart/form-data">
-								<div class="form-group">
-									<label for="title">Item Name</label>
-									<input type="numerical" class="form-control" name="order_name" required>
-								</div>
-								<div class="form-group">
-									<label for="name">Quantity</label>
-									<input type="number" class="form-control" name="order_q" required>
-								</div>
-								<div class="form-group">
-									<label for="name">Price</label>
-									<input type="number" class="form-control" name="order_price" required>
-								</div>
-								<button name="save" class="btn btn-dark btn-block">Order Now</button>
-
-						</form>
-                    </div>
-			   </div>
-			  
-		</div>
-		</div>
-               
-		
-                           
-    
-	</body>
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your Cart</span>
+                        <span class="badge badge-secondary badge-pill"><?php echo $cart->total_items(); ?></span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                    <?php 
+                    if($cart->total_items() > 0){ 
+                        // Get cart items from session 
+                        $cartItems = $cart->contents(); 
+                        foreach($cartItems as $item){ 
+                    ?>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0"><?php echo $item["name"]; ?></h6>
+                                <small class="text-muted"><?php echo CURRENCY_SYMBOL.$item["price"]; ?>(<?php echo $item["qty"]; ?>)</small>
+                            </div>
+                            <span class="text-muted"><?php echo CURRENCY_SYMBOL.$item["subtotal"]; ?></span>
+                        </li>
+                    <?php } } ?>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (<?php echo CURRENCY; ?>)</span>
+                            <strong><?php echo CURRENCY_SYMBOL.$cart->total(); ?></strong>
+                        </li>
+                    </ul>
+                    <a href="index.php" class="btn btn-sm btn-info">+ add items</a>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Contact Details</h4>
+                    <form method="post" action="cartAction.php">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" name="first_name" value="<?php echo !empty($postData['first_name'])?$postData['first_name']:''; ?>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" value="<?php echo !empty($postData['last_name'])?$postData['last_name']:''; ?>" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" name="phone" value="<?php echo !empty($postData['phone'])?$postData['phone']:''; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name">Address</label>
+                            <input type="text" class="form-control" name="address" value="<?php echo !empty($postData['address'])?$postData['address']:''; ?>" required>
+                        </div>
+                        <input type="hidden" name="action" value="placeOrder"/>
+                        <input class="btn btn-success btn-block" type="submit" name="checkoutSubmit" value="Place Order">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>

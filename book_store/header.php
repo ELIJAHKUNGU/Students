@@ -58,6 +58,19 @@
                      ?>
                     <a href="./logout.php" class="nav-link">Logout</a>
                     <a href="./cart.php"> <i class="fa fa-shopping-basket ml-3 pt-3"></i></a>
+                    <span class="cart-items">
+                        <?php
+                        if(!empty($_SESSION["shopping_carts"])){
+                            $cart_count = count(array_keys($_SESSION["shopping_carts"]));
+                        echo $cart_count;
+                        }else{
+                            echo 0;
+                        }
+
+                        ?>
+
+
+                    </span>
                    
                         <?php
 

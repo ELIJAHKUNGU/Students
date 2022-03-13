@@ -19,13 +19,10 @@ if(isset($_POST["add_to_cart"]))
                 'item_image'		=>	$_POST["hidden_image"],
 			);
 			$_SESSION["shopping_carts"][$count] = $item_array;
-			echo '<script>alert("added successfully")</script>';
-			echo '<script>window.location="products.php"</script>';
 		}
 		else
 		{
-			echo '<script>alert("Item Already Added")</script>';
-			
+            echo '<script>alert("Product added succefully in the cart")</script>';
 		}
 	}
 	else
@@ -38,7 +35,6 @@ if(isset($_POST["add_to_cart"]))
             "item_image"        => $_POST['hidden_image']
 		);
 		$_SESSION["shopping_carts"][0] = $item_array;
-		
 	}
 }
 
@@ -89,22 +85,20 @@ if(isset($_POST["add_to_cart"]))
 				
                 <form method="post" action="products.php?action=add&id=<?php echo $row["product_id"]; ?>">
 					<div  align="center">
-					<a href="./product.php?item_id=<?php echo $row['product_id']; ?> " style="text-decoration:none; color:white">
-					<img src="<?php echo $row["product_image"]; ?>" style="height:300px" class="img-fluid" /><br />
-					</a>
+						<img src="<?php echo $row["product_image"]; ?>" style="height:300px" class="img-fluid" /><br />
 
 						<h4 class="text-info"><?php echo $row["product_name"]; ?></h4>
 
 						<h4 class="text-danger">KSH <?php echo $row["product_price"]; ?></h4>
 
-						<input type="text" name="quantity" value="1" class="form-control" />
+					
 
 						<input type="hidden" name="hidden_name" value="<?php echo $row["product_name"]; ?>" />
 
 						<input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>" />
                         <input type="hidden" name="hidden_image" value="<?php echo $row["product_image"]; ?>" />
-
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+						<!-- <button class="btn btn-success pl-5 pr-5 mt-2" name="save" type="submit">Add to Cart <i class="fa fa-shopping-basket"></i></button> -->
+                        <button class="btn btn-success pl-5 pr-5 mt-2"><a href="./product.php?item_id=<?php echo $row['product_id']; ?> " style="text-decoration:none; color:white">Add Cart</a> <i class="fa fa-shopping-basket"></i></button>
 
 					</div>
 				</form>

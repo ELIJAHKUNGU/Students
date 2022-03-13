@@ -51,16 +51,25 @@ include "header.php";
                         </span>
                         </div>
                         <p class="mt-3"> Product Summery Long printed dress with thin adjustable straps. V-neckline and wiring under the Dust with ruffles at the bottom of the dress. </p>
-                        <form action="cartadd.php" method="post">
-                            <div class="d-flex">
-                                <label for="">QTY</label>
-                                <input type="number" name="quantity" class="pl-2 ml-5" min="1" value="1" id="">
-                                <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?> ">
+                   <form method="post" action="products.php?action=add&id=<?php echo $row["product_id"]; ?>">
+					<div  align="center">
+					
 
+						
 
-                            </div>
-                            <button class="btn btn-success pl-5 pr-5 mt-2" name="save" type="submit">Add to Cart <i class="fa fa-shopping-basket"></i></button>
-                        </form>
+						
+
+						<input type="text" name="quantity" value="1" />
+
+						<input type="hidden" name="hidden_name" value="<?php echo $row["product_name"]; ?>" />
+
+						<input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>" />
+                        <input type="hidden" name="hidden_image" value="<?php echo $row["product_image"]; ?>" />
+
+						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+
+					</div>
+				</form>
 
 
                     </div>
