@@ -1,0 +1,65 @@
+.col-sm-5 {
+    background-color: #ffffff;
+    max-width: 300px;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+.col-sm-5 .dashboard {
+    background-color: #46255B;
+    min-width: 240px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.row .col-sm-9 .dashboard-admin .user-img img {
+    border-radius: 30px;
+    border: 2px solid blue;
+    padding: 5px;
+}
+
+.col-sm-9 .d-flex h4 {
+    color: #46255B;
+    font-weight: 900;
+}
+
+.col-sm-9 .d-flex h4 {
+    color: #46255B;
+    font-weight: 500;
+}
+
+.search input[type="search"] {
+    border-radius: 30px;
+    padding-left: 5px;
+    padding: 10px;
+}
+
+.bg-primary-color {
+    background-color: #46255B;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.row .col-sm-9 .row .col-sm-6 {
+    max-width: 450px;
+    min-height: 150px;
+    margin-left: 30px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.row .col-sm-9 .row .bg-purple {
+    background-color: #B561D3;
+}
+
+.row .col-sm-9 .row .bg-danger {
+    background-color: #F5827F;
+}
+
+.row .col-sm-9 .row .border-icon-img {
+    border: 2px solid #fff;
+    padding: 20px;
+    border-radius: 100%;
+}
