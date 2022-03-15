@@ -9,6 +9,9 @@
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.css" />
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/styles.css" />
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+
+
     <title>Hospital System Dashboard</title>
 </head>
 
@@ -41,14 +44,15 @@
                 </a>
                 <div class="pl-5">
                     <a href="">
-                        <a href="">
-                            <li>Doctor profile</li>
-                        </a>
+
                         <a href="">
                             <li>Doctors</li>
                         </a>
                         <a href="">
                             <li>Doctors Reviews</li>
+                        </a>
+                        <a href="">
+                            <li>Top Rated</li>
                         </a>
 
                     </a>
@@ -108,11 +112,10 @@
 
             </div>
         </div>
-
         <div class="col-sm-9">
             <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Dashboard</h2>
+                    <h2>Doctors </h2>
                 </div>
                 <div class="ml-auto">
                     <div class="d-flex">
@@ -140,110 +143,155 @@
 
             </div>
             <hr>
-            <div class="d-flex">
-                <div class="d-block">
-                    <h4>Welcome to Mediqu!</h4>
-                    <h5>Hospital Admin Dashboard </h5>
+            <div class="d-flex mb-5">
+                <div class="d-block ml-4">
+                    <button style="background-color: #5EC961; color: #fff; border-radius: 20px;" class="btn pt-2 pb-2 pl-4 pr-4">Add  Doctor</button>
                 </div>
-                <div class="ml-auto">
-                    <div class="d-flex">
-                        <div class="search">
-                            <input type="search" class="form-control" placeholder="Search here ">
 
-                        </div>
-                        <div class="settings-bar ml-3 bg-primary-color">
-                            <i class="fa fa-user-alt mt-2"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6  ml-5 mt-3 card gradient-bx text-white bg-danger rounded">
-                    <div class="d-flex">
-                        <div class="d-block">
-                            <h5>Total Patient</h5>
-                            <div class="d-flex">
-                                <h4>784k</h4>
-                                <div class="ml-2">
-                                    <img src="./assets/icon1.svg" alt="" srcset="">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="ml-auto mt-2 pl-4 border-icon-img">
-                            <img src="./assets/icon2.svg" alt="" srcset="">
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 ml-5 mt-3 bg-success">
-                    <div class="d-flex">
-                        <div class="d-block">
-                            <h5>Total Patient</h5>
-                            <div class="d-flex">
-                                <h4>784k</h4>
-                                <div class="ml-5">
-                                    <img src="./assets/icon1.svg" alt="" srcset="">
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="icon-bars">
-                            <img src="./assets/icon8.svg" class="" alt="" srcset="">
-
-                        </div>
-                        <div class="ml-auto mt-2 pl-4 border-icon-img">
-                            <img src="./assets/icon10.svg" alt="" srcset="">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6  ml-5 mt-3 card gradient-bx text-white bg-primary rounded">
-                    <div class="d-flex">
-                        <div class="d-block">
-                            <h5>Total Patient</h5>
-                            <div class="d-flex">
-                                <h4>784k</h4>
-                                <div class="ml-2">
-                                    <img src="./assets/icon1.svg" alt="" srcset="">
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="ml-auto mt-2 pl-4 border-icon-img">
-                            <img src="./assets/icon7.svg" alt="" srcset="">
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 ml-5 mt-3 bg-purple">
-                    <div class="d-flex">
-                        <div class="d-block">
-                            <h5>Total Patient</h5>
-                            <div class="d-flex">
-                                <h4>784k</h4>
-                                <div class="ml-5">
-                                    <img src="./assets/icon1.svg" alt="" srcset="">
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="ml-auto mt-2 pl-4 border-icon-img">
-                            <img src="./assets/icon6.svg" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>
             </div>
 
+            <table id="patient" class="display mt-2">
+                <thead>
+                    <tr>
 
+                        <th>Patient ID</th>
+                        <th>Date Check in</th>
+                        <th>Patient Name</th>
+                        <th>Doctor Assigned</th>
+                        <th>Other Diseases</th>
+                        <th>Send Reminder</th>
+                        <th>Bl0od Group</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Alex Samantha</td>
+                        <td>Dr Samatham</td>
+                        <td>
+                            Allergies & Asthma
+                        </td>
+                        <td>
+                            <button>Send Email</button>
+                        </td>
+                        <td>A +</td>
+                        <td>
+                            <I class="fas fa-trash"></I>
+                            <I class="fas ml-3 fa-edit"></I>
+
+
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
 
 
         </div>
+
+
     </div>
 
 
@@ -251,6 +299,12 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <script src="./DataTables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#patient').DataTable();
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/all.min.css" />
+    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.css" />
+    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/styles.css" />
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+
+
+    <title>Hospital System Dashboard</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #E5E5E5;
+        }
+    </style>
+    <div class="row">
+        <div class="col-sm-5 pt-4">
+            <div class="d-flex  mt-3">
+                <img src="./assets/logo.png" class="img-fluid ml-2" style="max-width: 50px; margin-right: 15px;" alt="" srcset="">
+                <img src="./assets/logo-text.png" class="img-fluid mr-2" style="max-width: 150px;" alt="" srcset="">
+
+            </div>
+            <div class="pl-2">
+                <a href="" class="nav-link mt-3">
+                    <li class="nav-item d-flex dashboard">
+                        <span class=""> Dashboard </span>
+                        <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
+                    </li>
+                </a>
+
+                <a href="" class="nav-link mt-3">
+                    <li class="nav-item d-flex dashboard">
+                        <span class=""> Doctors </span>
+                        <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
+                    </li>
+                </a>
+                <div class="pl-5">
+                    <a href="">
+
+                        <a href="">
+                            <li>Doctors</li>
+                        </a>
+                        <a href="">
+                            <li>Doctors Reviews</li>
+                        </a>
+                        <a href="">
+                            <li>Top Rated</li>
+                        </a>
+
+                    </a>
+                </div>
+                <a href="" class="nav-link mt-3">
+                    <li class="nav-item d-flex dashboard">
+                        <span class=""> Patients </span>
+                        <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
+                    </li>
+                </a>
+                <div class="pl-5">
+                    <a href="">
+                        <a href="">
+                            <li>Patient profile</li>
+                        </a>
+                        <a href="">
+                            <li>Patients</li>
+                        </a>
+                        <a href="">
+                            <li>Create an Appointment</li>
+                        </a>
+                        <a href="">
+
+                        </a>
+
+
+                    </a>
+                </div>
+                <a href="" class="nav-link mt-3">
+                    <li class="nav-item d-flex dashboard">
+                        <span class="">Others </span>
+                        <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
+                    </li>
+                </a>
+                <div class="pl-5">
+                    <a href="">
+                        <a href="">
+                            <li>Create a Book</li>
+                        </a>
+                        <a href="">
+                            <li>Request Drugs</li>
+                        </a>
+
+
+                    </a>
+                </div>
+                <div class="logo-dashboard mt-5">
+                    <div class="d-flex justify-content-center">
+                        <img src="./assets/logo-text.png" class="img-fluid" style="width:100px" alt="" srcset="">
+
+                    </div>
+                    <h3>Medical Hospital Admin Dashboard</h3>
+                    <p>&copy; 2021 All Rights Reserved</p>
+                    <h6>Made with &LeftDownVector; </h6>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="d-flex">
+                <div class="dashboard-text mt-3">
+                    <h2>Doctors </h2>
+                </div>
+                <div class="ml-auto">
+                    <div class="d-flex">
+                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <div class="dashboard-admin ml-5 mt-2">
+                            <div class="d-flex">
+                                <div class="d-block">
+                                    <h5>JOHN DOE</h5>
+                                    <h6 class="ml-4">Admin</h6>
+                                </div>
+                                <div class="user-img ml-4 border">
+                                    <img src="./assets/logo.png" class="img-fluid" style="max-height: 50px;" alt="" srcset="">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <hr>
+            <div class="d-flex mb-5">
+                <div class="d-block ml-4">
+                    <button style="background-color: #5EC961; color: #fff; border-radius: 20px;" class="btn pt-2 pb-2 pl-4 pr-4">Add  Doctor</button>
+                </div>
+
+            </div>
+
+            <table id="table_id" class="display mt-2">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Date Join</th>
+                        <th>Doctor Name</th>
+                        <th>Specialist</th>
+                        <th>Schedule</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Dr Samantha</td>
+                        <td>Dentist</td>
+                        <td>
+                            <Button>5 Appointment</Button>
+                        </td>
+                        <td>+2547 4377 0216</td>
+                        <td>Unavailable</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Dr Samantha</td>
+                        <td>Dentist</td>
+                        <td>
+                            <Button>5 Appointment</Button>
+                        </td>
+                        <td>+2547 4377 0216</td>
+                        <td>Unavailable</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Dr Samantha</td>
+                        <td>Dentist</td>
+                        <td>
+                            <Button>5 Appointment</Button>
+                        </td>
+                        <td>+2547 4377 0216</td>
+                        <td>Unavailable</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Dr Samantha</td>
+                        <td>Dentist</td>
+                        <td>
+                            <Button>5 Appointment</Button>
+                        </td>
+                        <td>+2547 4377 0216</td>
+                        <td>Unavailable</td>
+                    </tr>
+                    <tr>
+                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <td>#p-0012</td>
+                        <td>26/01/2020</td>
+                        <td>Nurse</td>
+                        <td>Dentist</td>
+                        <td>
+                            <Button>5 Appointment</Button>
+                        </td>
+                        <td>+2547 4377 0216</td>
+                        <td>Unavailable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./DataTables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
+</body>
+
+</html>
