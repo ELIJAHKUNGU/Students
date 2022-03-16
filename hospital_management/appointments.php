@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/all.min.css" />
-    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.css" />
-    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/styles.css" />
-    <link rel="stylesheet" href="./DataTables/datatables.min.css">
-
-
-    <title>Hospital System Dashboard</title>
-</head>
-
-<body>
     <style>
         body {
             background-color: #E5E5E5;
@@ -32,13 +15,14 @@
             color: rgb(17, 153, 51);
         }
     </style>
-     <?php
+    <?php
     include 'sidebarpanel.php';
     ?>
+  
         <div class="col-sm-9">
             <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Doctors </h2>
+                    <h2>Appointments </h2>
                 </div>
                 <div class="ml-auto">
                     <div class="d-flex">
@@ -68,7 +52,11 @@
             <hr>
             <div class="d-flex mb-5">
                 <div class="d-block ml-2">
-                    <button style="background-color: #5EC961; color: #fff; border-radius: 20px;" class="btn pt-2 pb-2 pl-4 pr-4">Add  Doctor</button>
+                    <a href="">
+                        <button style="background-color: #5EC961; color: #fff; border-radius: 20px;" class="btn pt-2 pb-2 pl-4 pr-4">
+                        Create Appointment
+                      </button>
+                    </a>
                 </div>
 
             </div>
@@ -76,15 +64,15 @@
             <table id="patient" class="display  mt-2" style="border: 2px solid gray;">
                 <thead>
                     <tr>
+                        <th>Appointment ID</th>
 
                         <th>Patient ID</th>
                         <th>Date Check in</th>
                         <th>Patient Name</th>
                         <th>Doctor Assigned</th>
-                        <th>Other Diseases</th>
+
                         <th>Send Reminder</th>
-                        <th>Bl0od Group</th>
-                        <th>Book Appointment</th>
+
                         <th>Action</th>
 
                     </tr>
@@ -93,17 +81,13 @@
 
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>
@@ -113,17 +97,13 @@
                     </tr>
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>
@@ -133,17 +113,13 @@
                     </tr>
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>
@@ -153,17 +129,13 @@
                     </tr>
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>
@@ -173,17 +145,13 @@
                     </tr>
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>
@@ -193,17 +161,13 @@
                     </tr>
                     <tr>
                         <td>#p-0012</td>
+                        <td>#p-0012</td>
                         <td>26/01/2020</td>
                         <td>Alex Samantha</td>
                         <td>Dr Samatham</td>
-                        <td>
-                            Allergies & Asthma
-                        </td>
-                        <td>
-                            <button class="btn">Send Email</button>
-                        </td>
-                        <td>A +</td>
-                        <td><button class="btn">Appointment</button></td>
+
+
+                        <td><button class="btn">Send email</button></td>
                         <td>
                             <I class="fas fa-trash"></I>
                             <I class="fas ml-3 fa-edit"></I>

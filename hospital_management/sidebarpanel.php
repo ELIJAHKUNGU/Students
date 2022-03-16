@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +13,7 @@
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.css" />
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" class="nav-item" class="nav-item" href="./css/styles.css" />
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
     <title>Hospital System Dashboard</title>
 </head>
 
@@ -41,16 +46,18 @@
                 </a>
                 <div class="pl-5">
                     <a href="">
-                        <a href="">
+                        <a href="./doctorprofile.php">
                             <li>Doctor profile</li>
                         </a>
-                        <a href="">
+                        <a href="./doctors.php">
                             <li>Doctors</li>
                         </a>
-                        <a href="">
-                            <li>Doctors Reviews</li>
+                        <a href="./toprated.php">
+                            <li>Top Rated</li>
                         </a>
-                        <a href="">Apppointment</a>
+                        <a href="./appointments.php">
+                            <li>Appointments</li>
+                        </a>
 
                     </a>
                 </div>
@@ -62,18 +69,16 @@
                 </a>
                 <div class="pl-5">
                     <a href="">
-                        <a href="">
+                        <a href="./patientsdetails.php">
                             <li>Patient profile</li>
                         </a>
-                        <a href="">
+                        <a href="./patients.php">
                             <li>Patients</li>
                         </a>
-                        <a href="">
+                        <a href="./createappointment.php">
                             <li>Create an Appointment</li>
                         </a>
-                        <a href="">
-
-                        </a>
+                        
 
 
                     </a>
@@ -86,9 +91,7 @@
                 </a>
                 <div class="pl-5">
                     <a href="">
-                        <a href="">
-                            <li>Create a Book</li>
-                        </a>
+                       
                         <a href="">
                             <li>Request Drugs</li>
                         </a>
