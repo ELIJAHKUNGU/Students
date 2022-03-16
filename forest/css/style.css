@@ -70,7 +70,7 @@
 
 .dashboard .row .col-sm-3 {
     background-color: rgb(238, 232, 232);
-    height: 80vh;
+    height: 70vh;
     max-width: 250px;
     padding-bottom: 20px;
 }
@@ -206,4 +206,22 @@
     border: 2px solid green;
     border-radius: 100%;
     padding: 20px;
+}
+
+.row .questions input[type='checkbox'] {
+    height: 30px;
+    width: 30px;
+}
+
+.row .questions input[type='number'] {
+    height: 30px;
+    width: 100px;
+}
+
+.row .questions .form-group {
+    margin-top: 20px;
+}
+
+.row .questions label {
+    margin-right: 20px;
 }
