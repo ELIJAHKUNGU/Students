@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../hospital_management/DataTables"
+		}
+	],
+    "settings": {
+        "liveServer.settings.port": 5501
+    }
+}

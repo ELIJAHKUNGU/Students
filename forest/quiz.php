@@ -7,20 +7,20 @@ if (isset($_POST["save"])) {
     require 'db.php';
     extract($_POST);
 
-    $skidders = $_POST['skidders'];
-    $tractors = $_POST['tractors'];
-    $tractors_no = $_POST['tractors_no'];
-    $chain_saw = $_POST['chain_saw'];
-    $trucks = $_POST['trucks'];
-    // $trucks_hired = $_POST['trucks_hired'];
-    // $trucks_owned = $_POST['trucks_owned'];
-    $trucks_no = $_POST['trucks_no'];
-    $drying_kiln = $_POST['drying_kiln'];
-    $drying_air = $_POST['drying_air'];
-    $debarker = $_POST['debarker'];
-    $hand_saw = $_POST['hand_saw'];
-    $band_saw = $_POST['band_saw'];
-    $amount1 = $_POST['amount1'];
+    // $skidders = $_POST['skidders'];
+    // $tractors = $_POST['tractors'];
+    // $tractors_no = $_POST['tractors_no'];
+    // $chain_saw = $_POST['chain_saw'];
+    // $trucks = $_POST['trucks'];
+    // // $trucks_hired = $_POST['trucks_hired'];
+    // // $trucks_owned = $_POST['trucks_owned'];
+    // $trucks_no = $_POST['trucks_no'];
+    // $drying_kiln = $_POST['drying_kiln'];
+    // $drying_air = $_POST['drying_air'];
+    // $debarker = $_POST['debarker'];
+    // $hand_saw = $_POST['hand_saw'];
+    // $band_saw = $_POST['band_saw'];
+    // $amount1 = $_POST['amount1'];
     
     // $sql2 = "SELECT * FROM quizs where email = '$user_id'";
     // $result = mysqli_query($conn,$sql2);
@@ -30,19 +30,14 @@ if (isset($_POST["save"])) {
        
     // }else{
         $sql = "INSERT INTO `quizs`( `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`)
-         VALUES (,'$skidders',$tractors','$tractors_no','$chain_saw','$trucks','$trucks1','$trucks_no','$drying_kiln','$drying_air','$debarker','$hand_saw','$band_saw','$amount1')";
+         VALUES ('$skidders','$tractors','$tractors_no','$chain_saw','$trucks','$trucks1','$trucks_no','$drying_kiln','$drying_air','$debarker','$hand_saw','$band_saw','$amount1')";
         $result2 =  mysqli_query($conn, $sql);
         if ($result2){
-            // $info = mysqli_fetch_assoc($result2);
-
-            // session_start();
-            // $_SESSION["info"] = $info;
-            // header("location:login.php?success=Your account has been  successfully created login  ");
             header("location:customerdashboard.php?success=Your account has been  successfully created login");
             exit();
 
         }else{
-            header("location:quiz.php?error=unknown error occurred&");
+            header("location:customerdashboard.php?error=Yerroe");
         }
 
     // }
@@ -80,7 +75,8 @@ if (isset($_POST["save"])) {
                 <div class="col-sm-9">
                     <p>Kindly Answer the above</p>
                     <hr>
-                    <ol>
+                   
+                        <form action="#" method="post">
                         <div class="row mt-5">
                             <div class="col-sm-6 shadow">
                                 <div class="d-flex ">
@@ -173,13 +169,14 @@ if (isset($_POST["save"])) {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="save" value="Submit" class="form-control bg-success text-white">
+                                    <button type="submit" name="save" value="Submit" class="form-control bg-success text-white">Submit</button>
                                 </div>
 
                             </div>
 
                         </div>
-                    </ol>
+                        </form>
+                   
 
                 </div>
             </div>
