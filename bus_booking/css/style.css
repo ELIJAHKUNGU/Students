@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("/images/dot-grid.png");
+}
+
+
+/*========================
+Navbar
+=====================*/
+
+.nav-colored {
+    background: white;
+    color: #000 !important;
+}
+
+.nav-colored .nav-link {
+    color: #000 !important;
+    font-weight: 900;
+}
+
+header .navbar-brand {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+
+.nav-colored .navbar-brand {
+    color: #339bfe !important;
+}
+
+.nav-transparent {
+    background-color: transparent;
+}
+
+.navlinks-color {
+    color: #000 !important;
+}
+
+#header {
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    background-image: url(../images/bg2.jpg);
+    color: #fff;
+}
+
+#header .container {
+    border-bottom: 2px solid grey;
+}
+
+header .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    margin-left: 20px;
+    font-weight: 900;
+    font-family: "Allerta", sans-serif;
+}
+
+.nav-link::after {
+    padding-bottom: 10px;
+    transition: all ease-in-out 0.2s;
+    border-bottom: 2px solid #339bfe;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+}
+
+.nav-link:hover:after {
+    transition: all ease-in-out 0.2s;
+    border-bottom: 2px solid #339bfe;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+}
+
+header .navbar-nav .nav-item .contacts {
+    background-color: transparent;
+    border: 2px solid #3398fe;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.nav-link.contacts::after {
+    border-bottom: none !important;
+}
+
+.nav-link.contacts:hover:after {
+    border-bottom: none !important;
+}
+
+header .navbar-nav .nav-item .contacts {
+    background-color: transparent;
+    border: 2px solid #3398fe;
+    color: #666666;
+    padding: 5px 30px;
+    padding-bottom: 2px !important;
+    border-radius: 30px;
+}
+
+header nav button i {
+    font-size: 30px;
+}
