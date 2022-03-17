@@ -1,0 +1,43 @@
+if (isset($_POST["save"])) {
+    require 'db.php';
+    extract($_POST);
+
+    $skidders = $_POST['skidders'];
+    $tractors = $_POST['tractors'];
+    $tractors_no = $_POST['tractors_no'];
+    $chain_saw = $_POST['chain_saw'];
+    $trucks = $_POST['trucks'];
+    $trucks_hired = $_POST['trucks1'];
+    // $trucks_owned = $_POST['trucks_owned'];
+    $trucks_no = $_POST['trucks_no'];
+    $drying_kiln = $_POST['drying_kiln'];
+    $drying_air = $_POST['drying_air'];
+    $debarker = $_POST['debarker'];
+    $hand_saw = $_POST['hand_saw'];
+    $band_saw = $_POST['band_saw'];
+    $amount1 = $_POST['amount1'];
+    
+    // $sql2 = "SELECT * FROM quizs where email = '$user_id'";
+    // $result = mysqli_query($conn,$sql2);
+
+    // if (mysqli_num_rows($result) > 0){
+    //     header("Location:rating.php?error=kindly check rating");
+       
+    // }else{
+        $sql = "INSERT INTO `quizs`( `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`)
+         VALUES ('$skidders','$tractors','$tractors_no','$chain_saw','$trucks','$trucks1','$trucks_no','$drying_kiln','$drying_air','$debarker','$hand_saw','$band_saw','$amount1')";
+        $result2 =  mysqli_query($conn, $sql);
+        if ($result2){
+            header("location:quiz.php?success=Your account has been  successfully created login");
+            exit();
+
+        }else{
+            header("location:quiz.php?error=Yerroe");
+        }
+
+    // }
+    // INSERT INTO `quizs`(`quiz_id`, `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`) 
+    // VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]')
+
+
+}
