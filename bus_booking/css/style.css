@@ -48,10 +48,11 @@ header .navbar-brand {
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 3px #ccc;
     background-image: url(../images/bg2.jpg);
+    background-position: center;
     color: #fff;
 }
 
-#header .container {
+#header .topbar {
     border-bottom: 2px solid grey;
 }
 
@@ -62,6 +63,10 @@ header .navbar-nav .nav-item .nav-link {
     margin-left: 20px;
     font-weight: 900;
     font-family: "Allerta", sans-serif;
+}
+
+.top-secon {
+    border-bottom: 2px solid gray;
 }
 
 .nav-link::after {
@@ -109,4 +114,37 @@ header .navbar-nav .nav-item .contacts {
 
 header nav button i {
     font-size: 30px;
+}
+
+.banner h1 {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-top: 5rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.row .col-sm-3 select,
+.row .col-sm-3 input {
+    height: 50px;
+}
+
+.row .col-sm-3 button {
+    margin-top: 30px;
+    min-height: 50px;
+    border-radius: 15px;
+}
+
+.browser {
+    border-top: 5px solid #E9912A;
+}
+
+.services {
+    padding-top: 5rem;
+    background-color: #F5F8FA;
+    padding-top: 3rem;
 }
