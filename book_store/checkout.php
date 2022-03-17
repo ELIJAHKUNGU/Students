@@ -1,7 +1,24 @@
 
    
     <?php
+    session_start();
     include 'header.php';
+    // print_r($_SESSION["shopping_carts"]);
+    foreach($_SESSION["shopping_carts"] as $keys => $values){
+    //    print_r($values);
+   print_r( $id = $values['item_id']);
+    }
+
+    require 'db.php';
+    $query = "SELECT * FROM product ";
+    $result = mysqli_query($conn, $query);
+    
+                                
+                                
+    
+
+   
+				
     ?>
      <style>
         /*--------check out right---------*/
