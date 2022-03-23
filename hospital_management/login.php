@@ -1,3 +1,26 @@
+<?php
+
+if (isset($_POST["save"])) {
+    require "db.php";
+    extract($_POST);
+    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) ==TRUE){
+        //success
+
+        $user_details = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION["user_details"] = $user_details;
+        header("location:index.php?success=You are  succesfully logged in");
+    }else{
+        header("location:login.php?error= Wrong Email Address or Password");
+
+
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -53,7 +76,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center mt-2 mb-2">
-                                <button style="text-transform: uppercase;" class="btn btn-outline-primary pl-5 pr-5 ">Sign in</button>
+                                <button style="text-transform: uppercase;" name="save" class="btn btn-outline-primary pl-5 pr-5 ">Sign in</button>
                             </div>
 
                         </form>
