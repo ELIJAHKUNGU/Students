@@ -39,7 +39,7 @@
     background-color: #46255B;
     padding: 10px;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .row .col-sm-9 .row .col-sm-6 {
@@ -52,10 +52,17 @@
 
 .row .col-sm-9 .row .bg-purple {
     background-color: #B561D3;
+    border-radius: 30px;
+}
+
+.row .col-sm-9 .row .bg-success,
+.row .col-sm-9 .row .bg-primary {
+    border-radius: 30px;
 }
 
 .row .col-sm-9 .row .bg-danger {
-    background-color: #F5827F;
+    background-color: #f70c03 !important;
+    border-radius: 30px;
 }
 
 .row .col-sm-9 .row .border-icon-img {

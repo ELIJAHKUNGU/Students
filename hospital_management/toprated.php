@@ -68,12 +68,15 @@
                     <div class="row">
                     <?php
                       require 'db.php';
-                      $qry = "SELECT * FROM `doctors` LIMIT 4";
+                      $qry = "SELECT * FROM `doctors` LIMIT 5";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
                       {
                         
+                        
                       ?>
+                      <!-- `doctor_id`, `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, 
+`doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`) -->
                         <div class="col-sm-6   ml-5 mt-3 card ">
                             <div class="d-flex">
                                 <div class="image-banner">
@@ -85,8 +88,8 @@
                                 </div>
                                 <div class="user-details ml-3">
                                     <div class="d-block">
-                                        <h4 class="text-black"> Dr. Abdul Aziz Lazis</h4>
-                                        <h4> Physical Therapy</h4>
+                                        <h4 class="text-black"><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_name']  ?>  <?php echo $row['doctor_username']  ?></h4>
+                                        <h4> <?php echo $row['specialist']  ?></h4>
                                         <div class="rating ">
                                             <i class="text-warning fa fa-star"></i>
                                             <i class="text-warning fa fa-star"></i>

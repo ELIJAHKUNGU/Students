@@ -31,12 +31,18 @@
 
             </div>
             <div class="pl-2">
-                <a href="" class="nav-link mt-3">
+                <a href="./index.php" class="nav-link mt-3">
                     <li class="nav-item d-flex dashboard">
                         <span class=""> Dashboard </span>
                         <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
                     </li>
+
                 </a>
+                <div class="pl-5">
+                <a href="./index.php">
+                            <li>Admin</li>
+                </a>
+                </div>
 
                 <a href="" class="nav-link mt-3">
                     <li class="nav-item d-flex dashboard">
