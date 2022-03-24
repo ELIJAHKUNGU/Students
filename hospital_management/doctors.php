@@ -72,7 +72,23 @@
                         <td><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_username']  ?>  </td>
                         <td><?php echo $row['specialist']  ?></td>
                         <td>
-                            <Button class="btn btn-outline-success">5 Appointment</Button>
+                          
+                            <Button class="btn btn-outline-success">
+                                <?php
+                                 require 'db.php';
+                                 $doctor_id = $row['doctor_id']; 
+                                 $sql="SELECT * FROM `appointments` where doctor_id=$doctor_id ";
+                                 
+                                $result= mysqli_query($conn, $sql);
+                                $results = mysqli_num_rows($result);
+                                   echo $results;
+                                 
+                                
+
+
+                                 ?>
+
+                                Appointment</Button>
                         </td>
                         <td><?php echo $row['Telephone']  ?></td>
                         <td style="color:green"><?php echo $row['status']  ?></td>

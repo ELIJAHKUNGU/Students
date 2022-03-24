@@ -118,9 +118,9 @@
                         
                         <td>  <a href='createappointment.php?id=$patient_id'><button>Appointment</button></a>  </td>
                         <td>
-                        <a href='appointment.php?id=$patient_id'><I class='fas fa-trash'></I></a>
-                        <a href='appointment.php?id=$patient_id'><I class='fas ml-3 fa-edit'></I></a></td>
-                        </tr>";
+                        <a href='delete.php?id=$patient_id'><I class='fas fa-trash'></I></a>
+                        <a href='editp.php?id=$patient_id'><I class='fas ml-3 fa-edit'></I></a></td>
+                    </tr>";
                       
                     }
                     ?>

@@ -70,6 +70,8 @@
                         <th>Date Check in</th>
                         <th>Patient Name</th>
                         <th>Doctor Assigned</th>
+                        <th>Appointment Activity</th>
+
 
                         <th>Send Reminder</th>
 
@@ -79,110 +81,58 @@
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
+                <?php
+                      require 'db.php';
+                      $sql="SELECT * FROM `appointments`";
+                      $result = mysqli_query($conn, $sql);
+                      $row2 = mysqli_fetch_assoc($result);
+                      $doctor_id = $row2['doctor_id'];
 
+                    
+                      
+                     
+                      $doctor_name = $row2['doctor_name'];
+                      echo $doctor_name;
+                      $qry = "SELECT * FROM `appointments` order by appointment_id DESC";
+                      $products =$conn->query($qry);
+                      while ($row= $products->fetch_assoc())
+                      {
+                          ?>
+                        
+                      
+<!-- //                         `appointments`(`appointment_id`, `patient_id`, `pateint_name`, `appointment_activity`,
+//  `doctor_id`, `scheduled_month`, `scheduled_time -->
+              
+              <tr>
+                        <td>#AP-00<?php echo $row['appointment_id']?></td>
+                        <td>#p-00$<?php echo $row['patient_id']?></td>
+                        <td><?php echo $row['scheduled_month']?> <?php echo $row['scheduled_time']?> </td>
+                        <td><?php echo $row['pateint_name']?></td>
+                      
+                        <td><?php
+                         $doctor_id= $row['doctor_id'];
 
-                        <td><button class="btn">Send email</button></td>
-                        <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
+                         $sql="SELECT * FROM `doctors` WHERE  doctor_id= $doctor_id";
+                         $result = mysqli_query($conn, $sql);
+                         $row2 = mysqli_fetch_assoc($result);
+                         $doctor_name = $row2['doctor_name'];
+                         echo $doctor_name;
+                         ?>
+                         
+                         
                         </td>
-                    </tr>
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
-
-
-                        <td><button class="btn">Send email</button></td>
+                        <td><?php echo $row['appointment_activity']?></td>
+                        
+                        
+                        <td>  <a href='createappointment.php?id=<?php echo $row['appointment_id']?>'><button>Send Email</button></a>  </td>
                         <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
-                        </td>
+                        <a href='appointment.php?id=<?php echo $row['appointment_id']?>'><I class='fas fa-trash'></I></a>
+                        <a href='appointment.php?id=<?php echo $row['appointment_id']?>'><I class='fas ml-3 fa-edit'></I></a></td>
                     </tr>
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
-
-
-                        <td><button class="btn">Send email</button></td>
-                        <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
-
-
-                        <td><button class="btn">Send email</button></td>
-                        <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
-
-
-                        <td><button class="btn">Send email</button></td>
-                        <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#p-0012</td>
-                        <td>#p-0012</td>
-                        <td>26/01/2020</td>
-                        <td>Alex Samantha</td>
-                        <td>Dr Samatham</td>
-
-
-                        <td><button class="btn">Send email</button></td>
-                        <td>
-                            <I class="fas fa-trash"></I>
-                            <I class="fas ml-3 fa-edit"></I>
-
-
-                        </td>
-                    </tr>
-
-
-
-
-
-
-
-
+                    <?php
+                      
+                    }
+                    ?>
 
                 </tbody>
             </table>

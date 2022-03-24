@@ -177,20 +177,20 @@ if (isset($_POST["save"])) {
                                             <div class="form-group">
                                             <?php
 
-                                                // //Connect to our MySQL database using the PDO extension.
-                                                // $pdo = new PDO('mysql:host=localhost;dbname=hosi', 'root', '');
+                                                //Connect to our MySQL database using the PDO extension.
+                                                $pdo = new PDO('mysql:host=localhost;dbname=hosi', 'root', '');
 
-                                                // //Our select statement. This will retrieve the data that we want.
-                                                // $sql = "SELECT  doctor_id, doctor_name FROM doctors";
+                                                //Our select statement. This will retrieve the data that we want.
+                                                $sql = "SELECT  doctor_id, doctor_name FROM doctors";
 
-                                                // //Prepare the select statement.
-                                                // $stmt = $pdo->prepare($sql);
+                                                //Prepare the select statement.
+                                                $stmt = $pdo->prepare($sql);
 
-                                                // //Execute the statement.
-                                                // $stmt->execute();
+                                                //Execute the statement.
+                                                $stmt->execute();
 
-                                                // //Retrieve the rows using fetchAll.
-                                                // $users = $stmt->fetchAll();
+                                                //Retrieve the rows using fetchAll.
+                                                $users = $stmt->fetchAll();
 
                                             ?>
                                                 <label for="">Select Doctor</label>

@@ -98,13 +98,14 @@ header("location:index.php");
                                         <div class="pl-5 pr-5">
                                             <div class="form-group">
                                                 <label for="">Patient ID</label>
-                                                <input type="text" class="form-control" value="<?=$patient_id?>" name="patient_id" id="">
+                                                <input type="text" class="form-control" disabled value="<?=$patient_id?>" name="patient_id" id="">
                                             </div>
                                             
                                            
                                             <div class="form-group">
                                                 <label for="">pateint_name</label>
-                                                <input type="text" class="form-control"value="<?=$patient_name?>"  name="pateint_name" id="">
+                                                <input type="text"  class="form-control"  disabled value="<?=$patient_name?>"    >
+                                                <input type="hidden" class="form-control"  value="<?=$patient_name?>"  name="pateint_name" id=""  >
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Select Appointment Activity</label>

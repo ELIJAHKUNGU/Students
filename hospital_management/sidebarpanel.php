@@ -81,9 +81,9 @@
                         <a href="./patients.php">
                             <li>Patients</li>
                         </a>
-                        <a href="./createappointment.php">
+                        <!-- <a href="./createappointment.php">
                             <li>Create an Appointment</li>
-                        </a>
+                        </a> -->
                         
 
 
