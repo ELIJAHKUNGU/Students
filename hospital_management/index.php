@@ -56,7 +56,16 @@ include 'sidebarpanel.php';
                         <div class="d-block">
                             <h5>Total Patient</h5>
                             <div class="d-flex">
-                                <h4>784k</h4>
+                                <h4>
+                                    <?php
+                                    require 'db.php';
+                                     $sql = "SELECT * FROM `patients`";
+                                     $result= mysqli_query($conn, $sql);
+                                   $results = mysqli_num_rows($result);
+                                   echo $results. 'k';
+
+                                    ?>
+                                </h4>
                                 <div class="ml-2">
                                     <img src="./assets/icon1.svg" alt="" srcset="">
                                 </div>
@@ -232,19 +241,33 @@ include 'sidebarpanel.php';
                             <h6 class="ml-4">View More</h6>
                         </div>
                         <hr>
+                        <?php
+                        // patient_id`, `patient_name`, `patient_dr`, `patient_age`, `phoneNumber`, 
+                        // `email`, `other_diseases`, `hiv_level`, `blood_group`, `getDate`, `status`
+                      require 'db.php';
+                      $qry = "SELECT * FROM `patients` ORDER BY Rand()  LIMIT 4";
+                      $products =$conn->query($qry);
+                      while ($row= $products->fetch_assoc())
+                      {
+                        
+                        
+                      ?>
                         <div class="pl-3">
                             <div class="d-flex">
                                 <img src="./assets/bg2.jpg" class="img-fluid" style="height:80px" alt="" srcset="">
                                 <div class="d-block ml-2">
-                                    <h4>Aziz Bakree </h4>
-                                    <h5>24 years</h5>
+                                    <h4><?php echo $row['patient_name']  ?></h4>
+                                    <h5><?php echo $row['patient_age']  ?> years</h5>
                                 </div>
-                                <div class="mt-3 ml-4">
-                                    <h6 class="text-danger">Pending</h6>
+                                <div class="mt-3 ml-2 mr-4">
+                                    
+                                    <a href="">
+                                        <button>Book </button>
+                                    </a>
                                 </div>
                             </div>
                             <hr>
-                            <div class="d-flex">
+                            <!-- <div class="d-flex">
                                 <img src="./assets/bg2.jpg" class="img-fluid" style="height:80px" alt="" srcset="">
                                 <div class="d-block ml-2">
                                     <h4>Aziz Bakree </h4>
@@ -275,9 +298,10 @@ include 'sidebarpanel.php';
                                 <div class="mt-3 ml-4">
                                     <h6 class="text-danger">Pending</h6>
                                 </div>
-                            </div>
+                            </div> -->
                             <hr>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

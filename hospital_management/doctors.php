@@ -42,7 +42,7 @@
             <table id="table_id" class="display mt-2">
                 <thead>
                     <tr>
-                        <th></th>
+                        <!-- <th></th> -->
                         <th>ID</th>
                         <th>Date Join</th>
                         <th>Doctor Name</th>
@@ -66,7 +66,7 @@
 `doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`) -->
 
                     <tr>
-                        <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
+                        <!-- <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td> -->
                         <td> <?php echo '#D-00'.$row['doctor_id']  ?> </td>
                         <td>26/01/2020</td>
                         <td><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_username']  ?>  </td>

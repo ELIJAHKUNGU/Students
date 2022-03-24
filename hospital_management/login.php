@@ -4,14 +4,14 @@ ini_set('display_errors', 1);
 
 
 
-if (isset($_POST["password"])) {
+if (isset($_POST["login"])) {
     require 'db.php';
     extract($_POST);
     $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
 
     $result= mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) ==1){
+    if (mysqli_num_rows($result) == TRUE){
         //success
         $info = mysqli_fetch_assoc($result);
         session_start();

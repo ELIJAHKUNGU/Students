@@ -1,3 +1,20 @@
+<?php
+
+
+if (isset($_POST["save"])) {
+    $conn = mysqli_connect("localhost","root","","hosi");
+    extract($_POST);
+$sql = "INSERT INTO `patients`(`patient_id`, `patient_name`, `patient_age`, `phoneNumber`, `email`, `other_diseases`, `hiv_level`, `blood_group`, `status`)
+ VALUES (null,'$patient_name','$patient_age','$phoneNumber','$email','$other_diseases','$hiv_level','$blood_group','1')";
+mysqli_query($conn,$sql) or die(mysqli_error($conn));
+header("location:index.php");
+
+ 
+
+
+}
+?>
+
 
     <style>
         body {
@@ -62,30 +79,22 @@
                         <div class="p-2 shadow mb-5 " style="background-color: white;">
                             <div class="form-valiadtion">
                                 <h4 class="ml-5 pl-5">Form Validation Data</h4>
-                                <form action="">
+                                <form action="" method="POST">
                                     <div class="pl-5 pr-5">
                                         <div class="pl-5 pr-5">
                                             <div class="form-group">
                                                 <label for="">Patient Name</label>
-                                                <input type="text" class="form-control" name="PateintId" id="">
+                                                <input type="text" class="form-control" name="patient_name" id="">
                                             </div>
-                                            <div class="form-group">
-
-                                                <select name="" class="form-control" id="">
-                                                    <option value="Select Doctor">Assign Doctor</option>
-                                                    <option value="">Dr Mwangi</option>
-                                                    <option value="">Dr Mwangi</option>
-                                                    <option value="">Dr Mwangi</option>
-                                                    <option value="">Dr Mwangi</option>
-                                                </select>
-                                            </div>
+                                            
+                                           
                                             <div class="form-group">
                                                 <label for="">Age</label>
-                                                <input type="number" class="form-control" name="age" id="">
+                                                <input type="number" class="form-control" name="patient_age" id="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Phone number</label>
-                                                <input type="number" class="form-control" name="pnumber" id="">
+                                                <input type="number" class="form-control" name="phoneNumber" id="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Email Address</label>
@@ -93,10 +102,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Other Diseases</label>
-                                                <input type="text" class="form-control" name="othersd" id="">
+                                                <input type="text" class="form-control" name="other_diseases" id="">
                                             </div>
                                             <div class="form-group">
-                                                <select name="" class="form-control" id="">
+                                                <select name="hiv_level" class="form-control" id="">
                                                     <option value="Select Time">HIV LEVEL</option>
                                                     <option value="Infection">Infection. </option>
                                                     <option value="ASymptomatic">Asymptomatic </option>
@@ -105,7 +114,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <select name="" class="form-control" id="">
+                                                <select name="blood_group" class="form-control" id="">
                                                     
                                                     <option value="Select Time">Blood group</option>
                                                     <option value="A">A  </option>
@@ -119,11 +128,11 @@
 
 
                                     </div>
-                            </div>
+                                          </div>
 
-                            <div class="ml-5 d-flex justify-content-center">
-                                <button style="background-color: green; color: #fff; min-width: 260px;" class="btn  pl-5 pr-5">Submit</button>
-                            </div>
+                                        <div class="ml-5 d-flex justify-content-center">
+                                            <button style="background-color: green; color: #fff; min-width: 260px;" name="save" class="btn  pl-5 pr-5">Submit</button>
+                                        </div>
                             </form>
                         </div>
                     </div>
