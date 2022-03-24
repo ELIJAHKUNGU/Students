@@ -1,23 +1,27 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-if (isset($_POST["save"])) {
-    require "db.php";
+
+
+if (isset($_POST["password"])) {
+    require 'db.php';
     extract($_POST);
     $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
-    $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) ==TRUE){
+    $result= mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) ==1){
         //success
-
-        $user_details = mysqli_fetch_assoc($result);
+        $info = mysqli_fetch_assoc($result);
         session_start();
-        $_SESSION["user_details"] = $user_details;
-        header("location:index.php?success=You are  succesfully logged in");
+        $_SESSION["info"] = $info;
+        header("location:index.php");
+
     }else{
-        header("location:login.php?error= Wrong Email Address or Password");
-
-
+        $message="Wrong username or password";
     }
+
 }
 ?>
 
@@ -63,7 +67,16 @@ if (isset($_POST["save"])) {
                         </h2>
                     </div>
                     <div class="">
-                        <form action="login.php" method="post">
+                    <form action="login.php" method="post" >
+                            <?php
+
+                            if (isset($_GET['error'])) { ?>
+                            <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                            <?php } ?>
+
+                            <?php if (isset($_GET['success'])) { ?>
+                            <p class="text-success"><?php echo $_GET['success']; ?></p>
+                            <?php } ?>
 
                             <div class="form-group">
                                 <label for="title">Email</label>
@@ -75,9 +88,9 @@ if (isset($_POST["save"])) {
                                 <input type="password" class="form-control pt-4 pb-4" name="password" required>
                             </div>
 
-                            <div class="d-flex justify-content-center mt-2 mb-2">
-                                <button style="text-transform: uppercase;" name="save" class="btn btn-outline-primary pl-5 pr-5 ">Sign in</button>
-                            </div>
+                            <div class="d-flex">
+                                <button style="text-transform: uppercase;" name="login" class="btn btn-success mr-3 ">Sign in</button>
+
 
                         </form>
 

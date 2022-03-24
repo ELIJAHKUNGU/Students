@@ -53,19 +53,34 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                      require 'db.php';
+                      $qry = "SELECT * FROM `doctors`";
+                      $products =$conn->query($qry);
+                      while ($row= $products->fetch_assoc())
+                      {
+                        
+                      ?>
+
+<!-- `doctor_id`, `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, 
+`doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`) -->
+
                     <tr>
                         <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
-                        <td>#p-0012</td>
+                        <td> <?php echo '#D-00'.$row['doctor_id']  ?> </td>
                         <td>26/01/2020</td>
-                        <td>Dr Samantha</td>
-                        <td>Dentist</td>
+                        <td><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_username']  ?>  </td>
+                        <td><?php echo $row['specialist']  ?></td>
                         <td>
-                            <Button>5 Appointment</Button>
+                            <Button class="btn btn-outline-success">5 Appointment</Button>
                         </td>
-                        <td>+2547 4377 0216</td>
-                        <td>Unavailable</td>
+                        <td><?php echo $row['Telephone']  ?></td>
+                        <td style="color:green"><?php echo $row['status']  ?></td>
                     </tr>
-                    <tr>
+                    <?php
+                      }
+                    ?>
+                    <!-- <tr>
                         <td><img src="./assets/1.jpg" style="height:80px; border-radius:100%" class="img-fluid" alt="" srcset=""></td>
                         <td>#p-0012</td>
                         <td>26/01/2020</td>
@@ -112,7 +127,7 @@
                         </td>
                         <td>+2547 4377 0216</td>
                         <td>Unavailable</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
 

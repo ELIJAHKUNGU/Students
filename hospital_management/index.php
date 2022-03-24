@@ -99,7 +99,18 @@ include 'sidebarpanel.php';
                         <div class="d-block">
                             <h5>Total Patient</h5>
                             <div class="d-flex">
-                                <h4>784k</h4>
+                                <h4>
+                                    <?php 
+                                    require 'db.php';
+
+                                    $sql = "SELECT * FROM `doctors`";
+                                    $result= mysqli_query($conn, $sql);
+                                  $results = mysqli_num_rows($result);
+                                  echo $results. 'k';
+ 
+
+                                    ?>
+                                </h4>
                                 <div class="ml-2">
                                     <img src="./assets/icon1.svg" alt="" srcset="">
 

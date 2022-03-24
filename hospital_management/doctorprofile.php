@@ -1,4 +1,17 @@
+<?php
+if (isset($_POST["save"])) {
+    $conn = mysqli_connect("localhost","root","","hosi");
+    extract($_POST);
+    $sql = "INSERT INTO `doctors`( `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, `doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`)
+    VALUES ('$username','$doctor_phNo','$title','$salary','$fullname','$specialist','$status','$address','$telephone','$notes')";
+       mysqli_query($conn,$sql) or die(mysqli_error($conn));
+       header("location:index.php");
 
+        
+       
+
+}
+?>
     <style>
         body {
             background-color: #E5E5E5;
@@ -63,22 +76,22 @@
                     <div class="p-2 shadow mb-5 " style="background-color: white;">
                         <div class="form-valiadtion">
                             <h4 class="ml-5">Form Validation Data</h4>
-                            <form action="">
+                            <form action="#" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label for="">Full Name</label>
-                                        <input type="text" placeholder="Robert Mwarau" class="form-control" name="fullname">
+                                        <input type="text" placeholder="Robert Mwarau" class="form-control" required name="fullname">
                                         <label for="">Username</label>
-                                        <input type="text" class="form-control" placeholder="DR. Robert" name="username">
+                                        <input type="text" class="form-control" placeholder="DR. Robert" required name="username">
                                         <label for="">Primary Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="+2547 43 0000 0000" name="username">
-                                        <select name="" class="form-control mt-2" id="">
+                                        <input type="text" class="form-control" placeholder="+2547 43 0000 0000" required name="doctor_phNo">
+                                        <select required name="title" class="form-control mt-2" id="">
                                             <option value="">Select Title</option>
                                             <option value="Mr">MR</option>
                                             <option value="Dr">Dr</option>
                                             <option value="Mrs">MRS</option>
                                         </select>
-                                        <select name="" class="form-control mt-4" id="">
+                                        <select required name="specialist" class="form-control mt-4" id="">
                                             <option value="">Select Specialist</option>
                                             <option value="Mr">Densit</option>
                                             <option value="Nurse">Physical Therapy</option>
@@ -95,30 +108,35 @@
                                             <option value="clinical dietitian">clinical dietitian</option>
                                         </select>
                                         <label for="" class="mt-3">Address</label>
-                                        <input type="text" placeholder="244-900 KIAMBUI ADAMS ARACADE AVENUE" class="form-control ">
+                                        <input type="text" placeholder="244-900 KIAMBUI ADAMS ARACADE AVENUE" required name="address" class="form-control ">
 
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="">Salary </label>
-                                        <input type="number" class="form-control" placeholder="500 000" name="" id="">
+                                        <input type="number" class="form-control" placeholder="500 000" required name="salary" id="">
                                         <label for="">Status</label>
-                                        <input type="text" class="form-control" name="username">
+                                        
+
+                                      <select name="status" class="form-control" id="status">
+                                          <option value="available">Available</option>
+                                          <option value="unavailable">Unavailable</option>
+                                      </select>
                                         <label for="">Telephone</label>
-                                        <input type="text" class="form-control" placeholder="+2547 43 0000 0000" name="username">
-                                        <textarea name="" placeholder="Add notes......." class="form-control mt-3" id="" cols="30" rows="4"></textarea>
-                                        <label for="Doctor Profile"></label>
-                                        <input type="file" name="profile" class="form-control" id="">
+                                        <input type="text" class="form-control" placeholder="+2547 43 0000 0000" required name="telephone">
+                                        <textarea required name="notes" placeholder="Add notes......." class="form-control mt-3" id="" cols="30" rows="4"></textarea>
+                                        <!-- <label for="Doctor Profile"></label>
+                                        <input type="file" name="profile" class="form-control" id=""> -->
 
                                     </div>
                                 </div>
                                 <div class="d-flex mt-2 justify-content-center">
-                                    <input type="checkbox" class="mt-1" name="" id="">
+                                    <input type="checkbox" class="mt-1" name="" id="" required>
                                     <div class="ml-3 mt-3">
                                         <p>I Terms and conditions agree to the terms</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button style="background-color: green; color: #fff;" class="btn  pl-5 pr-5">Submit</button>
+                                    <button style="background-color: green;  color: #fff;" name="save" class="btn  pl-5 pr-5">Submit</button>
                                 </div>
                             </form>
                         </div>

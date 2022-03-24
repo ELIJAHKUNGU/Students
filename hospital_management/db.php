@@ -1,7 +1,12 @@
 <?php
 
 
-$conn = mysqli_connect("localhost","root","","forest");
+$conn = mysqli_connect("localhost","root","","hosi");
+// if ($conn){
+//     echo "connected";
+// }else{
+//     echo "unconnected";
+// }
 
 
 ?>
