@@ -127,7 +127,7 @@
                         <td>  <a href='createappointment.php?id=<?php echo $row['appointment_id']?>'><button>Send Email</button></a>  </td>
                         <td>
                         <a href='appointment.php?id=<?php echo $row['appointment_id']?>'><I class='fas fa-trash'></I></a>
-                        <a href='appointment.php?id=<?php echo $row['appointment_id']?>'><I class='fas ml-3 fa-edit'></I></a></td>
+                      </td>
                     </tr>
                     <?php
                       

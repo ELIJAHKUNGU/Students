@@ -123,12 +123,10 @@ include 'sidebarpanel.php';
                                     <?php 
                                     require 'db.php';
 
-                                    $sql = "SELECT * FROM `doctors`";
+                                    $sql = "SELECT * FROM `appointments`";
                                     $result= mysqli_query($conn, $sql);
                                   $results = mysqli_num_rows($result);
                                   echo $results. 'k';
- 
-
                                     ?>
                                 </h4>
                                 <div class="ml-2">
@@ -144,7 +142,7 @@ include 'sidebarpanel.php';
 
                     </div>
                 </div>
-                <div class="col-sm-6 ml-5 mt-3 bg-purple">
+                <!-- <div class="col-sm-6 ml-5 mt-3 bg-purple">
                     <div class="d-flex">
                         <div class="d-block">
                             <h5>Total Patient</h5>
@@ -161,7 +159,7 @@ include 'sidebarpanel.php';
                             <img src="./assets/icon6.svg" alt="" srcset="">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row mb-5">
                 <div class="col-sm-8 ml-5  pt-5 doctors shadow mt-5">
