@@ -4,9 +4,17 @@ if (isset($_POST["save"])) {
     extract($_POST);
     $sql = "INSERT INTO `doctors`( `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, `doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`)
     VALUES ('$username','$doctor_phNo','$title','$salary','$fullname','$specialist','$status','$address','$telephone','$notes')";
-       mysqli_query($conn,$sql) or die(mysqli_error($conn));
-       header("location:index.php");
+       if ($conn->query($sql) === TRUE) {
 
+        header("location:doctors.php?success= Doctors profile have been created successfully ");
+    
+    } else {
+        header("location:doctors.php?error=Your Doctors profile was not created  +2547  220 000");
+    
+    
+    }
+    
+    $conn->close();
         
        
 
@@ -93,10 +101,10 @@ if (isset($_POST["save"])) {
                                         </select>
                                         <select required name="specialist" class="form-control mt-4" id="">
                                             <option value="">Select Specialist</option>
-                                            <option value="Mr">Densit</option>
-                                            <option value="Nurse">Physical Therapy</option>
-                                            <option value="Dr">Nurse</option>
-                                            <option value="Mrs">therapist</option>
+                                            <option value="Densit">Densit</option>
+                                            <option value="Physical Therapy">Physical Therapy</option>
+                                            <option value="Nurse">Nurse</option>
+                                            <option value="Therapist">therapist</option>
                                             <option value="Ophthalmology">Ophthalmology</option>
                                             <option value="clinical psychologis">clinical psychologis</option>
                                             <option value="optometrist">optometrist</option>

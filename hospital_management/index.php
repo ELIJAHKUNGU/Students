@@ -33,6 +33,14 @@ include 'sidebarpanel.php';
 
             </div>
             <hr>
+            <?php 
+            if (isset($_GET['error'])) { ?>
+                <p class="alert alert-danger" role="alert"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+        
+                <?php if (isset($_GET['success'])) { ?>
+                <p class="alert alert-primary" role="alert"><?php echo $_GET['success']; ?></p>
+                <?php } ?>
             <div class="d-flex">
                 <div class="d-block">
                     <h4>Welcome to Mediqu!</h4>

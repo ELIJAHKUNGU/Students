@@ -8,7 +8,17 @@ if (isset($_GET['id'])){
     
     require 'db.php';
     $sql="DELETE FROM `doctors`  WHERE  doctor_id= $id";
-    mysqli_query($conn,$sql);
-    header("location:doctors.php");
+    
+    if ($conn->query($sql) === TRUE) {
+
+        header("location:doctors.php?success=Doctor profile have been deleted successfully ");
+    
+    } else {
+        header("location:doctors.php?error=Your ADoctor profile was not deleted  +2547  220 000");
+    
+    
+    }
+    
+    $conn->close();
 }
 ?>

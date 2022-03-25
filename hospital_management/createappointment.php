@@ -20,8 +20,17 @@ if (isset($_POST["save"])) {
     extract($_POST);
 $sql = "INSERT INTO `appointments`(`patient_id`, `pateint_name`, `appointment_activity`, `doctor_id`, `scheduled_month`, `scheduled_time`)
  VALUES ('$patient_id','$pateint_name','$appointment_activity','$doctor_id','$s_m','$s_time')";
-mysqli_query($conn,$sql) or die(mysqli_error($conn));
-header("location:index.php");
+if ($conn->query($sql) === TRUE) {
+
+    header("location:index.php?success=Appointment have scheduled successfully ");
+
+} else {
+    header("location:cart.php?error=Your Appointment was not scheduled  +2547  220 000");
+
+
+}
+
+$conn->close();
 
  
 
@@ -114,8 +123,7 @@ header("location:index.php");
                                                 <option value="Therapy">Therapy</option>
                                                 <option value="Consulation">Consulation</option>
                                                 <option value="Screening">Screening</option>
-                                                <option value="Therapy">Therapy</option>
-                                                <option value="Consulation">Consulation</option>
+                                               
                                                 </select>
                                             </div>
                                             

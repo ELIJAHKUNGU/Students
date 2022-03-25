@@ -19,8 +19,17 @@ if (isset($_POST["save"])) {
 
  $sql = "UPDATE `patients` SET `patient_name`='$patient_name',`patient_age`='$patient_age',
  `phoneNumber`='$phoneNumber',`email`='$email',`other_diseases`='$other_diseases' WHERE  patient_id= $id";
-mysqli_query($conn,$sql) or die(mysqli_error($conn));
-header("location:index.php");
+ if ($conn->query($sql) === TRUE) {
+
+    header("location:patients.php?success= Patients profile have been   updated successfully ");
+
+} else {
+    header("location:patients.php?error=Your Patients profile was not   updated  +2547  220 000");
+
+
+}
+
+$conn->close();
 
  
 

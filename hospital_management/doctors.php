@@ -38,6 +38,14 @@
                 </div>
 
             </div>
+            <?php
+             if (isset($_GET['error'])) { ?>
+                <p class="alert alert-danger" role="alert"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+        
+                <?php if (isset($_GET['success'])) { ?>
+                <p class="alert alert-primary" role="alert"><?php echo $_GET['success']; ?></p>
+                <?php } ?>
 
             <table id="table_id" class="display mt-2">
                 <thead>
