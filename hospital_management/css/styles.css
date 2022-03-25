@@ -17,6 +17,8 @@
     border-radius: 30px;
     border: 2px solid blue;
     padding: 5px;
+    background-position: center;
+    object-fit: contain;
 }
 
 .col-sm-9 .d-flex h4 {

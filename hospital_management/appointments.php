@@ -52,7 +52,7 @@
             <hr>
             <div class="d-flex mb-5">
                 <div class="d-block ml-2">
-                    <a href="">
+                    <a href="./patients.php">
                         <button style="background-color: #5EC961; color: #fff; border-radius: 20px;" class="btn pt-2 pb-2 pl-4 pr-4">
                         Create Appointment
                       </button>
@@ -105,7 +105,7 @@
               
               <tr>
                         <td>#AP-00<?php echo $row['appointment_id']?></td>
-                        <td>#p-00$<?php echo $row['patient_id']?></td>
+                        <td>#p-00<?php echo $row['patient_id']?></td>
                         <td><?php echo $row['scheduled_month']?> <?php echo $row['scheduled_time']?> </td>
                         <td><?php echo $row['pateint_name']?></td>
                       
@@ -124,9 +124,9 @@
                         <td><?php echo $row['appointment_activity']?></td>
                         
                         
-                        <td>  <a href='createappointment.php?id=<?php echo $row['appointment_id']?>'><button>Send Email</button></a>  </td>
+                        <td>  <a href='sendemail.php?id=<?php echo $row['appointment_id']?>'><button>Send Email</button></a>  </td>
                         <td>
-                        <a href='appointment.php?id=<?php echo $row['appointment_id']?>'><I class='fas fa-trash'></I></a>
+                        <a href='appointmentdelete.php?id=<?php echo $row['appointment_id']?>'><I class='fas fa-trash'></I></a>
                       </td>
                     </tr>
                     <?php

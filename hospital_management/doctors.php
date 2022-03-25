@@ -47,9 +47,10 @@
                         <th>Date Join</th>
                         <th>Doctor Name</th>
                         <th>Specialist</th>
-                        <th>Schedule</th>
+                        <th>Scheduled Appointment</th>
                         <th>Contact</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +74,7 @@
                         <td><?php echo $row['specialist']  ?></td>
                         <td>
                           
-                            <Button class="btn btn-outline-success">
+                            <a href="./appointments.php"><Button class="btn btn-outline-success">
                                 <?php
                                  require 'db.php';
                                  $doctor_id = $row['doctor_id']; 
@@ -88,10 +89,12 @@
 
                                  ?>
 
-                                Appointment</Button>
+                                Appointment</Button></a>
                         </td>
                         <td><?php echo $row['Telephone']  ?></td>
                         <td style="color:green"><?php echo $row['status']  ?></td>
+                        <td ><a href='ddelete.php?id=<?php echo $row['doctor_id']?>'><I class='fas fa-trash'></I></a>
+</td>
                     </tr>
                     <?php
                       }

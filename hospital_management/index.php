@@ -177,7 +177,18 @@ include 'sidebarpanel.php';
                       <!-- `doctor_id`, `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, 
 `doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`) -->
                         <div class="col-sm-3 ">
-                            <img src="./assets/1.jpg" class="img-fluid" alt="" srcset="">
+                            <style>
+                                .doctor{
+                                    /* border:2px solid #000000;
+                                    padding:5px;
+                                    display: flex;
+                                    justify-content: center;
+                                    border: radius 30px !important; */
+                                    
+                                }
+
+                            </style>
+                            <img src="./assets/1.jpg"  class="img-fluid doctor" alt="" srcset="">
                             <h6 class="text-center"><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_name']?> <?php echo $row['doctor_username']  ?></h6>
                             <p><?php echo $row['specialist']  ?>   </p>
                             <p><?php echo $row['status']  ?>  </p>
@@ -252,19 +263,19 @@ include 'sidebarpanel.php';
                       ?>
                         <div class="pl-3">
                             <div class="d-flex">
-                                <img src="./assets/bg2.jpg" class="img-fluid" style="height:80px" alt="" srcset="">
+                                <img src="./assets/pateint.png" class="img-fluid" style="height:80px" alt="" srcset="">
                                 <div class="d-block ml-2">
                                     <h4><?php echo $row['patient_name']  ?></h4>
                                     <h5><?php echo $row['patient_age']  ?> years</h5>
                                 </div>
                                 <div class="mt-3 ml-2 mr-4">
                                     
-                                    <a href="">
-                                        <button>Book </button>
+                                    <a href="./patients.php">
+                                        <button class="btn btn-secondary">Book </button>
                                     </a>
                                 </div>
                             </div>
-                            <hr>
+                            
                             <!-- <div class="d-flex">
                                 <img src="./assets/bg2.jpg" class="img-fluid" style="height:80px" alt="" srcset="">
                                 <div class="d-block ml-2">
