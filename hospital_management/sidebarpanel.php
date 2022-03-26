@@ -1,3 +1,9 @@
+<?php
+
+
+require_once 'security.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

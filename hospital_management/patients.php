@@ -46,13 +46,31 @@
                         <i class="fas ml-5 mt-4 fa-bars"></i>
                         <i class="fas ml-5 mt-4 fa-bars"></i>
                         <div class="dashboard-admin ml-5 mt-2">
-                            <div class="d-flex">
-                                <div class="d-block">
-                                    <h5>JOHN DOE</h5>
-                                    <h6 class="ml-4">Admin</h6>
+                        <div class="d-flex">
+                                <div class="d-block bg-primary-color">
+                                    <h5>
+                                        <?php
+                                        // echo $user_id;
+                                        require 'db.php';
+                                         $sql="SELECT * FROM `users` where user_id = '$user_id'";
+                                         $result = mysqli_query($conn, $sql);
+                                         $row2 = mysqli_fetch_assoc($result);
+                                         $full_name = $row2['full_name'];
+                                         echo $full_name;
+
+                                          ?>
+                                    </h5>
+                                    <h6 class="ml-4">
+                                        <?php echo $name = $row2['username']; ?>
+                                    </h6>
                                 </div>
-                                <div class="user-img ml-4 border">
+                                <!-- <div class="user-img ml-4 border">
                                     <img src="./assets/logo.png" class="img-fluid" style="max-height: 50px;" alt="" srcset="">
+                                </div> -->
+                                <div class="">
+                                   <a href="./logout.php" class="mt-1 nav-link">
+                                       <button class="btn bg-primary-color">Logout</button>
+                                   </a>
                                 </div>
 
                             </div>

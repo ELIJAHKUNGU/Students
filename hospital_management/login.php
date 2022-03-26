@@ -4,24 +4,22 @@ ini_set('display_errors', 1);
 
 
 
-if (isset($_POST["login"])) {
-    require 'db.php';
+if (isset($_POST["password"])) {
+    $conn = mysqli_connect("localhost", "root", "" , "hosi");
     extract($_POST);
+    $password = $_POST['password'];
     $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-    $result= mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == TRUE){
+    if (mysqli_num_rows($result) == 1){
         //success
         $info = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION["info"] = $info;
-        header("location:index.php");
-
+        header("location:index.php?success= You have successfully logged in  ");
     }else{
-        $message="Wrong username or password";
+        header("location:login.php?error= Patients profile have been   updated successfully ");
     }
-
 }
 ?>
 
@@ -67,7 +65,7 @@ if (isset($_POST["login"])) {
                         </h2>
                     </div>
                     <div class="">
-                    <form action="login.php" method="post" >
+                    <form action="" method="post">
                             <?php
 
                             if (isset($_GET['error'])) { ?>
@@ -78,19 +76,13 @@ if (isset($_POST["login"])) {
                             <p class="text-success"><?php echo $_GET['success']; ?></p>
                             <?php } ?>
 
-                            <div class="form-group">
-                                <label for="title">Email</label>
-                                <input type="email" class="form-control pt-4 pb-4" name="email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="title">Password</label>
-                                <input type="password" class="form-control pt-4 pb-4" name="password" required>
-                            </div>
-
-                            <div class="d-flex">
-                                <button style="text-transform: uppercase;" name="login" class="btn btn-success mr-3 ">Sign in</button>
-
+                            
+                            <label for="">Enter Your Email Address Here...</label>
+                            <input type="email" name="email" class="form-control" id="">
+                            <label for="">Password</label>
+                            <input type="password" name="password" class="form-control" id="">
+                            <button type="submit" name="save" class="btn pl-2 pr-2 btn-success mt-2">login</button>
+                        </form>
 
                         </form>
 
