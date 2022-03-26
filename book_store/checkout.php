@@ -3,20 +3,32 @@
     <?php
     session_start();
     include 'header.php';
-    // print_r($_SESSION["shopping_carts"]);
-    foreach($_SESSION["shopping_carts"] as $keys => $values){
-    //    print_r($values);
-   print_r( $id = $values['item_id']);
-    }
-
     require 'db.php';
-    $query = "SELECT * FROM product ";
-    $result = mysqli_query($conn, $query);
-    
-                                
-                                
-    
-
+    require_once 'security.php';
+    print_r($_SESSION["shopping_carts"]);
+    // foreach($_SESSION["shopping_carts"] as $keys => $values)
+    // {
+    //         // echo $key ." : ". $value['quantity'] . "<br>";
+           
+    //         // print_r($values["item_quantity"]);
+    //         $sql_cart = "SELECT * FROM product where product_id = '$keys' ";
+    //        $result = mysqli_query($conn, $sql_cart);
+    //        $row = mysqli_fetch_assoc($result);
+    //        print_r($row);
+    //        $total = $total +  ($row['product_price'] * $values["item_quantity"]);
+    //     // print_r($keys);
+          
+    // }
+    if(!empty($_SESSION["shopping_carts"]))
+    {
+        $total = 0;
+        // print_r($_SESSION["shopping_carts"]);
+        foreach($_SESSION["shopping_carts"] as $keys => $values)
+        {
+            $total = $total + ($values["item_quantity"] * $values["item_price"]);
+       
+        }
+    }
    
 				
     ?>
@@ -113,6 +125,15 @@
 // include 'header.php';
 ?> -->
         <h5 class="pl-4">Checkout</h5>
+        <?php
+        // $user_id =  $info ['user_id'];
+        // $query = "SELECT * FROM users  where `user_id` = '$user_id'";
+        // $result = mysqli_query($conn, $query);
+    
+        //     $row = mysqli_fetch_array($result);
+            
+       
+        ?>
         <section class="">
             <div class="container">
                 <div class="row">
@@ -128,20 +149,74 @@
                                     </div>
                                     <div class="address-body pl-3">
                                         <form action="">
+                                            <?php
+                                            $query = "SELECT * FROM `users` where user_id = '$user_id' ";
+                                            $result = mysqli_query($conn, $query);
+                                            
+                                            if(mysqli_num_rows($result) > 0)
+                                            {
+                                                while($row = mysqli_fetch_array($result))
+                                                {
+
+                                            ?>
                                             <div class="d-flex">
+                                                <style>
+                                                    input{
+                                                        text-transform: uppercase;
+
+                                                    }
+                                                </style>
                                                 <div class="d-block">
                                                     <label for="" class="text-success">Username</label>
-                                                    <input style="height: 50px; min-width:300px;" type="text" class="form-control" placeholder="John" />
+                                                    <input style="height: 50px; min-width:300px;" value=<?php echo $row['username'] ?>  type="text" class="form-control" placeholder="John" />
                                                 </div>
                                                 <div class="d-block ml-3">
                                                     <label for="" class="text-success">Email Address</label>
-                                                    <input style="height: 50px; min-width:300px;" type="text" class="form-control pt-2 pb-2" placeholder="Doe" />
+                                                    <input style="height: 50px; min-width:300px;"  value=<?php echo $row['email'] ?>  type="text" class="form-control pt-2 pb-2" placeholder="Doe" />
                                                 </div>
+                                                
                                             </div>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+                                            <div class="d-block ml-3">
+                                                    <label for="" class="text-success"> Address</label>
+                                                    <input style="height: 50px; min-width:300px;" name="address" type="text" class="form-control pt-2 pb-2" placeholder="Doe" />
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="d-block">
+                                                         <label for="" class="text-center ml-2 ">Town</label>
+                                                        <input type="text " name="town" class="form-control">
+                                                    </div>
+                                                    <div class="d-block ml-2">
+                                                         <label for="" class="text-center ml-2 ">City</label>
+                                                        <input type="text " name="city" class="form-control">
+                                                    </div>
+                                                    <div class="d-block ml-2">
+                                                         <label for="" class="text-center ml-2 ">Zip code</label>
+                                                        <input type="text " name="town" class="form-control">
+                                                    </div>
+                                                   
+
+
+                                                  
+                                                </div>
+                                                <input type="text" value="<?php $values['item_quantity']  ?>">
+
+                                                
+                                                <div class="d-block ml-3">
+                                                    <label for="" class="text-success">Notes</label>
+                                                    <textarea name="desc" id="" class="form-control" cols="30" rows="5"></textarea>
+                                                </div>
+                                                
+                                               
 
                                         </form>
                                     </div>
                                 </div>
+           
+            
                                 <div class="pay-with-mpesa">
                                     <div class="d-flex">
                                         <h5 class=" pl-5 mt-3">Pay with Mpesa</h5>
@@ -182,11 +257,21 @@
                                     <div class="calculated-totals">
                                         <div class="total-group">
                                             <span class="total-title">Total Items</span>
-                                            <span>4</span>
+                                            <span>
+                                            <?php
+                        if(!empty($_SESSION["shopping_carts"])){
+                            $cart_count = count(array_keys($_SESSION["shopping_carts"]));
+                        echo $cart_count;
+                        }else{
+                            echo 0;
+                        }
+
+                        ?>
+                                            </span>
                                         </div>
                                         <div class="total-group">
                                             <span class="total-title">SubTotal</span>
-                                            <span>2000</span>
+                                            <span><?php echo $total?></span>
                                         </div>
                                         <div class="total-group">
                                             <span class="total-title">VAT</span>
@@ -194,7 +279,7 @@
                                         </div>
                                         <div class="total-group">
                                             <span class="total-title">Total</span>
-                                            <span>2000</span>
+                                            <span><?php echo $total?></span>
                                         </div>
                                         <div class="total-group">
                                             <button>
