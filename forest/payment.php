@@ -81,7 +81,10 @@
 
                 <?php
                       require 'db.php';
-                     
+                    //   $sql="SELECT * FROM `hello`";
+                    //   $result = mysqli_query($conn, $sql);
+                    //   $row2 = mysqli_fetch_assoc($result);
+                    //   $doctor_id = $row2['doctor_id'];
 
                     
                       

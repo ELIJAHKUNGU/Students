@@ -5,7 +5,7 @@
             ?>
             <div class="col-sm-9">
                 <div class="row">
-                    <div class="col-sm-3  p-0 ml-2 home">
+                    <div class="col-sm-6  p-0 ml-2 home">
                         <div class="d-flex pl-3 pr-3 pt-3">
                             <h6>Home </h6>
                             <i class="fas fa-home ml-auto"></i>
@@ -15,7 +15,7 @@
                         </div>
 
                     </div>
-                    <div class="col-sm-3  p-0 ml-2 user-details">
+                    <div class="col-sm-6  p-0 ml-2 user-details">
                         <div class="d-flex pl-3 pr-3 pt-3">
                             <h6> User Details </h6>
                             <i class="fas fa-user ml-auto"></i>
@@ -25,7 +25,7 @@
                         </div>
 
                     </div>
-                    <div class="col-sm-3  p-0 ml-2 rating">
+                    <div class="col-sm-6  p-0 ml-2 rating">
                         <div class="d-flex pl-3 pr-3 pt-3">
                             <h6>Rating </h6>
                             <i class="fas fa-briefcase ml-auto"></i>
@@ -34,7 +34,7 @@
                             <a href="paymets.php"><button class="btn btn-info ml-4 mt-5">View  Panel</button></a>
                         </div>
                     </div>
-                    <div class="col-sm-3 p-0 ml-2 orders">
+                    <div class="col-sm-6 p-0 ml-2 orders">
                         <div class="d-flex pl-3 pr-3 pt-3">
                             <h6>Orders </h6>
                             <i class="fas fa-plus ml-auto"></i>
@@ -43,7 +43,7 @@
                             <a href="./addemployees.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
                         </div>
                     </div>
-                    <div class="col-sm-3 p-0 ml-2 deliveries ">
+                    <div class="col-sm-6 p-0 ml-2 deliveries ">
                         <div class="d-flex pl-3 pr-3 pt-3">
                             <h6>Deliveries</h6>
                             <i class="fas fa-plus ml-auto"></i>
