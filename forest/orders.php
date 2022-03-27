@@ -88,7 +88,8 @@
                      
                     //   $doctor_name = $row2['doctor_name'];
                     //   echo $doctor_name;
-                      $qry = "SELECT * FROM `hello` order by id DESC";
+                    require 'config.php';
+                      $qry = "SELECT * FROM `hello` where user_id = '$user_id'";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
 

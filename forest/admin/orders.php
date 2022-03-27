@@ -22,38 +22,7 @@
         <div class="col-sm-9">
             <p>The following are measurement we used</p>
             <ol>
-                <table class="table table-bordered table-responsive">
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Quantity of measurement</th>
-                        <td>Amount</td>
-
-                    </tr>
-                    <tr>
-                        <td>Timber </td>
-                        <td>1</td>
-                        <td>Linear Feet</td>
-                        <td>25</td>
-
-                    </tr>
-                
-                    <tr>
-                        <td>Fuel Wood </td>
-                        <td>1</td>
-                        <td>Cord</td>
-                        <td>120</td>
-
-                    </tr>
-                    <tr>
-                        <td>Plywood</td>
-                        <td>1</td>
-                        <td>Pieces</td>
-                        <td>150</td>
-
-                    </tr>
-                
-                </table>
+               
             </ol>
            
             <hr>
@@ -64,7 +33,7 @@
                     <tr>
                         <th>invoice ID</th>
                         <th>Names Verification </th>
-                        
+                        <th>User_id</th>
                         <th>Pick Up location</th>
                         <th>Amount </th>
                         <th>Phone Number</th>
@@ -72,8 +41,8 @@
                         <th>Order Date</th>
                         <th>Product</th>
                         <th>Quantity</th>
-                        <th>Pay</th>
-                        <th>Action</th>
+                        <th>Payment</th>
+                        
 
                     </tr>
                 </thead>
@@ -81,18 +50,7 @@
 
                 <?php
                       require 'db.php';
-                    //   $sql="SELECT * FROM `hello`";
-                    //   $result = mysqli_query($conn, $sql);
-                    //   $row2 = mysqli_fetch_assoc($result);
-                    //   $doctor_id = $row2['doctor_id'];
-
-                    
-                      
-                     
-                    //   $doctor_name = $row2['doctor_name'];
-                    //   echo $doctor_name;
-                    require 'config.php';
-                      $qry = "SELECT * FROM `hello` where user_id = '$user_id'";
+                      $qry = "SELECT * FROM `hello` order by id DESC";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
 
@@ -105,6 +63,7 @@
                      <tr>
                         <td>#AP-00<?php echo $row['id']?></td>
                         <td><?php echo $row['fname']?> <?php echo $row['lname']?></td>
+                        <td><?php echo $row['user_id']?> </td>
                        
                         <td><?php echo $row['yyyy']?> </td>
                         <td>
@@ -151,7 +110,7 @@
 
                             }else{
                                 ?>
-                                  <a href='pay.php?id=<?php echo $row['id']?>'><button class="btn btn-outline-success">pay</button></a>
+                                  <a href='confirm.php?id=<?php echo $row['id']?>'><button class="btn btn-outline-success">Confirm</button></a>
                                 <?php
                             }
                             
@@ -160,7 +119,7 @@
 
                             ?>
                          </td>
-                        <td>Delete</td>
+                       
 
 
                         </td>

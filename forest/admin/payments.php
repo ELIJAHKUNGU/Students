@@ -21,7 +21,7 @@
   
         <div class="col-sm-9">
             <div class="pt-2 mt-2 pl-4">
-            <table id="patient" class="display  " style="border: 2px solid gray;">
+            <table id="patient" class="display  " style="border: 2px solid gray; width:145%">
                 <thead>
                     <tr>
                         <th>PAYMENT ID</th>
@@ -89,7 +89,7 @@
 
                             }else{
                                 ?>
-                                  <a href='confirm.php?id=<?php echo $row['payment_id']?>'><button class="btn btn-outline-success">pay</button></a>
+                                  <a href='confirm.php?id=<?php echo $row2['id']?>'><button class="btn btn-outline-success">pay</button></a>
                                 <?php
                             }
 

@@ -18,7 +18,7 @@ include 'sidebar.php';
                     <i class="fas fa-user ml-auto"></i>
                 </div>
                 <div class="background-white p-0 ">
-                    <a href="./employees.php"><button class="btn btn-warning text-white mt-5">View Panel</button></a>
+                    <a href="./orders.php"><button class="btn btn-warning text-white mt-5">View Panel</button></a>
                 </div>
 
             </div>
@@ -28,7 +28,7 @@ include 'sidebar.php';
                     <i class="fas fa-briefcase ml-auto"></i>
                 </div>
                 <div class="background-white p-0 ">
-                    <a href="paymets.php"><button class="btn btn-info ml-4 mt-5">View  Panel</button></a>
+                    <a href="payments.php"><button class="btn btn-info ml-4 mt-5">View  Panel</button></a>
                 </div>
             </div>
             <div class="col-sm-6 mt-4 p-0  orders">
@@ -37,18 +37,10 @@ include 'sidebar.php';
                     <i class="fas fa-plus ml-auto"></i>
                 </div>
                 <div class="background-white p-0 ">
-                    <a href="./addemployees.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
+                    <a href="./users.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
                 </div>
             </div>
-            <div class="col-sm-6 mt-4 p-0  deliveries ">
-                <div class="d-flex pl-3 pr-3 pt-3">
-                    <h6>Deliveries</h6>
-                    <i class="fas fa-plus ml-auto"></i>
-                </div>
-                <div class="background-white p-0 ">
-                    <a href="./addemployees.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
-                </div>
-            </div>
+            
         </div>
 
     </div>

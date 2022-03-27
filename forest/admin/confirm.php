@@ -10,6 +10,7 @@
                 $sql="SELECT * FROM `hello` WHERE  id= $id";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
+                // print($row);
                 extract($row);
                 // <!-- `hello`(`id`, `user_id`, `fname`, `lname`, 
                 // `email`, `phone`, `dd`, `nn`, `yyyy`, `uname`, `pword`, `date_cart`) -->
@@ -20,16 +21,28 @@
                  extract($_POST);
                  $id =$row['id'];
                 require 'db.php';
-                $sql ="UPDATE `hello` SET `paid`='$payment' WHERE  id=$id";
+                $sql ="UPDATE `hello` SET `id`='$id',`paid`='$paid' WHERE id='$id'";
+                // UPDATE `hello` SET `id`='[value-1]',`user_id`='[value-2]',`fname`='[value-3]',`
+                // lname`='[value-4]',`email`='[value-5]',`phone`='[value-6]',`dd`='[value-7]',`nn`='[value-8]'
+                // ,`yyyy`='[value-9]',`uname`='[value-10]'
+                // ,`pword`='[value-11]',`date_cart`='[value-12]',`paid`='[value-13]' WHERE 1
+                $result =  mysqli_query($conn ,$sql);
+                if($result){
+                    header("location:payments.php?success=Your payment have been successfully ");
+
+                }else{
+                    header("location:confirm.php?error=Your payment wasn't have been successfully ");
+                }
+            
                 
-                mysqli_query($conn ,$sql) or die (mysqli_error($conn));
-                header("location:payments.php?success=Your payment have been successfully ");
+               
+                
             }
             ?>
 
             
             <div class="col-sm-9">
-                <div class="shadow">
+                <div class="shadow mt-5">
                     <div class=" ">
                         <h2 class=" text-center pt-5 font-weight-bold" style="font-size: 25px">
                           
@@ -45,9 +58,9 @@
                             </div>
                             <div class="p-5">
                             <div class="form-group">
-                                <input type="hidden" class="form-control" name="" value="<?php echo $row['id'] ?>" id="">
+                                <input type="hidden" class="form-control" name="id" value="<?php echo $row['id'] ?>" id="">
                                 <label for="title">Verified</label>
-                               <select name="payment" class="form-control" id="">
+                               <select name="paid" class="form-control" id="">
                                    <option value="1">Paid</option>
                                    <option value="0">unpaid</option>
                                </select>

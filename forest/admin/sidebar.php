@@ -98,20 +98,18 @@
     </div>
     <div class="mt-3">
         <div class="dashboard-links">
-            <a class="nav-item" href="./customerdashboard.php">
+            <a class="nav-item" href="./index.php">
                 <li><i class="fas mr-3 fa-home text-white"></i>Home </li>
             </a>
-            <a class="nav-item" href="./userdetails.php">
+            <a class="nav-item" href="./users.php">
                 <li><i class="fas mr-3 fa-user text-white"></i>User Details </li>
             </a>
-            <a class="nav-item" href="./rating.php">
-                <li><i class="fas mr-3 fa-briefcase text-white"></i> Rating </li>
-            </a>
+            
             <a class="nav-item" href="./orders.php">
                 <li><i class="fas mr-3 text-white fa-plus"></i>Orders</li>
             </a>
-            <a class="nav-item" href="./deliveries.php">
-                <li><i class="fas mr-3 text-white fa-plus"></i>Deliveries</li>
+            <a class="nav-item" href="./payments.php">
+                <li><i class="fas mr-3 text-white fa-plus"></i>Payments</li>
             </a>
         </div>
     </div>
