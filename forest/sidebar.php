@@ -30,7 +30,7 @@
         </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ml-auto mr-auto">
-                    <a class="nav-link text-white" href="#">
+                    <a class="nav-link text-white" href="./placeorder.php">
                         <button class=" blink btn bg-light    text-dark" style="font-size:13px;" type="button" data-toggle="modal" data-target="#exampleModal" aria-expanded="false" aria-label="Toggle navigation">
                           Place Order
                           </button>

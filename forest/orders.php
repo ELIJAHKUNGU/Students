@@ -20,60 +20,128 @@
     ?>
   
         <div class="col-sm-9">
+            <p>The following are measurement we used</p>
+            <ol>
+                <table class="table table-bordered table-responsive">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Quantity of measurement</th>
+                        <td>Amount</td>
+
+                    </tr>
+                    <tr>
+                        <td>Timber </td>
+                        <td>1</td>
+                        <td>Linear Feet</td>
+                        <td>25</td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>Fuel Wood </td>
+                        <td>1</td>
+                        <td>Cord</td>
+                        <td>120</td>
+
+                    </tr>
+                    <tr>
+                        <td>Plywood</td>
+                        <td>1</td>
+                        <td>Pieces</td>
+                        <td>150</td>
+
+                    </tr>
+                
+                </table>
+            </ol>
            
             <hr>
-            <
+            
 
             <table id="patient" class="display  mt-2" style="border: 2px solid gray;">
                 <thead>
                     <tr>
                         <th>invoice ID</th>
+                        <th>Names Verification </th>
                         
-
-                        
-                        <th>Date Check in</th>
-                        <th>Fuel</th>
-                        <th>Pick point</th>
-                        <th>Destination</th>
-                        <th>Amount</th>
-
-                        
-                        <th>View invoice</th>
-
+                        <th>Pick Up location</th>
+                        <th>Amount </th>
+                        <th>Phone Number</th>
+                        <th>Date Pickup</th>
+                        <th>Order Date</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Pay</th>
                         <th>Action</th>
 
                     </tr>
                 </thead>
                 <tbody>
 
-                    <tr>
-                        <td>#p-0012</td>
+                <?php
+                      require 'db.php';
+                    //   $sql="SELECT * FROM `hello`";
+                    //   $result = mysqli_query($conn, $sql);
+                    //   $row2 = mysqli_fetch_assoc($result);
+                    //   $doctor_id = $row2['doctor_id'];
+
+                    
+                      
+                     
+                    //   $doctor_name = $row2['doctor_name'];
+                    //   echo $doctor_name;
+                      $qry = "SELECT * FROM `hello` order by id DESC";
+                      $products =$conn->query($qry);
+                      while ($row= $products->fetch_assoc())
+
+                      {
+                          ?>
                         
-                        <td>26/01/2020</td>
-                        <td>Timber</td>
-                        <td>Karura Forest</td>
-                        <td>Remaken Stores</td>
-                        <td>70,000</td>
-
-
-                        <td><button class="btn">View</button></td>
+                      
+                        <!-- `hello`(`id`, `user_id`, `fname`, `lname`, 
+                        `email`, `phone`, `dd`, `nn`, `yyyy`, `uname`, `pword`, `date_cart`) -->
+                     <tr>
+                        <td>#AP-00<?php echo $row['id']?></td>
+                        <td><?php echo $row['fname']?> <?php echo $row['lname']?></td>
+                       
+                        <td><?php echo $row['yyyy']?> </td>
                         <td>
-                          <button>Edit</button>
-                          <button>Delete</button>
+                        <?php
+                        $amount = 0;
+                        $product =   $row['uname'];
+                        if ($product == 'Timber'){
+                          echo $amount = $row['pword'] * 25;
+                        }else if($product == 'Fireword'){
+                           echo $amount = $row['pword'] * 120;
+                        }else if($product == 'Plywood'){
+                            echo $amount = $row['pword'] * 150;
+                            
+                        }else{
+                            echo 'invalid';
+                        }
+                        ?>
+
+
+
+
+                        </td>
+
+                        <td><?php echo $row['phone']?> </td>
+                        <td><?php echo $row['dd']?> <?php echo $row['nn']?>  </td>
+                        <td><?php echo $row['date_cart']?> </td>
+                        <td><?php echo $row['uname']?></td>
+
+                        <td><?php echo $row['pword']?></td>
+                        <td>Button</td>
+                        <td>Delete</td>
 
 
                         </td>
                     </tr>
-                   
-
-
-
-
-
-
-
-
-
+                    <?php
+                      }
+                      ?>
                 </tbody>
             </table>
 

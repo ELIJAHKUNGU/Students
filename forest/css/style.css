@@ -70,7 +70,8 @@
 
 .dashboard .row .col-sm-3 {
     background-color: rgb(238, 232, 232);
-    height: 70vh;
+    height: 100vh;
+    overflow: scroll;
     max-width: 250px;
     padding-bottom: 20px;
 }
