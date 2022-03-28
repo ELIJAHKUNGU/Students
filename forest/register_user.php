@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST["register"])) {
+    
     require 'db.php';
     extract($_POST);
     $email = $_POST['email'];

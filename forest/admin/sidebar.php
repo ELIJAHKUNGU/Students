@@ -40,8 +40,8 @@
                     <a class="nav-link text-white" href="#">
                     <span>Welcome
                         <?php
-                        // require 'config.php';
-                        // echo   $user_name; 
+                        require 'config.php';
+                        echo   $user_name; 
 
 
                         ?>
@@ -80,8 +80,8 @@
                             <i class="fas fa-4x user-company  fa-user mr-2"></i>
 
                        <?php
-                        // require 'config.php';
-                        // echo   $company_name; 
+                        require 'config.php';
+                        echo   $company_name; 
 
 
                         ?>
@@ -89,8 +89,8 @@
         </div>
         <span>user ID: 
                         <?php
-                        // require 'config.php';
-                        // echo   $user_id; 
+                        require 'config.php';
+                        echo   $user_id; 
 
 
                         ?>

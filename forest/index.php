@@ -4,6 +4,19 @@
             include 'sidebar.php';
             ?>
             <div class="col-sm-9">
+            <?php
+            if(isset($_GET['success'])){?>
+            <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
+                <?php
+                echo $_GET['success'];
+                ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+        }
+        ?>
                 <div class="row">
                     <div class="col-sm-6  p-0 ml-2 home">
                         <div class="d-flex pl-3 pr-3 pt-3">
@@ -21,7 +34,7 @@
                             <i class="fas fa-user ml-auto"></i>
                         </div>
                         <div class="background-white p-0 ">
-                            <a href="./employees.php"><button class="btn btn-warning text-white mt-5">View Panel</button></a>
+                            <a href="./userdetails.php"><button class="btn btn-warning text-white mt-5">View Panel</button></a>
                         </div>
 
                     </div>
@@ -31,7 +44,7 @@
                             <i class="fas fa-briefcase ml-auto"></i>
                         </div>
                         <div class="background-white p-0 ">
-                            <a href="paymets.php"><button class="btn btn-info ml-4 mt-5">View  Panel</button></a>
+                            <a href="rating.php"><button class="btn btn-info ml-4 mt-5">View  Panel</button></a>
                         </div>
                     </div>
                     <div class="col-sm-6 p-0 ml-2 orders">
@@ -40,18 +53,19 @@
                             <i class="fas fa-plus ml-auto"></i>
                         </div>
                         <div class="background-white p-0 ">
-                            <a href="./addemployees.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
+                            <a href="./orders.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 p-0 ml-2 deliveries ">
+                    <div class="col-sm-6 p-0 ml-2 home">
                         <div class="d-flex pl-3 pr-3 pt-3">
-                            <h6>Deliveries</h6>
+                            <h6>Confirmed Payments </h6>
                             <i class="fas fa-plus ml-auto"></i>
                         </div>
                         <div class="background-white p-0 ">
-                            <a href="./addemployees.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
+                            <a href="./orders_payments.php"><button class="btn btn-success ml-4 mt-5">View Panel</button></a>
                         </div>
                     </div>
+                   
                 </div>
 
             </div>

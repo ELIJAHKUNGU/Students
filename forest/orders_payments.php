@@ -20,54 +20,7 @@
     ?>
   
         <div class="col-sm-9">
-        <?php
-        if(isset($_GET['success'])){?>
-            <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
-                <?php
-                echo $_GET['success'];
-                ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php
-        }
-        ?>
-            <p>The following are measurement we used</p>
-            <ol>
-                <table class="table table-bordered table-responsive">
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Quantity of measurement</th>
-                        <td>Amount</td>
-
-                    </tr>
-                    <tr>
-                        <td>Timber </td>
-                        <td>1</td>
-                        <td>Linear Feet</td>
-                        <td>25</td>
-
-                    </tr>
-                
-                    <tr>
-                        <td>Fuel Wood </td>
-                        <td>1</td>
-                        <td>Cord</td>
-                        <td>120</td>
-
-                    </tr>
-                    <tr>
-                        <td>Plywood</td>
-                        <td>1</td>
-                        <td>Pieces</td>
-                        <td>150</td>
-
-                    </tr>
-                
-                </table>
-            </ol>
+            
            
             <hr>
             
@@ -94,7 +47,10 @@
 
                 <?php
                       require 'db.php';
-                     
+                    //   $sql="SELECT * FROM `hello`";
+                    //   $result = mysqli_query($conn, $sql);
+                    //   $row2 = mysqli_fetch_assoc($result);
+                    //   $doctor_id = $row2['doctor_id'];
 
                     
                       
@@ -102,7 +58,7 @@
                     //   $doctor_name = $row2['doctor_name'];
                     //   echo $doctor_name;
                     require 'config.php';
-                      $qry = "SELECT * FROM `hello` where user_id = '$user_id'";
+                      $qry = "SELECT * FROM `hello` where user_id = '$user_id' and paid=1";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
 

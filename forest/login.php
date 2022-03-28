@@ -12,7 +12,7 @@ if (isset($_POST["save"])) {
         $user_details = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION["user_details"] = $user_details;
-        header("location:customerdashboard.php?success=You are  succesfully logged in");
+        header("location:index.php?success=You are  succesfully logged in");
     }else{
         header("location:login.php?error= Wrong Email Address or Password");
 

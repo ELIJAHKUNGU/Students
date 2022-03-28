@@ -98,7 +98,7 @@
                        </td>
 
                         
-                        <td>Delete</td>
+                        <td>  <a href='deletepayments.php?id=<?php echo $row2['id']?>'>Delete</a> </td>
 
 
                         </td>

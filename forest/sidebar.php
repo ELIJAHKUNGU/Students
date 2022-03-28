@@ -55,19 +55,7 @@
             </ul>
 
         </nav>
-        <?php
-        if(isset($_GET['success'])){?>
-            <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
-                <?php
-                echo $_GET['success'];
-                ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php
-        }
-        ?>
+        
     </header>
 
     <div class="dashboard">
@@ -98,7 +86,7 @@
     </div>
     <div class="mt-3">
         <div class="dashboard-links">
-            <a class="nav-item" href="./customerdashboard.php">
+            <a class="nav-item" href="./index.php">
                 <li><i class="fas mr-3 fa-home text-white"></i>Home </li>
             </a>
             <a class="nav-item" href="./userdetails.php">
@@ -110,9 +98,10 @@
             <a class="nav-item" href="./orders.php">
                 <li><i class="fas mr-3 text-white fa-plus"></i>Orders</li>
             </a>
-            <a class="nav-item" href="./deliveries.php">
-                <li><i class="fas mr-3 text-white fa-plus"></i>Deliveries</li>
+            <a class="nav-item" href="./orders_payments.php">
+                <li><i class="fas mr-3 text-white fa-plus"></i>Payments</li>
             </a>
+            
         </div>
     </div>
 </div>

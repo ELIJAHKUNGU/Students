@@ -20,7 +20,7 @@
                 VALUES ('$order_id','$user_id','$amount','$name','$reference')";
                 if ($conn->query($sql) === TRUE) {
                 
-                    header("location:customerdashboard.php?success=Payment processed successfully ");
+                    header("location:index.php?success=Payment processed successfully ");
                 
                 } else {
                     header("location:pay.php?error=Payment not  processed successfully");

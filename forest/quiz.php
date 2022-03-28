@@ -6,12 +6,17 @@ include 'sidebar.php';
 
 
 if (isset($_POST["save"])) {
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
     require 'db.php';
     extract($_POST);
 
-        $sql = "INSERT INTO `quizs`( `quiz_id`,`skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`)
+        $sql = "INSERT INTO `quizs`(`quiz_id`, `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`) 
          VALUES (null,'$skidders','$tractors','$tractors_no','$chain_saw','$trucks','$trucks1','$trucks_no','$drying_kiln','$drying_air','$debarker','$hand_saw','$band_saw','$amount1')";
-        $result =  mysqli_query($conn, $sql);
+       
+    //    INSERT INTO `quizs`(`quiz_id`, `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks_no`, `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1`) 
+    //    VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]')
+       $result =  mysqli_query($conn, $sql);
         if ($result){
             header("location:quiz.php?success=Your account has been  successfully created login");
             exit();
@@ -19,11 +24,6 @@ if (isset($_POST["save"])) {
         }else{
             header("location:quiz.php?error=Yerroe");
         }
-
-  
-   
-
-
 }
 
 
@@ -59,7 +59,7 @@ if (isset($_POST["save"])) {
                     <p>Kindly Answer the above</p>
                     <hr>
                    
-                        <form action="quizs.php" method="post">
+                        <form action="" method="POST">
                             <div class="row mt-5">
                                 <div class="col-sm-6 shadow">
                                     <div class="d-flex ">
@@ -152,7 +152,7 @@ if (isset($_POST["save"])) {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" name="save" value="Submit" class="form-control bg-success text-white">Submit</button>
+                                        <button type="submit" name="save"  class="form-control bg-success text-white">Submit</button>
                                     </div>
 
                                 </div>

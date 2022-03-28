@@ -3,18 +3,18 @@
 if (isset($_POST["save"])) {
     require "db.php";
     extract($_POST);
-    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $sql = "SELECT  * from users where email='$email' and password='$password' and user_type = 1 LIMIT 1";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) ==TRUE){
         //success
 
-        $user_details = mysqli_fetch_assoc($result);
+        $info = mysqli_fetch_assoc($result);
         session_start();
-        $_SESSION["user_details"] = $user_details;
-        header("location:customerdashboard.php?success=You are  succesfully logged in");
+        $_SESSION["info"] = $info;
+        header("location:index.php?success=You are  succesfully logged in");
     }else{
-        header("location:login.php?error= Wrong Email Address or Password");
+        header("location:login.php?error= You're not admin ");
 
 
     }
@@ -71,7 +71,6 @@ if (isset($_POST["save"])) {
 
 
                         </form>
-                        <a style="text-transform: uppercase;" href="./register.php">Register</a>
                         </div>
 
 

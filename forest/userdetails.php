@@ -27,7 +27,7 @@
                  WHERE  user_id=$id";
                 
                 mysqli_query($conn ,$sql) or die (mysqli_error($conn));
-                header("location:userdetails.php?success=Your details have been successfully updated kindly logout to update");
+                header("location:index.php?success=Your details have been successfully updated kindly logout to update");
             }
 
 
