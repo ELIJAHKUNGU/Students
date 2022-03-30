@@ -13,7 +13,7 @@ require 'PHPMailer/src/SMTP.php';
 if (isset($_GET["id"])){
     $id = $_GET["id"];
     require 'db.php';
-    $sql="SELECT * FROM `appointments` WHERE  appointment_id= $id";
+    $sql="SELECT * FROM `patients` WHERE  patient_id= $id";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     extract($row);
@@ -56,7 +56,7 @@ if (isset($_GET["id"])){
             <div class="col-sm-9">
             <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Send Email</h2>
+                    <h2>Upcoming Events</h2>
                 </div>
                 <div class="ml-auto">
                     <div class="d-flex">
@@ -130,12 +130,7 @@ if (isset($_GET["id"])){
                                                   
 
 
-                                                $doctor_id= $row['doctor_id'];
-
-                                                    $sql="SELECT * FROM `doctors` WHERE  doctor_id= $doctor_id";
-                                                    $result = mysqli_query($conn, $sql);
-                                                    $row3 = mysqli_fetch_assoc($result);
-                                                    $doctor_name = $row3['doctor_name'];
+                                                
                                                 ?>
                                             <div class="form-group">
                                                 <p class="text-success">Kindly note the email will be sent using the email provided for patient</p>
@@ -198,7 +193,7 @@ if (isset($_GET["id"])){
                                                 }
                                             </style>
                                             <textarea name="message" class="form-control" id="" cols="30" rows="3">
-                                            Hello  <?= $row2['patient_name']?> you have an appointment scheduled at  <?= $row['scheduled_month']?> <?= $row['scheduled_time']?> with Doctor  <?=$doctor_name?>  
+                                            Hello  <?= $row['patient_name']?> you have an upcoming scheduled at    
 
                                             </textarea>
 

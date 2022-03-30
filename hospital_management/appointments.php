@@ -20,12 +20,18 @@
     ?>
   
         <div class="col-sm-9">
-            <div class="d-flex">
+        <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Appointments </h2>
+                    <h2>Appointment</h2>
                 </div>
                 <div class="ml-auto">
-                <div class="d-flex">
+                    <div class="d-flex">
+                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <i class="fas ml-5 mt-4  fa-bell"></i>
+                       
+                        
+                        <div class="dashboard-admin ml-5 mt-2">
+                            <div class="d-flex">
                                 <div class="d-block bg-primary-color">
                                     <h5>
                                         <?php
@@ -53,6 +59,11 @@
                                 </div>
 
                             </div>
+
+
+                        </div>
+
+                    </div>
 
                 </div>
 

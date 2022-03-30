@@ -2,7 +2,7 @@
 	/*Update credentials*/
 
 	define('EMAIL', 'elijahkungu100@gmail.com');
-	define('PASS', '');
+	define('PASS', '0743770216');
 
 	
  ?>

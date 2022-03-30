@@ -38,7 +38,7 @@
         <div class="col-sm-9">
         <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Patients</h2>
+                    <h2>Upcoming Events</h2>
                 </div>
                 <div class="ml-auto">
                     <div class="d-flex">
@@ -144,7 +144,7 @@
 
                         <td>$blood_group</td>
                         <td>$type_arvs</td>
-                        <td>  <a href='createappointment.php?id=$patient_id'><button>Appointment</button></a>  </td>
+                        <td>  <a href='sendemail2.php?id=$patient_id'><button class='btn btn-outline-success'>Send Email</button></a>  </td>
                         <td>
                         <a href='delete.php?id=$patient_id'><I class='fas fa-trash'></I></a>
                         <a href='editp.php?id=$patient_id'><I class='fas ml-3 fa-edit'></I></a></td>

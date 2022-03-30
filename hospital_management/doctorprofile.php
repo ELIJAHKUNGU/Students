@@ -2,8 +2,8 @@
 if (isset($_POST["save"])) {
     $conn = mysqli_connect("localhost","root","","hosi");
     extract($_POST);
-    $sql = "INSERT INTO `doctors`( `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, `doctor_name`, `specialist`, `status`, `address`, `Telephone`, `doctor_notes`)
-    VALUES ('$username','$doctor_phNo','$title','$salary','$fullname','$specialist','$status','$address','$telephone','$notes')";
+    $sql = "INSERT INTO `doctors`( `doctor_username`, `doctor_phNo`, `doctor_title`, `salary`, `doctor_name`, `specialist`, `gender`,`status`, `address`, `Telephone`, `doctor_notes`)
+    VALUES ('$username','$doctor_phNo','$title','$salary','$fullname','$specialist', '$gender','$status','$address','$telephone','$notes')";
        if ($conn->query($sql) === TRUE) {
 
         header("location:doctors.php?success= Doctors profile have been created successfully ");
@@ -47,17 +47,18 @@ if (isset($_POST["save"])) {
     ?>
    
         <div class="col-sm-9">
-            <div class="d-flex">
+        <div class="d-flex">
                 <div class="dashboard-text mt-3">
-                    <h2>Doctors Profile </h2>
+                    <h2>Doctor Profile</h2>
                 </div>
                 <div class="ml-auto">
                     <div class="d-flex">
                         <i class="fas ml-5 mt-4 fa-bars"></i>
-                        <i class="fas ml-5 mt-4 fa-bars"></i>
-                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <i class="fas ml-5 mt-4  fa-bell"></i>
+                       
+                        
                         <div class="dashboard-admin ml-5 mt-2">
-                        <div class="d-flex">
+                            <div class="d-flex">
                                 <div class="d-block bg-primary-color">
                                     <h5>
                                         <?php
@@ -85,11 +86,14 @@ if (isset($_POST["save"])) {
                                 </div>
 
                             </div>
+
+
                         </div>
 
                     </div>
 
                 </div>
+
             </div>
             <hr>
 
@@ -132,6 +136,12 @@ if (isset($_POST["save"])) {
                                             <option value="Anesthesiology">Anesthesiology</option>
                                             <option value="Clinical Immunology/Allergy">Clinical Immunology/Allergy</option>
                                             <option value="clinical dietitian">clinical dietitian</option>
+                                        </select>
+                                        <select required name="gender" class="form-control mt-4" id="">
+                                            <option value="">Select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            
                                         </select>
                                         <label for="" class="mt-3">Address</label>
                                         <input type="text" placeholder="244-900 KIAMBUI ADAMS ARACADE AVENUE" required name="address" class="form-control ">

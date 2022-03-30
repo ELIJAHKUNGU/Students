@@ -36,39 +36,61 @@
     ?>
 
             <div class="col-sm-9">
-                <div class="d-flex">
-                    <div class="dashboard-text mt-3">
-                        <h2>Top Rated Profiles </h2>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="d-flex">
-                            <i class="fas ml-5 mt-4 fa-bars"></i>
-                            <i class="fas ml-5 mt-4 fa-bars"></i>
-                            <i class="fas ml-5 mt-4 fa-bars"></i>
-                            <div class="dashboard-admin ml-5 mt-2">
-                                <div class="d-flex">
-                                    <div class="d-block">
-                                        <h5>JOHN DOE</h5>
-                                        <h6 class="ml-4">Admin</h6>
-                                    </div>
-                                    <div class="user-img ml-4 border">
-                                        <img src="./assets/logo.png" class="img-fluid" style="max-height: 50px;" alt="" srcset="">
-                                    </div>
+            <div class="d-flex">
+                <div class="dashboard-text mt-3">
+                    <h2>Top Rated Doctors</h2>
+                </div>
+                <div class="ml-auto">
+                    <div class="d-flex">
+                        <i class="fas ml-5 mt-4 fa-bars"></i>
+                        <i class="fas ml-5 mt-4  fa-bell"></i>
+                       
+                        
+                        <div class="dashboard-admin ml-5 mt-2">
+                            <div class="d-flex">
+                                <div class="d-block bg-primary-color">
+                                    <h5>
+                                        <?php
+                                        // echo $user_id;
+                                        require 'db.php';
+                                         $sql="SELECT * FROM `users` where user_id = '$user_id'";
+                                         $result = mysqli_query($conn, $sql);
+                                         $row2 = mysqli_fetch_assoc($result);
+                                         $full_name = $row2['full_name'];
+                                         echo $full_name;
 
+                                          ?>
+                                    </h5>
+                                    <h6 class="ml-4">
+                                        <?php echo $name = $row2['username']; ?>
+                                    </h6>
                                 </div>
+                                <!-- <div class="user-img ml-4 border">
+                                    <img src="./assets/logo.png" class="img-fluid" style="max-height: 50px;" alt="" srcset="">
+                                </div> -->
+                                <div class="">
+                                   <a href="./logout.php" class="mt-1 nav-link">
+                                       <button class="btn bg-primary-color">Logout</button>
+                                   </a>
+                                </div>
+
                             </div>
+
 
                         </div>
 
                     </div>
+
                 </div>
+
+            </div>
                 <hr>
 
                 <div class="mt-3">
                     <div class="row">
                     <?php
                       require 'db.php';
-                      $qry = "SELECT * FROM `doctors` LIMIT 5";
+                      $qry = "SELECT * FROM `doctors`  ORDER BY RAND () LIMIT 5";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
                       {
@@ -82,7 +104,24 @@
                                 <div class="image-banner">
                                     <div class="d-block">
                                         <div class="user-img">
-                                            <img src="./assets/1.jpg" style="height: 100px;" class="img-fluid" alt="" srcset="">
+                                        <?php
+                            $gender = $row['gender'];
+                            if($gender == 'Male'){
+                                ?>
+                                <img src="./assets/male.png"  style="height: 100px;" class="img-fluid doctor" alt="" srcset="">
+                                <?php 
+                                
+
+                            }else{
+                                ?>
+                            <img src="./assets/d2.svg" style="height: 100px;"  class="img-fluid doctor" alt="" srcset="">
+
+
+                                <?php
+                            }
+
+
+                            ?>
                                         </div>
                                     </div>
                                 </div>

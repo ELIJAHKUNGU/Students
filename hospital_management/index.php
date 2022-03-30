@@ -70,7 +70,7 @@ include 'sidebarpanel.php';
                 <div class="ml-auto">
                     <div class="d-flex">
                         <div class="search">
-                            <input type="search" class="form-control" placeholder="Search here ">
+                            <input type="search" disabled class="form-control" placeholder="Search here ">
 
                         </div>
                         <div class="settings-bar ml-3 bg-primary-color">
@@ -217,7 +217,24 @@ include 'sidebarpanel.php';
                                 }
 
                             </style>
-                            <img src="./assets/1.jpg"  class="img-fluid doctor" alt="" srcset="">
+                            <?php
+                            $gender = $row['gender'];
+                            if($gender == 'Male'){
+                                ?>
+                                <img src="./assets/male.png"  class="img-fluid doctor" alt="" srcset="">
+                                <?php 
+                                
+
+                            }else{
+                                ?>
+                            <img src="./assets/d2.svg"  class="img-fluid doctor" alt="" srcset="">
+
+
+                                <?php
+                            }
+
+
+                            ?>
                             <h6 class="text-center"><?php echo $row['doctor_title']  ?> <?php echo $row['doctor_name']?> <?php echo $row['doctor_username']  ?></h6>
                             <p><?php echo $row['specialist']  ?>   </p>
                             <p><?php echo $row['status']  ?>  </p>

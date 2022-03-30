@@ -95,17 +95,17 @@ require_once 'security.php';
 
                     </a>
                 </div>
-                <a href="" class="nav-link mt-3">
+                <a href="./events.php" class="nav-link mt-3">
                     <li class="nav-item d-flex dashboard">
                         <span class="">Others </span>
                         <span class="ml-auto"><i class="fas fa-chevron-down"></i></span>
                     </li>
                 </a>
                 <div class="pl-5">
-                    <a href="">
+                    <a href="./events.php">
                        
-                        <a href="">
-                            <li>Request Drugs</li>
+                        <a href="./events.php">
+                            <li>Upcoming Events</li>
                         </a>
 
 
