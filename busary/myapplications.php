@@ -3,13 +3,13 @@ include 'sidebar.php';
 ?>
 
 
-<div class=" d-flex flex-column justify-content-center shadow">
+<div class=" d-flex flex-column justify-content-center shadow pr-3">
                     <div class="d-flex justify-content-between">
                         <h5>Date Of Application</h5>
                         <h5 class="ml-5">22/02/2022</h5>
                     </div>
                     <hr>
-                    <table id="demo" class="table table-bordered">
+                    <table id="demo" class="table table-bordered mr-3" >
                         <thead>
                             <tr>
                             <td>Bursary Type</td>
@@ -20,7 +20,6 @@ include 'sidebar.php';
                                 <th>Download Statement</th>
                                 <td>Fees Structure</td>
                                 <th>Download Fees</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +41,7 @@ include 'sidebar.php';
                                 $result2 = mysqli_query($con, $sql4);
                                 while ($row4 = mysqli_fetch_array($result2)) {
                                 echo '<tr>';
+                                echo '<td>'   .$row4['b_id'].'</td>';
                                 echo '<td>'.$row4['b_type'].'</td>';
                                 echo '<td>'.$row['FileName'].'</td>';
                                 echo '<td><a class="btn" href="'.$row['Location'].'">
@@ -57,23 +57,6 @@ include 'sidebar.php';
                                 echo '<td><a class="btn" href="'.$row3['Location'].'">
                                                <img src="./assets/feather/arrow-down-circle.svg" class="text-center d-flex justify-content-center" alt="" srcset="">
                                 </a></td>';
-                                ?>
-                                <td>
-                                <?php
-                                $status = $row4['status'];
-                                if ($status == 1 ){
-                                    echo ' <button class="btn btn-outline-success">Confirmed</button>';
-
-                                }else{
-                                    echo ' <button class="btn btn-outline-danger">Unsuccessfully</button>';
-
-                                }
-
-
-                                ?>
-                                </td>
-                                <?php
-                               
                                 echo '</tr>';
                                 }
                             }

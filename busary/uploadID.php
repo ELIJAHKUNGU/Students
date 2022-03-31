@@ -37,14 +37,16 @@
                                         $sqli = "INSERT INTO `tblfiles` (`file_id`,`FileName`, `Location` , `user_id`) VALUES (null,'{$filename}','{$location}','{$user_id}' )";
                                         $result = mysqli_query($con,$sqli);
                                         if ($result) {
-                                            header("location:feestructure.php?success=Your ID Copy have been uploaded ");
+                                           echo ' <script>window.location.replace("feestructure.php");</script>';
+                                            #header("location:feestructure.php?success=Your ID Copy have been uploaded ");
                                         }
                                     };
                                 
                             ?>
                         <form class="form" method="post" action="" enctype="multipart/form-data">
                             <div class="form-group ml-4 mt-3">
-                                <label class="text-center" for="">FileName :</label>
+                                
+                                <label class="text-center" for="">School ID</label>
                                 <input type="text" name="filename" class="form-control" required placeholder="patriciaID">
                             </div>
 

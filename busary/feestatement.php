@@ -32,17 +32,19 @@
                                         }
                                         $filename = $_POST['filename'];
                                         $location = "uploads/" . $files;
-                                        $sqli = "INSERT INTO `tblfiles` (`FileName`, `Location`) VALUES ('{$filename}','{$location}')";
+                                        $user_id = '1';
+                                        $sqli = "INSERT INTO `Fees_statement` (`file_id`,`FileName`, `Location` , `user_id`) VALUES (null,'{$filename}','{$location}','{$user_id}' )";
                                         $result = mysqli_query($con,$sqli);
                                         if ($result) {
-                                        echo "File has been uploaded";
+                                           echo ' <script>window.location.replace("busarytype.php");</script>';
+                                            #header("location:feestructure.php?success=Your ID Copy have been uploaded ");
                                     };
                                 }
                             ?>
                         <form class="form" method="post" action="" enctype="multipart/form-data">
                             <div class="form-group ml-4 mt-3">
-                                <label class="text-center" for="">FileName :</label>
-                                <input type="text" name="filename" class="form-control" placeholder="patriciaID">
+                                <label class="text-center" for="">Fees Statement</label>
+                                <input type="text" name="filename" class="form-control" placeholder="Fee statement JKUAT">
                             </div>
 
 

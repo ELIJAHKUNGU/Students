@@ -20,7 +20,6 @@ include 'sidebar.php';
                                 <th>Download Statement</th>
                                 <td>Fees Structure</td>
                                 <th>Download Fees</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,23 +56,6 @@ include 'sidebar.php';
                                 echo '<td><a class="btn" href="'.$row3['Location'].'">
                                                <img src="./assets/feather/arrow-down-circle.svg" class="text-center d-flex justify-content-center" alt="" srcset="">
                                 </a></td>';
-                                ?>
-                                <td>
-                                <?php
-                                $status = $row4['status'];
-                                if ($status == 1 ){
-                                    echo ' <button class="btn btn-outline-success">Confirmed</button>';
-
-                                }else{
-                                    echo ' <button class="btn btn-outline-danger">Unsuccessfully</button>';
-
-                                }
-
-
-                                ?>
-                                </td>
-                                <?php
-                               
                                 echo '</tr>';
                                 }
                             }
