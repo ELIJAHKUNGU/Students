@@ -33,7 +33,7 @@ include 'header.php';
                 </p>
                 <?php } ?>
 
-                <table id="people"  class="display table-bordered table-responsive  mt-2" style="border: 2px solid gray;">
+                <table id="people"  class="display table-bordered  mt-2" style="border: 2px solid gray;">
                     <thead>
                         <tr>
 
@@ -42,9 +42,10 @@ include 'header.php';
                             <th> ID NO</th>
                             <th>Pickup Location</th>
                             <th>Date Order</th>
+
                             <th>No of Seats</th>
                             <th>model</th>
-                           
+                            <th>Amount</th>
                             <th>Cancel Order</th>
                             <th>Status</th>
 
@@ -53,29 +54,55 @@ include 'header.php';
                     <tbody>
                         <?php
                       require 'db.php';
-                      $qry = "SELECT * FROM `people_requests` order by request_id DESC";
+                      $qry = "SELECT * FROM `people_people` order by request_id DESC";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
                       {
                         
                       
-                        // `people_requests`(`request_id`, `user_id`, `username`, 
-                        // `parcel_idno`, `pickup_location`, `date_m`, `time_t`, `model`, `weight`
+                        // `people_people`(`request_id`, `user_id`, `idNo`, `username`
+                        // , `pickup_location`, `date_m`, `time_t`, `model`, `no_seats
                     extract($row);
-                    echo "<tr>
-                        <td>#p-00$request_id</td>
-                        <td>$username</td>
-                        <td>$parcel_idno</td>
-                        <td>$pickup_location</td>
-                        <td>$date_m.$time_t</td>
-                        <td>$weight</td>
-
-                        <td>$model</td>
-                        
-                        <td> <a href='createappointment.php?id=$cancel'><button>cancel</button></a>  </td>
-                        <td>Confirmed</tr>";
+                    ?>
+                   <tr>
+                        <td>#p-00  <?php echo $row["request_id"] ?></td>
+                        <td> <?php echo $row["username"] ?> </td>
+                        <td> <?php echo $row["idNo"] ?> </td>
+                        <td> <?php echo $row["pickup_location"] ?> </td>
                       
-                    }
+                        <td> <?php echo  $row["time_t"]. "|" .$row["date_m"]?></td>
+                        <td> <?php echo $row["no_seats"] ?> </td>
+
+                        <td> <?php echo $row["model"] ?> </td>
+                        <th>
+                            <?php
+                            $amount = 0;
+                            $location = $row["pickup_location"]; 
+                            $seats = $row["no_seats"];
+                            if($location == "Mombasa-Nairobi"){
+                              echo  $amount =  1000 *  $seats;
+
+                            }else  if($location == "Nairobi-Mombasa"){
+                                echo  $amount =  1500 *  $seats;
+
+                            }else if($location == "Mombasa-Kisumu"){
+                                echo  $amount =  3500 *  $seats;
+                            }else{
+                                echo  "invalid";
+                            }
+                            
+
+
+
+                            ?>
+
+                        </th>
+                        
+                        <td> <a href="deletep.php?id=<?php echo $row["request_id"] ?>"><button class="btn btn-outline-warning">cancel</button></a>  </td>
+                        <td><button class="btn btn-outline-danger">PAY</button></tr>
+                      
+                    <?php
+                      }
                     ?>
                     </tbody>
                 </table>

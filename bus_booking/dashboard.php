@@ -31,39 +31,8 @@ include 'header.php';
                                         <?php echo $_GET['success']; ?>
                                     </p>
                                     <?php } ?>
-                                <?php
-                                    error_reporting(E_ALL);
-                                    ini_set('display_errors', 1);
-                                    if (isset($_POST["save"])) {
-                                        $conn = mysqli_connect("localhost","root","","autoride");
-                                        extract($_POST);
-                                        $sql = "INSERT INTO `people_requests`(`request_id`, `user_id`, `username`, `parcel_idno`, `pickup_location`, `date_m`, `time_t`, `model`, `weight`) 
-                                        VALUES (null,'$user_id','$username','$parcel_idno','$pickup_location','$date_m','$time_t','$model','$weight')";
-                                        $result2 =  mysqli_query($conn, $sql);
-                                        if ($result2){
-                                            header("location:index.php?success=Your account has been  successfully created login");
-                                            exit();
-                                    }else{
-                                        header("location:h.php?error=unknown error occurred&");
-                                        }
-                                    }
-                                   
-                                  
-                                    if (isset($_POST["book_seats"])) {
-                                        $conn = mysqli_connect("localhost","root","","autoride");
-                                        extract($_POST);
-                                        $sql = "INSERT INTO `people_people`(`request_id`, `user_id`,`idNo`,  `username`, `pickup_location`, `date_m`, `time_t`, `model`, `no_seats`) 
-                                        VALUES (null,'$user_id', '$idNo','$username','$pickup_location','$date_m','$time_t','$model','$no_seats')";
-                                         $result2 =  mysqli_query($conn, $sql);
-                                         if ($result2){
-                                             header("location:index.php?success=Your account has been  successfully created login");
-                                             exit();
-                                       }else{
-                                         header("location:h.php?error=unknown error occurred&");
-                                          }
-                                    }
-                                 ?>
-                                    <form action="" method="post" id="pacelForm">
+                                
+                                    <form action="addparcels.php" method="post" id="pacelForm">
 
                                         <div class="d-block">
                                             <?php
@@ -89,9 +58,9 @@ include 'header.php';
                                             <label for="">Choose a Pickup/Delivery location </label>
                                             <select name="pickup_location" class="form-control" id="">
                                                 <option value="">Choose a Pickup location</option>
-                                                <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
-                                                <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
-                                                <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
+                                                <option value="Mombasa-Nairobi">Mombasa - Nairobi </option>
+                                                <option value="Nairobi-Mombasa"> Nairobi- Mombasa </option>
+                                                <option value="Mombasa-Kisumu">Mombasa - Kisumu</option>
                                              </select>
                                         </div>
                                         <div class="form-group">
@@ -129,7 +98,7 @@ include 'header.php';
 
 
 
-                                    <form action="" method="post" id="PeopleForm">
+                                    <form action="addpeople.php" method="post" id="PeopleForm">
 
                                         <div class="d-block">
                                         <?php
@@ -157,9 +126,9 @@ include 'header.php';
                                             <label for="">Choose a Pickup/Delivery location </label>
                                             <select name="pickup_location" class="form-control" id="">
                                                 <option value="">Choose a Pickup location</option>
-                                                <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
-                                                <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
-                                                <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
+                                                <option value="Mombasa-Nairobi">Mombasa - Nairobi </option>
+                                                <option value="Nairobi-Mombasa"> Nairobi- Mombasa </option>
+                                                <option value="Mombasa-Kisumu">Mombasa - Kisumu</option>
 
                                             </select>
                                         </div>
