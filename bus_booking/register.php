@@ -1,6 +1,58 @@
 <?php 
 include 'header.php';
 ?>
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+if (isset($_POST["register"])) {
+    $conn=mysqli_connect("localhost","root","","autoride");
+    extract($_POST);
+    $email = $_POST['email'];
+    $sql2 = "SELECT * FROM users where email = '$email'";
+    $result = mysqli_query($conn,$sql2);
+
+    if (mysqli_num_rows($result) > 0){
+        header("Location:register.php?error=The Email Address exist login");
+       
+    }else{
+       
+             $sql = "INSERT INTO `users`(`username`, `email`, `phoneNumber`,  `password`) 
+            VALUES ('$name','$email','$phoneNumber','$password')";
+            $result2 =  mysqli_query($conn, $sql);
+            if ($result2){
+                
+                header("location:register.php?success=Your account has been  successfully created login" );
+                exit();
+
+          }else{
+            header("location:register.php?error=unknown error occurred&$email");
+             }
+
+    }
+
+
+}
+if (isset($_POST["save"])) {
+    require "db.php";
+    extract($_POST);
+    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) ==TRUE){
+        //success
+
+        $info = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION["info"] = $info;
+        header("location:dashboard.php?success=You are  succesfully logged");
+    }else{
+        header("location:register.php?error= Wrong Email Address or Password");
+
+
+    }
+}
+
+?>
         <!-- !Primary Navigation -->
 
     </header>
@@ -9,6 +61,15 @@ include 'header.php';
             <div class="row">
 
                 <div class="col-6">
+                <?php
+
+                if (isset($_GET['error'])) { ?>
+                <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+
+                <?php if (isset($_GET['success'])) { ?>
+                <p class="text-success"><?php echo $_GET['success']; ?></p>
+                <?php } ?>
                     <div class="form-container">
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
@@ -16,11 +77,12 @@ include 'header.php';
                             <hr id="Indicator2">
 
                         </div>
-                        <form action="" id="LoginForm">
-                            <input type="text" class="form-control mt-2 pt-4 pb-4" placeholder="  Username ">
-                            <input type="password" class="form-control mt-2 pt-4 pb-4" placeholder=" Password ">
-                            <button type="submit" class="form-control mt-2 " class="btn btn-primary-color ">Login</button>
-
+                        <form action="" method="post" id="LoginForm">
+                            <label for="">Enter Your Email Address Here...</label>
+                            <input type="email" name="email" class="form-control" id="">
+                            <label for="">Password</label>
+                            <input type="password" name="password" class="form-control" id="">
+                            <button type="submit" name="save" class="btn pl-2 pr-2 btn-success mt-2">login</button>
                         </form>
                         <style>
                             #RegForm button .btn-primary-color {
@@ -30,11 +92,22 @@ include 'header.php';
                                 width: 300px !important;
                             }
                         </style>
-                        <form action="" id="RegForm">
-                            <input type="text" class="form-control mt-2 pt-4 pb-4" placeholder="  Full Name  " required>
-                            <input type="email" class="form-control mt-2 pt-4 pb-4" placeholder=" Email " required>
-                            <input type="password" class="form-control mt-2 pt-4 pb-4" placeholder=" Password" required>
-                            <button type="submit" class="form-control mt-2 " class="btn btn-primary-color bg-danger">Register</button>
+                        <form action="" method="post" id="RegForm">>
+                            <label for="">Full Name</label>
+                            <input type="text" name="name"  class="form-control mt-2 pt-4 pb-4" id="">
+
+                            <label for="">Email</label>
+                            <input type="text" name="email"  class="form-control mt-2 pt-4 pb-4" id="">
+                            <label for="">Phone Number</label>
+                            <input type="text" name="phoneNumber"  class="form-control mt-2 pt-4 pb-4" id="">
+                            <div class="d-flex">
+                                <div class="d-block">
+                                    <label for="">Password</label>
+                                    <input type="text" name="password"  class="form-control mt-2 pt-4 pb-4" id="">
+                                </div>
+                                
+                            </div>
+                            <button type="submit" name="register" class="btn btn-success mt-2">Register</button>
                         </form>
 
                     </div>

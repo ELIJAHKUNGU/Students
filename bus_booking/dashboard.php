@@ -1,199 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'config.php';
+include 'header.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./owl-carousel/css/owl.theme.default.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoride-chauffeur-booking </title>
-</head>
+?>
 
-<body>
-    <!-- start #header -->
-    <header id="header" class="">
-        <!-- Primary Navigation -->
-        <div class="container topbar">
-            <div class="d-flex  ">
-                <p>Fairview Ave, El Monte,Kilimani</p>
-                <div class="d-flex ml-5">
-                    <i class="fa fa-envelope mt-1"></i>
-                    <span class="ml-2">autoride@autoride.com</span>
-                </div>
-                <div class="d-flex ml-auto">
-                    <span>Login |</span>
-                    <span>Register |</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="top-secon">
-            <nav class="navbar  navbar-expand-lg  container color-second-bg">
-
-                <a class="navbar-brand" href="#">Autoride</a>
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span><i class="fas fa-bars"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mt-2  font-rubik">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./aboutus.html">Our Fleet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./services.html">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./projects.html">Contacts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./contacts.html">
-
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
-        <!-- !Primary Navigation -->
 
     </header>
     <section>
         <div class="customer-form">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 mt-5">
-                        <div class="form-container">
-                            <div class="form-btn ">
-                                <span onclick="people()">People</span>
-                                <span onclick="parcel()">Goods and Items/Parcel</span>
-                                <hr id="Indicator">
 
-                            </div>
-                            <form action="" id="pacelForm">
-                                <div class="d-block">
-                                    <label for="">Username</label>
-                                    <input type="text" class="form-control" name="text" id="">
-                                </div>
-                                <div class="d-block">
-                                    <label for="">Parcel No</label>
-                                    <input type="text" class="form-control" name="text" id="">
-                                </div>
+                    <div class="row">
+                        <div class="col-sm-6 mt-5">
+                            <div class="form-container">
+                                <div class="form-btn ">
+                                    <span onclick="people()">People</span>
+                                    <span onclick="parcel()">Goods and Items/Parcel</span>
+                                    <hr id="Indicator">
 
-                                <div class="form-group">
-                                    <label for="">Choose a Pickup/Delivery location </label>
-                                    <select name="" class="form-control" id="">
-                                        <option value="">Choose a Pickup location</option>
-                                        <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
-                                        <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
-                                        <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
-
-                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <div class="d-block">
-                                        <label for="">Select Date</label>
-                                        <input type="date" class="form-control" name="date" id="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="d-block">
-                                        <label for="">Select Time</label>
-                                        <input type="time" class="form-control" name="time" id="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Select Model</label>
-                                    <select name="model" id="" class="form-control">
-                                        <option value="">Select the Model</option>
-                                        <option value="Easy Coach">Easy Coach</option>
-                                        <option value="Modern Coast">Modern Coast</option>
-                                        <option value="Express">Express </option>
-                                        <option value="Flight one">Flight one</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <div class="d-block">
-                                        <label for="">Weight in Kgs</label>
-                                        <input type="number" min="1" max="100" placeholder="1" class="form-control" name="seats" id="">
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary-color">Book</button>
+                                <?php
+                                if (isset($_GET['error'])) { ?>
+                                    <p class="text-danger">
+                                        <?php echo $_GET['error']; ?>
+                                    </p>
+                                    <?php } ?>
 
+                                    <?php if (isset($_GET['success'])) { ?>
+                                    <p class="text-success">
+                                        <?php echo $_GET['success']; ?>
+                                    </p>
+                                    <?php } ?>
+                                <?php
+                                    error_reporting(E_ALL);
+                                    ini_set('display_errors', 1);
+                                    if (isset($_POST["save"])) {
+                                        $conn = mysqli_connect("localhost","root","","autoride");
+                                        extract($_POST);
+                                        $sql = "INSERT INTO `people_requests`(`request_id`, `user_id`, `username`, `parcel_idno`, `pickup_location`, `date_m`, `time_t`, `model`, `weight`) 
+                                        VALUES (null,'$user_id','$username','$parcel_idno','$pickup_location','$date_m','$time_t','$model','$weight')";
+                                        $result2 =  mysqli_query($conn, $sql);
+                                        if ($result2){
+                                            header("location:index.php?success=Your account has been  successfully created login");
+                                            exit();
+                                    }else{
+                                        header("location:h.php?error=unknown error occurred&");
+                                        }
+                                    }
+                                   
+                                  
+                                    if (isset($_POST["book_seats"])) {
+                                        $conn = mysqli_connect("localhost","root","","autoride");
+                                        extract($_POST);
+                                        $sql = "INSERT INTO `people_people`(`request_id`, `user_id`,`idNo`,  `username`, `pickup_location`, `date_m`, `time_t`, `model`, `no_seats`) 
+                                        VALUES (null,'$user_id', '$idNo','$username','$pickup_location','$date_m','$time_t','$model','$no_seats')";
+                                         $result2 =  mysqli_query($conn, $sql);
+                                         if ($result2){
+                                             header("location:index.php?success=Your account has been  successfully created login");
+                                             exit();
+                                       }else{
+                                         header("location:h.php?error=unknown error occurred&");
+                                          }
+                                    }
+                                 ?>
+                                    <form action="" method="post" id="pacelForm">
 
-                            </form>
-                            <form action="" id="PeopleForm">
-                                <div class="form-group">
-                                    <label for="">Username</label>
-                                    <input type="text" class="form-control" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Choose a Pickup location </label>
-                                    <select name="" class="form-control" id="">
-                                        <option value="">Choose a Pickup/Delivery location</option>
-                                        <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
-                                        <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
-                                        <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
-
-                                    </select>
-
-
-                                    <div class="form-group">
                                         <div class="d-block">
-                                            <label for="">Select Date</label>
-                                            <input type="date" class="form-control" name="date" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="d-block">
-                                            <label for="">Select Time</label>
-                                            <input type="time" class="form-control" name="time" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Select Model</label>
-                                        <select name="model" id="" class="form-control">
-                                            <option value="">Select the Model</option>
-                                            <option value="Easy Coach">Easy Coach</option>
-                                            <option value="Modern Coast">Modern Coast</option>
-                                            <option value="Express">Express </option>
-                                            <option value="Flight one">Flight one</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="d-block">
-                                            <label for="">No of Seats</label>
-                                            <input type="number" min="1" max="100" placeholder="1" class="form-control" name="seats" id="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="d-block">
+                                            <?php
+                                                // require 'config.php';
+                                                // echo $user_id;
+                                                // echo $username;
 
-                                            <button class="btn btn-primary-color">Book</button>
+                                            ?>
+
+                                                <hr>
+                                                <!-- <label for="">User_id</label> -->
+                                                <input type="hidden" class="form-control" value="<?php echo $user_id?>" name="user_id" id="">
+
+                                                <label for="">Username</label>
+                                                <input type="text" disabled class="form-control" value="<?php echo $username?>" name="username" id="">
                                         </div>
-                                    </div>
+                                        <div class="d-block">
+                                            <label for="">Parcel No/ID</label>
+                                            <input type="text" class="form-control" name="parcel_idno" id="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Choose a Pickup/Delivery location </label>
+                                            <select name="pickup_location" class="form-control" id="">
+                                                <option value="">Choose a Pickup location</option>
+                                                <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
+                                                <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
+                                                <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
+                                             </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">Select Date</label>
+                                                <input type="date" class="form-control" name="date_m" id="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">Select Time</label>
+                                                <input type="time" class="form-control" name="time_t" id="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Select Model</label>
+                                            <select name="model" id="" class="form-control">
+                                                <option value="">Select the Model</option>
+                                                <option value="Easy Coach">Easy Coach</option>
+                                                <option value="Modern Coast">Modern Coast</option>
+                                                <option value="Express">Express </option>
+                                                <option value="Flight one">Flight one</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">Weight in Kgs</label>
+                                                <input type="number" min="1" max="100" placeholder="1" class="form-control" name="weight" id="">
+                                            </div>
+                                        </div>
+                                        <button name="save" class="btn btn-primary-color">Book</button>
 
 
-                            </form>
+                                    </form>
+
+
+
+                                    <form action="" method="post" id="PeopleForm">
+
+                                        <div class="d-block">
+                                        <?php
+                                            // require 'config.php';
+                                            // echo $user_id;
+                                            // echo $username;
+
+                                        ?>
+
+                                                <hr>
+                                                <!-- <label for="">User_id</label> -->
+                                                <input type="hidden" class="form-control" value="<?php echo $user_id?>" name="user_id" id="">
+                                                <div class="d-block">
+                                                    <label for="">ID</label>
+                                                    <input type="text" class="form-control" name="idNo" id="">
+                                                </div>
+
+                                                <label for="">Username</label>
+                                                <input type="text" disabled class="form-control" value="<?php echo $username?>" name="username" id="">
+
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Choose a Pickup/Delivery location </label>
+                                            <select name="pickup_location" class="form-control" id="">
+                                                <option value="">Choose a Pickup location</option>
+                                                <option value="Mombasa - Nairobi ">Mombasa - Nairobi </option>
+                                                <option value="Nairobi Mombasa "> Nairobi- Mombasa </option>
+                                                <option value="Mombasa - Kisumu">Mombasa - Kisumu</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">Select Date</label>
+                                                <input type="date" class="form-control" name="date_m" id="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">Select Time</label>
+                                                <input type="time" class="form-control" name="time_t" id="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Select Model</label>
+                                            <select name="model" id="" class="form-control">
+                                                <option value="">Select the Model</option>
+                                                <option value="Easy Coach">Easy Coach</option>
+                                                <option value="Modern Coast">Modern Coast</option>
+                                                <option value="Express">Express </option>
+                                                <option value="Flight one">Flight one</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="d-block">
+                                                <label for="">NO SEATS</label>
+                                                <input type="number" min="1" max="52" placeholder="1" class="form-control" name="no_seats" id="">
+                                            </div>
+                                        </div>
+                                        <button name="book_seats" class="btn btn-primary-color">Book</button>
+
+
+                                    </form>
+
+
+                                    </form>
                             </div>
                         </div>
+                    
+                   
+                        <div class="col-sm-6">
+                            <img src="./images/234234.jpeg" alt="" srcset="">
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        <img src="./234234.jpeg" alt="" srcset="">
-                    </div>
-                </div>
             </div>
         </div>
+        
     </section>
     <script>
         var pacelForm = document.getElementById("pacelForm");
@@ -234,6 +249,6 @@
     <script src="./js/index.js "></script>
 
 
-</body>
+    </body>
 
-</html>
+    </html>

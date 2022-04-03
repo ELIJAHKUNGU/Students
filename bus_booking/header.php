@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./owl-carousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./owl-carousel/css/owl.theme.default.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./DataTables/datatables.min.css">
+
     <title>Autoride-chauffeur-booking </title>
 </head>
 
@@ -27,8 +29,22 @@
                     <span class="ml-2">autoride@autoride.com</span>
                 </div>
                 <div class="d-flex ml-auto">
-                   <a href="register.php"> <span>Login |</span></a>
+               <?php
+                if( !isset($_SESSION['info']) ){
+                    ?>
+                    <a href="register.php"> <span>Login |</span></a>
                    <a href="register.php"> <span>Register |</span></a>
+                   <?php
+
+                   
+
+                }else{
+                    ?>
+                    <a href="logout.php"> <span>Login out|</span></a>
+                    <?php
+                }
+               ?>
+                   
                 </div>
             </div>
 
@@ -46,9 +62,23 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="./index.php">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Our Fleet</a>
-                        </li>
+                        <div class="dropdown">
+                            <style>
+                                .btn.text-white{
+                                    font-weight:900;
+                                    font-size:20px;
+                                }
+                            </style>
+                            <button class="btn text-white  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Booking
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="parcel.php">Parcel Booking</a>
+                                <a class="dropdown-item" href="people.php">Seats Booking</a>
+
+                                
+                            </div>
+                        </div>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">About us</a>
                         </li>
