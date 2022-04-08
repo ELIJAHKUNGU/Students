@@ -45,7 +45,7 @@
                         </h2>
                     </div>
                     <div class="card-body">
-                        <form action="" method="get">
+                        <form action="" method="post">
                         <div class="form-group">
                                 <label for="title">UserID</label>
                                 <input type="text" disabled class="form-control pt-4 pb-4" value ="<?php echo $row['user_id'];?>"  required>

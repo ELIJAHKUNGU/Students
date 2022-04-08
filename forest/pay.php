@@ -13,21 +13,21 @@
                 extract($row);
             }
 
-            if (isset($_POST["save"])) {
-               require 'db.php';
-                extract($_POST);
-                $sql = "INSERT INTO `payment`( `order_id`, `user_id`, `amount`, `name`, `reference`) 
-                VALUES ('$order_id','$user_id','$amount','$name','$reference')";
-                if ($conn->query($sql) === TRUE) {
+            // if (isset($_POST["save"])) {
+            //    require 'db.php';
+            //     extract($_POST);
+            //     $sql = "INSERT INTO `payment`( `order_id`, `user_id`, `amount`, `name`, `reference`) 
+            //     VALUES ('$order_id','$user_id','$amount','$name','$reference')";
+            //     if ($conn->query($sql) === TRUE) {
                 
-                    header("location:index.php?success=Payment processed successfully ");
+            //         header("location:index.php?success=Payment processed successfully ");
                 
-                } else {
-                    header("location:pay.php?error=Payment not  processed successfully");
+            //     } else {
+            //         header("location:pay.php?error=Payment not  processed successfully");
                 
                 
-                }
-            }
+            //     }
+            // }
             ?>
             
             <div class="col-sm-9">
@@ -42,9 +42,8 @@
                             <ol class="pl-5">
                                 <li>KCB Account :9214994003</li>
                                 <li>NCBA Account :9214994003</li>
-                                <li>MPESA PAYBIL 230303 Account :9214994003</li>
                             </ol>
-                        <form action="" method="post">
+                       
                             
                            
                             <div class="pl-5">
@@ -53,7 +52,7 @@
                             <div class="p-5">
                             <div class="form-group">
                                 <label for="title">Order No</label>
-                                <input type="hidden" placeholder="" value="<?php echo $id; ?>" class="form-control pt-4 pb-4" name="order_id" required>
+                                <input type="hidden" placeholder="" value="<?php echo $id; ?>" disabled class="form-control pt-4 pb-4" name="order_id" required>
                                 <?php
                                  require 'config.php';
                                 //  echo $user_id;
@@ -78,27 +77,46 @@
                                         'invalid';
                                     }
                                 ?>
-                                <input type="text" class="form-control pt-4 pb-4"  value="<?php echo $amount; ?>"  name="amount" required>
+                                <input type="text" class="form-control pt-4 pb-4" disabled  value="<?php echo $amount; ?>"  name="amount" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="title">Full Name</label>
-                                <input type="text" placeholder="JOHN DOE" class="form-control pt-4 pb-4" name="name" required>
+                                <?php
+                                session_start();
+                                require 'config.php';
+                                $user_id =  $user_details ['user_id'];
+
+                                 require 'db.php';
+                                $sql="SELECT * FROM `hello` WHERE  user_id= $user_id";
+                                $result = mysqli_query($conn, $sql);
+                                $row = mysqli_fetch_assoc($result);
+                                extract($row);
+                                $phone = $row['phone'];
+                            
+                          
+                                ?>
+                                <label for="title">Phone</label>
+                                <input type="text" disabled placeholder="phone" value="<?php echo  $phone?>" class="form-control pt-4 pb-4" name="phone" required>
                             </div>
                             
 
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="title">MPESA Transaction ID/ Bank Reference NO</label>
                                 <input type="text" class="form-control pt-4 pb-4"  name="reference" required>
-                            </div>
+                            </div> -->
 
                             <div class="d-flex">
+                            <a href="./MpesaProcessor.php?amount=<?php echo$amount?>">
                                 <button style="text-transform: uppercase;" name="save" class="btn btn-success  mr-3 ">Submit</button>
+                                </a>
+
                             </div>
                             </div>
 
-                        </form>
+                        
+                        
+                       
                         
                         </div>
 

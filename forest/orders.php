@@ -86,7 +86,7 @@
                         <th>Product</th>
                         <th>Quantity</th>
                         <th>Pay</th>
-                        <th>Action</th>
+                        
 
                     </tr>
                 </thead>
@@ -170,7 +170,7 @@
 
                             ?>
                          </td>
-                        <td>Delete</td>
+                        
 
 
                         </td>
