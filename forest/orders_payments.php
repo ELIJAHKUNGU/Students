@@ -25,40 +25,28 @@
             <hr>
             
 
-            <table id="patient" class="display  mt-2" style="border: 2px solid gray;">
+            <table id="patient" class="display  " style="border: 2px solid gray; width:100%">
                 <thead>
                     <tr>
-                        <th>invoice ID</th>
-                        <th>Names Verification </th>
+                        <th>USER ID</th>
+                        <th>First Name </th>
                         
-                        <th>Pick Up location</th>
-                        <th>Amount </th>
-                        <th>Phone Number</th>
-                        <th>Date Pickup</th>
-                        <th>Order Date</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Pay</th>
-                        <th>Action</th>
+                        <th>Last Name</th>
+                        <th>Amount</th>
+                        <th>Phone NO </th>
+                        <th>EMAIL</th>
+                      
+                        <th>Status</th>
+                      
 
                     </tr>
                 </thead>
-                <tbody>
-
                 <?php
                       require 'db.php';
-                    //   $sql="SELECT * FROM `hello`";
-                    //   $result = mysqli_query($conn, $sql);
-                    //   $row2 = mysqli_fetch_assoc($result);
-                    //   $doctor_id = $row2['doctor_id'];
-
-                    
-                      
-                     
-                    //   $doctor_name = $row2['doctor_name'];
-                    //   echo $doctor_name;
-                    require 'config.php';
-                      $qry = "SELECT * FROM `hello` where user_id = '$user_id' and paid=1";
+                      session_start();
+                      require 'config.php';
+                  
+                      $qry = "SELECT * FROM `hello`  where paid='1' and  user_id = '$user_id'";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
 
@@ -66,15 +54,14 @@
                           ?>
                         
                       
-                        <!-- `hello`(`id`, `user_id`, `fname`, `lname`, 
+                         <!-- `hello`(`id`, `user_id`, `fname`, `lname`, 
                         `email`, `phone`, `dd`, `nn`, `yyyy`, `uname`, `pword`, `date_cart`) -->
                      <tr>
-                        <td>#AP-00<?php echo $row['id']?></td>
-                        <td><?php echo $row['fname']?> <?php echo $row['lname']?></td>
+                        <td>#PA-00-<?php echo $row['user_id']?></td>
+                        <td><?php echo $row['fname']?> </td>
                        
-                        <td><?php echo $row['yyyy']?> </td>
-                        <td>
-                        <?php
+                        <td><?php echo $row['lname']?> </td>
+                        <td>  <?php
                         $amount = 0;
                         $product =   $row['uname'];
                         if ($product == 'Timber'){
@@ -87,27 +74,17 @@
                         }else{
                             echo 'invalid';
                         }
-                        ?>
-
-
-
-
-                        </td>
-
+                        ?> </td>
                         <td><?php echo $row['phone']?> </td>
-                        <td><?php echo $row['dd']?> <?php echo $row['nn']?>  </td>
-                        <td><?php echo $row['date_cart']?> </td>
-                        <td><?php echo $row['uname']?></td>
 
-                        <td><?php echo $row['pword']?></td>
-                        <td>
-                           <style>
-                               #paid{
-                                cursor: not-allowed;
-                               }
+                        <td><?php echo $row['email']?> </td>
+                        
 
-                           </style>
-                            <?php
+                       
+                       <td>
+                       <?php 
+                          
+                        
                             $paid = $row['paid'];
                             if ($paid == 1){
                                 ?>
@@ -117,16 +94,15 @@
 
                             }else{
                                 ?>
-                                  <a href='pay.php?id=<?php echo $row['id']?>'><button class="btn btn-outline-success">pay</button></a>
+                                  <a href='confirm.php?id=<?php echo $row['id']?>'><button class="btn btn-outline-success">pay</button></a>
                                 <?php
                             }
-                            
 
 
+                        ?>
+                       </td>
 
-                            ?>
-                         </td>
-                        <td>Delete</td>
+                        
 
 
                         </td>

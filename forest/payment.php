@@ -81,16 +81,7 @@
 
                 <?php
                       require 'db.php';
-                    //   $sql="SELECT * FROM `hello`";
-                    //   $result = mysqli_query($conn, $sql);
-                    //   $row2 = mysqli_fetch_assoc($result);
-                    //   $doctor_id = $row2['doctor_id'];
-
                     
-                      
-                     
-                    //   $doctor_name = $row2['doctor_name'];
-                    //   echo $doctor_name;
                     require 'config.php';
                       $qry = "SELECT * FROM `hello` where user_id = '$user_id'";
                       $products =$conn->query($qry);

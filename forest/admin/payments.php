@@ -24,16 +24,16 @@
             <table id="patient" class="display  " style="border: 2px solid gray; width:145%">
                 <thead>
                     <tr>
-                        <th>PAYMENT ID</th>
-                        <th>Order NO </th>
+                        <th>USER ID</th>
+                        <th>First Name </th>
                         
-                        <th>User Acc</th>
-                        <th>Amount </th>
-                        <th>Depositor Name</th>
-                        <th>Reference ID</th>
-                        <th>Transaction Date</th>
-                        <th>Confirm</th>
-                        <th>Action</th>
+                        <th>Last Name</th>
+                        <th>Amount</th>
+                        <th>Phone NO </th>
+                        <th>EMAIL</th>
+                      
+                        <th>Status</th>
+                      
 
                     </tr>
                 </thead>
@@ -41,17 +41,8 @@
 
                 <?php
                       require 'db.php';
-                    //   $sql="SELECT * FROM `hello`";
-                    //   $result = mysqli_query($conn, $sql);
-                    //   $row2 = mysqli_fetch_assoc($result);
-                    //   $doctor_id = $row2['doctor_id'];
-
-                    
-                      
-                     
-                    //   $doctor_name = $row2['doctor_name'];
-                    //   echo $doctor_name;
-                      $qry = "SELECT * FROM `payment` order by payment_id DESC";
+                  
+                      $qry = "SELECT * FROM `hello`  where paid='1'";
                       $products =$conn->query($qry);
                       while ($row= $products->fetch_assoc())
 
@@ -59,28 +50,38 @@
                           ?>
                         
                       
-                        <!-- <`payment`(`payment_id`, `order_id`, `user_id`, `amount`, `name`, 
-                        `reference`) VALUES  -->
+                         <!-- `hello`(`id`, `user_id`, `fname`, `lname`, 
+                        `email`, `phone`, `dd`, `nn`, `yyyy`, `uname`, `pword`, `date_cart`) -->
                      <tr>
-                        <td>#PA-00-<?php echo $row['payment_id']?></td>
-                        <td>#AP-00-<?php echo $row['order_id']?> </td>
+                        <td>#PA-00-<?php echo $row['user_id']?></td>
+                        <td><?php echo $row['fname']?> </td>
                        
-                        <td>#AP-00-<?php echo $row['user_id']?> </td>
-                        <td> <?php echo $row['amount']?> </td>
+                        <td>#AP-00-<?php echo $row['lname']?> </td>
+                        <td>  <?php
+                        $amount = 0;
+                        $product =   $row['uname'];
+                        if ($product == 'Timber'){
+                          echo $amount = $row['pword'] * 25;
+                        }else if($product == 'Fireword'){
+                           echo $amount = $row['pword'] * 120;
+                        }else if($product == 'Plywood'){
+                            echo $amount = $row['pword'] * 150;
+                            
+                        }else{
+                            echo 'invalid';
+                        }
+                        ?> </td>
+                        <td><?php echo $row['phone']?> </td>
 
-                        <td><?php echo $row['name']?> </td>
-                        <td><?php echo $row['reference']?> </td>
+                        <td><?php echo $row['email']?> </td>
+                        
+
                        
-                        <td><?php echo $row['date_time']?></td>
                        <td>
                        <?php 
-                          require 'db.php';
-                          $order_id = $row['order_id']; 
-                            $sql="SELECT * FROM `hello` where id='$order_id'";
-                            $result = mysqli_query($conn, $sql);
-                            $row2 = mysqli_fetch_assoc($result);
+                          
                         
-                            $paid = $row2['paid'];
+                            $paid = $row['paid'];
                             if ($paid == 1){
                                 ?>
                                 <button id="paid" class="btn btn-outline-primary" >paid</button>
@@ -89,7 +90,7 @@
 
                             }else{
                                 ?>
-                                  <a href='confirm.php?id=<?php echo $row2['id']?>'><button class="btn btn-outline-success">pay</button></a>
+                                  <a href='confirm.php?id=<?php echo $row['id']?>'><button class="btn btn-outline-success">pay</button></a>
                                 <?php
                             }
 
@@ -98,7 +99,6 @@
                        </td>
 
                         
-                        <td>  <a href='deletepayments.php?id=<?php echo $row2['id']?>'>Delete</a> </td>
 
 
                         </td>

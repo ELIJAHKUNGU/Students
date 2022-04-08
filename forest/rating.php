@@ -55,42 +55,55 @@ ini_set('display_errors', 1);
                         <div class="pt-5">
                             <div class="shadow">
                             <?php
+
+                            
                                 
                                 
                                 $user_id =  $user_details ['user_id'];
+                                $total = 0;
 
                                  require 'db.php';
                                 $sql="SELECT * FROM `quiz` WHERE   user_id= $user_id";
                                 $result = mysqli_query($conn, $sql);
                                 $row = mysqli_fetch_assoc($result);
-                                extract($row);
+
+                                if ($row > 0){
+                                    extract($row);
+                                    $skidders = $row['skidders'];
+                                    $tractors = $row['tractors'];
+                                   # $tractors_no = $row['tractors_no'];
+                                    $chain_saw = $row['chain_saw'];
+                                    $trucks = $row['trucks'];
+                                    $trucks1 = $row['trucks1'];
+                                    $trucks2 = $row['trucks2'];
+                                    $drying_kiln = $row['drying_kiln'];
+                                    $drying_air = $row['drying_air'];
+                                    $debarker = $row['debarker'];
+                                    $hand_saw = $row['hand_saw'];
+                                    $band_saw = $row['band_saw'];
+                                    $amount1 = $row['amount1'];
+    
+                                    $total = $skidders +$tractors + $chain_saw +$trucks + $trucks1 + $trucks2 + $drying_kiln + $drying_air + $debarker + $hand_saw + $band_saw + $amount1;
+
+                                }else{
+                                    echo 'KINDLY WORK DO THE QUIZS';
+
+                                }
+                               
                                 
 
                                 // `quiz`(`quiz_id`, `skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks2`, 
                                 // `drying_kiln`, `drying_air`, `debarker`, `hand_saw`, `band_saw`, `amount1
 
-                                $skidders = $row['skidders'];
-                                $tractors = $row['tractors'];
-                               # $tractors_no = $row['tractors_no'];
-                                $chain_saw = $row['chain_saw'];
-                                $trucks = $row['trucks'];
-                                $trucks1 = $row['trucks1'];
-                                $trucks2 = $row['trucks2'];
-                                $drying_kiln = $row['drying_kiln'];
-                                $drying_air = $row['drying_air'];
-                                $debarker = $row['debarker'];
-                                $hand_saw = $row['hand_saw'];
-                                $band_saw = $row['band_saw'];
-                                $amount1 = $row['amount1'];
-
-                                $total = $skidders +$tractors + $chain_saw +$trucks + $trucks1 + $trucks2 + $drying_kiln + $drying_air + $debarker + $hand_saw + $band_saw + $amount1;
+                              
 
 
                             
                           
                                 ?>
                                 <h1>
-                                    <?php echo $total / 100 . "%" ?>
+                                    <?php 
+                                    echo $total /2 . "%" ?>
                                 </h1>
                             </div>
                         </div>
