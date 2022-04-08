@@ -1,6 +1,4 @@
 <?php
-session_start();
-require_once 'config.php';
 include 'sidebar.php';
 
 error_reporting(E_ALL);
@@ -12,15 +10,14 @@ if (isset($_POST["save"])) {
 
     require 'db.php';
     extract($_POST);
-    
 
-        $sql = "INSERT INTO `quiz`(`skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks2`,`drying_kiln`, `drying_air`,`debarker`,`hand_saw`, `band_saw`,`amount1` ,`user_id`)
-        VALUES ('$skidders', '$tractors', '$tractors_no','$chain_saw', '$trucks', '$trucks1', '$trucks2','$drying_kiln', '$drying_air', '$debarker', '$hand_saw','$band_saw','$amount1','$user_id')";
+        $sql = "INSERT INTO `quiz`(`skidders`, `tractors`, `tractors_no`, `chain_saw`, `trucks`, `trucks1`, `trucks2`,`drying_kiln`, `drying_air`,`debarker`,`hand_saw`, `band_saw`,`amount1)
+        VALUES ('$skidders', '$tractors', '$tractors_no','$chain_saw', '$trucks', '$trucks1', '$trucks2','$drying_kiln', '$drying_air', '$debarker', '$hand_saw','$band_saw','$amount1')";
        
        
               $result =  mysqli_query($conn, $sql);
         if ($result){
-            header("location:rating.php?success=Your account has been  successfully created login");
+            header("location:quiz.php?success=Your account has been  successfully created login");
             exit();
 
         }else{
