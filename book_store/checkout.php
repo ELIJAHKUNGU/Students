@@ -5,7 +5,7 @@
     include 'header.php';
     require 'db.php';
     require_once 'security.php';
-    print_r($_SESSION["shopping_carts"]);
+    // print_r($_SESSION["shopping_carts"]);
     // foreach($_SESSION["shopping_carts"] as $keys => $values)
     // {
     //         // echo $key ." : ". $value['quantity'] . "<br>";
@@ -97,6 +97,19 @@
                 <li class="breadcrumb-item active" aria-current="page">Checkout </li>
             </ol>
         </nav>
+        <?php
+        // foreach($_SESSION["shopping_carts"] as $keys => $values)
+        // {
+        //     $product_id = $values['item_id'];
+        //     echo $product_id;
+        // }
+        $session_array= $_SESSION["shopping_carts"];
+        
+        $session_text = implode("",$session_array);
+        echo $session_text;
+        
+
+        ?>
         <!-- <div class="row">
             <div class="col-sm-9">
                 <h4>CHECKOUT</h4>
@@ -126,11 +139,26 @@
 ?> -->
         <h5 class="pl-4">Checkout</h5>
         <?php
-        // $user_id =  $info ['user_id'];
-        // $query = "SELECT * FROM users  where `user_id` = '$user_id'";
-        // $result = mysqli_query($conn, $query);
-    
-        //     $row = mysqli_fetch_array($result);
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        if(isset($_POST['save'])){
+            require_once 'security.php';
+            $user_id =  $info ['user_id'];
+
+           $session_array= $_SESSION["shopping_carts"];
+           $session_text = implode("",$session_array);
+       
+
+           $sql = "INSERT INTO `cart`(`cart_id`, `user_id`, `cart_products`)
+            VALUES (null,'$user_id','$session_text')";
+            
+            mysqli_query($conn, $sql);
+        // echo '<script>location.replace("index.php")</script>';
+           
+            
+        }
+        
             
        
         ?>
@@ -148,7 +176,7 @@
                                         <h2 class="text-success ml-3">Address Details</h2>
                                     </div>
                                     <div class="address-body pl-3">
-                                        <form action="">
+                                        <form action="" method="post">
                                             <?php
                                             $query = "SELECT * FROM `users` where user_id = '$user_id' ";
                                             $result = mysqli_query($conn, $query);
@@ -209,7 +237,9 @@
                                                     <label for="" class="text-success">Notes</label>
                                                     <textarea name="desc" id="" class="form-control" cols="30" rows="5"></textarea>
                                                 </div>
-                                                
+                                                <div class="total-group">
+                                        <button class="save" name="save">Confirm Order</button>
+                                    </div>
                                                
 
                                         </form>
@@ -236,9 +266,7 @@
                                 <div class="calculated-totals">
 
                                     <div class="total-group">
-                                        <button>
-                                        <a href="/index.html">Confirm Order</a>
-                                    </button>
+                                        <button class="save" name="save">Confirm Order</button>
                                     </div>
                                 </div>
                             </div>
