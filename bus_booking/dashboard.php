@@ -61,8 +61,8 @@ include 'header.php';
                                                 <option value="Mombasa-Nairobi">Mombasa - Nairobi </option>
                                                 <option value="Nairobi-Mombasa"> Nairobi- Mombasa </option>
                                                 <option value="Mombasa-Kisumu">Mombasa - Kisumu</option>
-                                             </select>
-                                        </div>
+
+                                            </select>
                                         <div class="form-group">
                                             <div class="d-block">
                                                 <label for="">Select Date</label>
@@ -171,8 +171,16 @@ include 'header.php';
                         </div>
                     
                    
-                        <div class="col-sm-6">
-                            <img src="./images/234234.jpeg" alt="" srcset="">
+                        <div class="col-sm-6" >
+                            <style>
+                                #parcel_img{
+                                    display: "none";
+
+                                }
+
+                            </style>
+                            <img id="parcel_img" src="./images/234234.jpeg" style="display:none; background-size:cover" alt="" srcset="">
+                            <img id="people_img" src="./images/b2.png" class="img-fluid" style="padding-left:10px; background-color:#F8FAF9; margin-top:100px; margin-left:30px; padding-bottom:180px; padding-top:20rem;"  alt="">
                         </div>
                     </div>
             </div>
@@ -182,6 +190,8 @@ include 'header.php';
     <script>
         var pacelForm = document.getElementById("pacelForm");
         var PeopleForm = document.getElementById("PeopleForm");
+        var imgpeople = document.getElementById("people_img");
+        var imgparcel = document.getElementById("parcel_img");
         var Indicator = document.getElementById("Indicator");
 
 
@@ -191,6 +201,8 @@ include 'header.php';
             Indicator.style.transform = "translateX(-10px)";
             pacelForm.style.display = "none"
             PeopleForm.style.display = "block"
+            imgpeople.style.display = "block"
+            imgparcel.style.display = "none"
 
         }
 
@@ -199,7 +211,9 @@ include 'header.php';
             pacelForm.style.transform = "translateX(300px)";
             Indicator.style.transform = "translateX(100px)";
             PeopleForm.style.display = "none";
-            pacelForm.style.display = "block"
+            pacelForm.style.display = "block";
+            imgpeople.style.display = "none"
+            imgparcel.style.display = "block";
 
         }
     </script>

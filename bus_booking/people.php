@@ -90,16 +90,13 @@ include 'header.php';
                             }else{
                                 echo  "invalid";
                             }
-                            
-
-
 
                             ?>
 
                         </th>
                         
                         <td> <a href="deletep.php?id=<?php echo $row["request_id"] ?>"><button class="btn btn-outline-warning">cancel</button></a>  </td>
-                        <td><button class="btn btn-outline-danger">PAY</button></tr>
+                        <td><a href="pay.php?id=<?php echo $row["request_id"] ?>"><button type="submit">PAY </button></a>     </tr>
                       
                     <?php
                       }
@@ -119,11 +116,28 @@ include 'header.php';
 
 
 
-    <div class="text-center text-white ">
+
+<!-- Modal
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        form
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-    </div>
-    </div>
-    </section>
+  </div>
+</div> -->
+
     <script src="./js/jquery.min.js "></script>
     <script src="./js/bootstrap.min.js "></script>
     <script src="./owl-carousel/js/owl.carousel.min.js "></script>

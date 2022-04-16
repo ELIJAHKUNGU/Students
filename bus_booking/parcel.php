@@ -33,7 +33,7 @@ include 'header.php';
                 </p>
                 <?php } ?>
 
-                <table id="patient"  class="display table-bordered table-responsive  mt-2" style="border: 2px solid gray;">
+                <table id="patient"  class="display table-bordered   mt-2" style="border: 2px solid gray;">
                     <thead>
                         <tr>
 
@@ -43,9 +43,11 @@ include 'header.php';
                             <th>Pickup Location</th>
                             <th>Date Order</th>
                             <th>weight in KGS</th>
+                            <th>Amount</th>
                             <th>model</th>
                            
                             <th>Cancel Order</th>
+                            <th>Pay</th>
                             <th>Status</th>
 
                         </tr>
@@ -61,20 +63,46 @@ include 'header.php';
                       
                         // `people_requests`(`request_id`, `user_id`, `username`, 
                         // `parcel_idno`, `pickup_location`, `date_m`, `time_t`, `model`, `weight`
-                    extract($row);
-                    echo "<tr>
-                        <td>#p-00$request_id</td>
-                        <td>$username</td>
-                        <td>$parcel_idno</td>
-                        <td>$pickup_location</td>
-                        <td>$date_m.$time_t</td>
-                        <td>$weight</td>
-
-                        <td>$model</td>
+                    // extract($row);
+                    ?>
+                   <tr>
+                        <td>RPP-00<?php echo $row['request_id']?></td>
+                        <td><?php echo $row['username']?></td>
+                        <td><?php echo $row['parcel_idno']?></td>
+                        <td><?php echo $row['pickup_location']?></td>
+                        <td><?php echo $row['date_m'] .' '.$row['time_t'] ?></td>
+                        <td><?php echo $row['weight']?></td>
+                        <th>
+                            <?php
                         
-                        <td> <a href='createappointment.php?id=$cancel'><button>Appointment</button></a>  </td>
-                        <td>Confirmed</tr>";
-                      
+                        $amount = 0;
+                        $location = $row['pickup_location']; 
+                        $weight = $row['weight'];
+                        if($location == 'Mombasa-Nairobi'){
+                          echo  $amount =  400 *  $weight;
+
+                        }else  if($location == 'Nairobi-Mombasa'){
+                            echo  $amount =  400 *  $weight;
+
+                        }else if($location == 'Mombasa-Kisumu'){
+                            echo  $amount =  1000 *  $weight;
+                        }else{
+                            echo  "invalid";
+                        }
+
+                        ?>
+
+                    </th>
+
+                        <td><?php echo $row['model']?></td>
+                        
+                        <td> <a href='deleteparcel.php?id=<?php echo $row['request_id'] ?>'><button class='btn btn-danger'>Cancel</button></a>  </td>
+                        <td> <a href='payparcel.php?id=<?php echo $row['request_id'] ?>'><button class='btn btn-success'>Pay</button></a>  </td>
+
+                        <td><button class="btn btn-outline-warning">View Status</button></td>
+                        </tr>
+                        <?php
+                
                     }
                     ?>
                     </tbody>
