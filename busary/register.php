@@ -1,13 +1,4 @@
-<?php
-if (isset($_POST["password"])) {
-    require "DB.php";
-    extract($_POST);
-    $sql = "INSERT INTO users(`user_id`, `names`, `email`, `password`) 
-                      VALUES (null,'$username','$email','$password')";
-    mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    header('location:login.php');
-}
-?>
+
 
 <style>
        body{
@@ -26,39 +17,91 @@ if (isset($_POST["password"])) {
 </head>
 <body>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-6  mt-5 pt-2">
-            <div class="card  mt-5 ">
-                <div class="card-header bg-info">Register Here</div>
-
-
-                <div class="card-body">
-                    <form action="register.php" method="post">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" name="username" required>
+            <div class="shadow">
+                    <div class="pl-5">
+                        <div class="p-5">
+                            <div class="d-flex justify-content-between">
+                                <div class="ml-3">
+                                    <h4>Form Data</h4>
+                                </div>
+                                <!-- <div class="">
+                                    <button class="btn btn-outline-primary">Edit</button>
+                                </div> -->
+                            </div>
                         </div>
+                        <form action="userdetails.php" method="POST" class="p-5">
+                            <div class="form-group mt-3">
+                                <label for="">Student Name</label>
+                                <input type="text" class="form-control" name="s_n" placeholder="Patricia Wanjiru">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">Student Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Patricia Wanjiru">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">Name Of Institution</label>
+                                <input type="text" class="form-control" name="i_n" placeholder="Jomo Kenyatta University of Agriculture and Technology">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">School Address</label>
+                                <input type="text" class="form-control"name="s_a" placeholder=" P.O. Box 62 000 – 00200 NAIROBI, KENYA">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">Student Registration Number</label>
+                                <input type="text" class="form-control" name="reg" placeholder="Jomo Kenyatta University of Agriculture and Technology">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">Gender</label>
+                                <select class="form-control" name="sex" id="">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="">Course</label>
+                                <input type="text" class="form-control" name="course" placeholder="BACHELOR OF BUSINESS INFORMATION TECHNOLOGY">
+                            </div>
+                            <div class="form-group  mt-3">
+                                    <label class="text-center"  for="">Preferred Password</label>
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                            <div class="form-group mt-3">
+                                <label for="">Level of Study</label>
+                                <select class="form-control" name="l_o_s" id="">
+                                <option value="">Select Level of Study</option>
+                                <option value="High School">High School</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Postgraduate">Postgraduate </option>
+                            </select>
+                            </div>
+                            <div class="d-flex">
+                                <div class="form-group  mt-3">
+                                    <label class="text-center"  for="">County</label>
+                                    <input type="text" name="country"  class="form-control">
+                                </div>
+                                <div class="form-group ml-4 mt-3">
+                                    <label class="text-center" for="">Sub County</label>
+                                    <input type="text"  name="s_county" class="form-control">
+                                </div>
+                                <div class="form-group ml-4 mt-3">
+                                    <label class="text-center" for="">Ward</label>
+                                    <input type="text" name="ward" class="form-control">
+                                </div>
+                                <div class="form-group ml-4 mt-3">
+                                    <label class="text-center"  for="">Village</label>
+                                    <input type="text"name="village" class="form-control">
+                                </div>
 
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
+                            </div>
+                            <button name="submit" class="btn mt-3 btn-dark text-white">Submit</button>
 
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password" required>
-                        </div>
 
-                        <div class="d-flex justify-content-center ">
-                       <button class="btn btn-info pl-5 pr-5 ">Register </button>
-                      
-                    </form>
-                    <a href="login.php"> <span class="btn ml-4 btn-info pl-5 pr-5 btn-block">SIGN IN</span></a>
-                       </div>
+
+
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
 </div>
 </body>
 </html>

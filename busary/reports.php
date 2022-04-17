@@ -1,13 +1,20 @@
 <?php
+session_start();
 include 'sidebar.php';
+include 'config.php';
+
+$user_id =  $user_details ['user_id'];
+
+
 ?>
 
 
 <div class=" d-flex flex-column justify-content-center shadow">
                     <div class="d-flex justify-content-between">
                         <h5>Date Of Application</h5>
-                        <h5 class="ml-5">22/02/2022</h5>
-                    </div>
+                        <h5 class="ml-5">
+                        <?php echo date("d-m-Y") ?>
+                            </h5>                    </div>
                     <hr>
                     <table id="demo" class="table table-bordered">
                         <thead>
@@ -27,7 +34,7 @@ include 'sidebar.php';
                             <?php
                             $con=mysqli_connect("localhost","root","","bursary");
 
-                                $sqli = "SELECT * FROM `tblfiles`";
+                            $sqli = "SELECT * FROM `tblfiles` where user_id= '$user_id'";
 
                                 $res = mysqli_query($con, $sqli);
                                 while ($row = mysqli_fetch_array($res)) {
@@ -62,10 +69,23 @@ include 'sidebar.php';
                                 <?php
                                 $status = $row4['status'];
                                 if ($status == 1 ){
-                                    echo ' <button class="btn btn-outline-success">Confirmed</button>';
+                                    ?>
+                                    <button  class="btn btn-outline-success">Confirmed</button>
+
+                                    <?php
+
+                                }elseif ($status == 0 ){
+                                    ?>
+                                     <a href="bussaryconfirm.php?id=<?php echo $row4['b_id'] ?>"><button class="btn btn-outline-primary">Processing</button></a>
+                                    
+                                   <?php
 
                                 }else{
-                                    echo ' <button class="btn btn-outline-danger">Unsuccessfully</button>';
+                                    ?>
+                                    <button  class="btn btn-outline-danger">Unsuccessfully</button>
+
+                                    <?php
+
 
                                 }
 
@@ -78,7 +98,8 @@ include 'sidebar.php';
                                 }
                             }
                             }
-                            }
+                            
+                        }
                                 mysqli_close($con);
                             ?>
                         </tbody>

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/22 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace-autumn">undefined
+/*# sourceURL=ace/css/ace-autumn */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <title>Section 12.22 - CS 1101: Programming and Problem Solving</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://learn.zybooks.com/assets/favicon.ico" integrity="">
+
+    
+<meta name="zybooks-web/config/environment" content="%7B%22environment%22%3A%22production%22%2C%22locationType%22%3A%22auto%22%2C%22modulePrefix%22%3A%22zybooks-web%22%2C%22rootURL%22%3A%22%2F%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3Atrue%7D%2C%22APP%22%3A%7B%22ACCESS_DEV%22%3Afalse%2C%22ADMIN_URL%22%3A%22https%3A%2F%2Fadmin.zybooks.com%2F%22%2C%22ANALYTICS_URL%22%3A%22https%3A%2F%2Fanalytics.zybooks.com%2F%22%2C%22API_HOST%22%3A%22https%3A%2F%2Fzyserver.zybooks.com%2Fv1%2F%22%2C%22AUTHORS_ONLY%22%3Afalse%2C%22BUILDKEY%22%3A%2282845e65-657c-9aeb-0dea-32e39244ebc1%22%2C%22CLOUDSEARCH_ENDPOINT%22%3A%22https%3A%2F%2Foqsgv0xbv7.execute-api.us-west-2.amazonaws.com%2Fproduction%22%2C%22DISABLE_EVENTS%22%3Afalse%2C%22ENABLE_ZYANALYTICS_WEB%22%3A%22false%22%2C%22EVENTS_API_HOST%22%3A%22https%3A%2F%2Fzyevents.zybooks.com%2F%22%2C%22EVENTS_API_TARGET%22%3A%22v1%2Fstream%22%2C%22ROUTE_IF_ALREADY_AUTHENTICATED%22%3A%22library%22%2C%22SALES_URL%22%3A%22https%3A%2F%2Fsales.zybooks.com%2F%22%2C%22SESSION_KEY_SUFFIX%22%3A%225%22%2C%22TERMINAL_SOCKET_URL%22%3A%22wss%3A%2F%2Fzyterminal.zybooks.com%2Fws%22%2C%22WEBINAR_URL%22%3A%22https%3A%2F%2Fzoom.us%2Fwebinar%2Fregister%2FWN_vuUaO8C6QLy_yzxW4ixU3Q%22%2C%22WHAT_IS_ZYBOOK_VIDEO_URL%22%3A%22https%3A%2F%2Fvimeo.com%2F285133146%2F48bc90afb5%22%2C%22ZYBOOKS_URL%22%3A%22https%3A%2F%2Flearn.zybooks.com%2F%22%2C%22ZYSERVER2_API_HOST%22%3A%22https%3A%2F%2Fzyserver2.zybooks.com%2Fv1%2F%22%2C%22ITLABS_API_HOST%22%3A%22https%3A%2F%2Fitlabs-server.zybooks.com%2Fv1%2F%22%2C%22ZYSERVER2_DR_API_HOST%22%3A%22https%3A%2F%2Fzyserver2.dr.zybooks.com%2Fv1%2F%22%2C%22ZYEXAM_SERVER_API_HOST%22%3A%22https%3A%2F%2Fzyexam-server.zybooks.com%2Fv1%2F%22%7D%2C%22contentSecurityPolicy%22%3A%7B%22connect-src%22%3A%22&#39;self&#39;%20www.google-analytics.com%20https%3A%2F%2Ffonts.googleapis.com%20https%3A%2F%2F*.nr-data.net%20https%3A%2F%2Fzyserver.zybooks.com%2Fv1%2F%22%2C%22default-src%22%3A%22&#39;none&#39;%22%2C%22font-src%22%3A%22&#39;self&#39;%20fonts.gstatic.com%20%22%2C%22img-src%22%3A%22&#39;self&#39;%20http%3A%2F%2Fupload.wikimedia.org.com%2F%20https%3A%2F%2F*.nr-data.net%22%2C%22media-src%22%3A%22&#39;self&#39;%22%2C%22script-src%22%3A%22&#39;self&#39;%20&#39;unsafe-inline&#39;%20&#39;unsafe-eval&#39;%20www.google-analytics.com%20http%3A%2F%2F*.newrelic.com%20https%3A%2F%2F*.nr-data.net%20http%3A%2F%2F*.nr-data.net%22%2C%22style-src%22%3A%22&#39;self&#39;%20&#39;unsafe-inline&#39;%20https%3A%2F%2Ffonts.googleapis.com%22%2C%22frame-ancestors%22%3A%22*%22%7D%2C%22metricsAdapters%22%3A%5B%7B%22name%22%3A%22GoogleAnalytics%22%2C%22environments%22%3A%5B%22development%22%2C%22staging%22%2C%22production%22%5D%2C%22config%22%3A%7B%22id%22%3A%22UA-43181201-3%22%2C%22debug%22%3Afalse%2C%22trace%22%3Afalse%2C%22sendHitTask%22%3Atrue%2C%22require%22%3A%5B%22ecommerce%22%5D%7D%7D%5D%2C%22moment%22%3A%7B%22includeTimezone%22%3A%22subset%22%7D%2C%22newRelic%22%3A%7B%22agent%22%3A%22js-agent.newrelic.com%2Fnr-spa-1208.min.js%22%2C%22applicationId%22%3A%2287357829%22%2C%22licenseKey%22%3A%22NRBR-79cb652ae9dbc748a87%22%2C%22spaMonitoring%22%3Atrue%2C%22beacon%22%3A%22bam.nr-data.net%22%2C%22errorBeacon%22%3A%22bam.nr-data.net%22%7D%2C%22stripe%22%3A%7B%22publishableKey%22%3A%22pk_live_6WfpM1NZl9sSnKivV9WvGD2H%22%7D%2C%22zy-ember-froala-editor%22%3A%7B%22key%22%3A%22vA2A6A6D6E5E3iB3B9B6B5C2C4G5H3I3H3C-22NGNb1IODMGYNSFKV%3D%3D%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-websockets%22%3A%7B%22socketIO%22%3Afalse%7D%2C%22resourceHost%22%3A%22https%3A%2F%2Fzytools.zybooks.com%2FzyBooks2%2F%22%2C%22staticResourceHost%22%3A%22https%3A%2F%2Fstatic-resources.zybooks.com%2F%22%2C%22imageHost%22%3A%22https%3A%2F%2Fzytools.zybooks.com%2FzyAuthor%2F%22%2C%22zydeHost%22%3A%22http%3A%2F%2Fzyde2.zyante.com%22%2C%22terminalSocketUrl%22%3A%22wss%3A%2F%2Fzyterminal.dev.kube.zybooks.com%2Fws%22%7D">
+
+    <link rel="stylesheet" href="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/vendor-829972d510273725312b404925992213.css" integrity="">
+    <link rel="stylesheet" href="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/zybooks-web-c3658c9071e186882c028b10b3cd5b4a.css" integrity="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet" integrity="" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" integrity="">
+    <link rel="stylesheet" href="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/basicLightbox.min-69bdb9cd40a5bbcb4587424b1c70f89b.css" integrity="">
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ecommerce.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="https://bam.nr-data.net/1/NRBR-79cb652ae9dbc748a87?a=87357829&amp;sa=1&amp;v=1208.49599aa&amp;t=Unnamed%20Transaction&amp;rst=20636&amp;ck=1&amp;ref=https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/22&amp;be=16034&amp;fe=20621&amp;dc=18147&amp;af=err,xhr,stn,ins,spa&amp;perf=%7B%22timing%22:%7B%22of%22:1634664337814,%22n%22:0,%22f%22:16,%22dn%22:16,%22dne%22:16,%22c%22:16,%22ce%22:16,%22rq%22:10069,%22rp%22:15382,%22rpe%22:15387,%22dl%22:15413,%22di%22:18147,%22ds%22:18147,%22de%22:18154,%22dc%22:20621,%22l%22:20621,%22le%22:20622%7D,%22navigation%22:%7B%7D%7D&amp;fp=16260&amp;fcp=16266&amp;jsonp=NREUM.setToken"></script><script src="https://js-agent.newrelic.com/nr-spa-1208.min.js"></script><script type="text/javascript" src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/MathJax.js" id="mathjax" integrity=""></script>
+    <script integrity="">
+        MathJax.Hub.Config({ menuSettings: { inTabOrder: false } });
+        MathJax.Hub.Queue([ "setRenderer", MathJax.Hub, "SVG" ]);
+    </script>
+
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/vendor-3986d5f7e89c6af215b8de9c1bfbcb6f.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/zybooks-web-68aa243c032c0a556156d0c88c25aa8d.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/ace.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/string-diff-038aa18befe8da4171d20867cb79ec0e.js" integrity=""></script>
+
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/zip.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/zip-ext.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/zip-fs.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/mime-types.js" integrity=""></script>
+    <script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/deflate.js" integrity=""></script>
+
+    
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/mode-java.js"></script><style></style></head>
+  <body class="ember-application" data-new-gr-c-s-check-loaded="14.1034.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div>
+      <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+
+      
+
+      <div id="ember-basic-dropdown-wormhole"></div>
+
+      <!--Comment out until we do maintenance on the platform-->
+      <script src="https://7pdrvq9vj4n5.statuspage.io/embed/script.js" integrity=""></script><iframe src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/frame.html" style="position: fixed; border: none; box-shadow: rgba(9, 20, 66, 0.25) 0px 20px 32px -8px; z-index: 9999; transition: left 1s ease 0s, bottom 1s ease 0s, right 1s ease 0s; height: 115px; width: 320px; left: -9999px; right: -9999px; bottom: calc(100% - 175px);"></iframe>
+  
+
+<iframe name="__privateStripeMetricsController3730" frameborder="0" allowtransparency="true" scrolling="no" allow="payment *" src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/m-outer-303f500c0ffddb43526548bb387fe25d.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div class="ember-view" id="ember3"><header class="top-toolbar" role="none">
+    <div class="left-buttons">
+        <div id="ember4" class="zb-breadcrumbs ember-view"><button class="zb-button  grey false   icon-button left       menu-button " aria-label="Menu" aria-expanded="false" type="button">
+            <i class="zb-icon material-icons med grey  " role="img" aria-label="menu" aria-hidden="false">
+            menu
+<!----></i>
+
+<!----></button>
+
+    <div class="logo">
+            <img width="83px" height="22px" src="./Section 12.22 - CS 1101_ Programming and Problem Solving_files/logo.svg" alt="zyBooks">
+    </div>
+        <ul class="bread-crumbs">
+<!---->                <a href="https://learn.zybooks.com/library" id="ember15" class="ember-view">
+                    <li class="bread-crumb">My library</li>
+                </a>
+                    <span aria-hidden="true" class="divider">&gt;</span>
+                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021" id="ember17" class="ember-view">
+                    <li class="bread-crumb">CS 1101: Programming and Problem Solving home</li>
+                </a>
+                    <span aria-hidden="true" class="divider">&gt;</span>
+                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/22" id="ember21" class="active ember-view no-link-styling">
+                    <li class="bread-crumb">12.22: PA06-B: Resizable ASCII Art (15 pts)</li>
+                </a>
+        </ul>
+</div>
+    </div>
+    <div class="right-buttons">
+<!----><!----><!---->            <a href="https://learn.zybooks.com/catalog" id="ember13" class="ember-view zb-button">
+                <i class="zb-icon material-icons med grey  " role="img" aria-label="library_books">
+            library_books
+<!----></i>
+
+                <span class="font-light ml-2 text-base">
+                    zyBooks catalog
+                </span>
+            </a>
+                <a class="zb-button help-button" href="http://support.zybooks.com/" target="_blank" rel="noopener noreferrer">
+            <i class="zb-icon material-icons med grey  " role="img" aria-label="help">
+            help
+<!----></i>
+
+                Help/FAQ
+        </a>
+            <div id="ember5" class="ember-view zb-menu">
+                <button id="ember6" class="rl-dropdown-toggle ember-view toolbar-menu-toggle" aria-expanded="false" aria-label="Profile for EZRA NDEMO Ngare" type="button">
+                    <i class="zb-icon material-icons med grey  " role="img" aria-label="account_circle" aria-hidden="true">
+            account_circle
+<!----></i>
+
+                    EZRA NDEMO Ngare
+                    <i class="zb-icon material-icons med grey  " role="img" aria-label="arrow_drop_down" aria-hidden="true">
+            arrow_drop_down
+<!----></i>
+
+                </button>
+
+                <ul id="ember7" class="rl-dropdown ember-view right-anchored" style="display: none;">
+                    <li><button class="profile-button" type="button" data-ember-action="" data-ember-action-8="8">My profile</button></li>
+                    <li><button class="signout-button" type="button" data-ember-action="" data-ember-action-9="9">Sign out</button></li>
+                </ul>
+            
+</div>
+    </div>
+</header>
+
+<!---->
+<!---->
+<div class="route-container zybook-chapter-section-page no-margin-left " role="main" aria-label="zybook page">
+<!---->
+    <nav id="ember10" class="zb-nav-menu ember-view hide-nav-menu"><ul class="level-1">
+            <li class="flex-row">
+                            <i class="zb-icon material-icons med grey   item-bullet" role="img" aria-label="search">
+            search
+<!----></i>
+
+                                            <a tabindex="-1" href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/content-explorer" id="ember23" class="ember-view">
+                        Search zyBook
+                    </a>
+            </li>
+            <li class="flex-row">
+                    <button class="list-toggle" type="button" data-ember-action="" data-ember-action-25="25">
+                        <div class="flex-row">
+                                    <i class="zb-icon material-icons med grey   item-bullet" role="img" aria-label="info">
+            info
+<!----></i>
+
+                                                            <span class="list-toggle-title">
+                                About this Material
+                            </span>
+                        </div>
+                    </button>
+            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-27="27">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">1)</span>
+                            <span class="list-toggle-title">
+                                Introduction to Java
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-29="29">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">2)</span>
+                            <span class="list-toggle-title">
+                                Identifiers / Variables / Expressions
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-31="31">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">3)</span>
+                            <span class="list-toggle-title">
+                                Introduction to Methods
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-33="33">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">4)</span>
+                            <span class="list-toggle-title">
+                                Branches and Decisions
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-35="35">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">5)</span>
+                            <span class="list-toggle-title">
+                                Loops
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-37="37">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">6)</span>
+                            <span class="list-toggle-title">
+                                Input / Output
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-39="39">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">7)</span>
+                            <span class="list-toggle-title">
+                                Arrays
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-41="41">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">8)</span>
+                            <span class="list-toggle-title">
+                                Methods Revisited
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-43="43">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">9)</span>
+                            <span class="list-toggle-title">
+                                Objects and Classes
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-45="45">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">10)</span>
+                            <span class="list-toggle-title">
+                                Inheritance
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-47="47">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">11)</span>
+                            <span class="list-toggle-title">
+                                Abstract Class and Interfaces
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="true" class="list-toggle" type="button" data-ember-action="" data-ember-action-49="49">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">12)</span>
+                            <span class="list-toggle-title">
+                                Programming Assignments (PAs) | zyLabs
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_less" aria-hidden="true">
+            expand_less
+<!----></i>
+
+                    </div>
+                </button>
+
+                    <ul class="level-2">
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/1" id="ember105" class="ember-view">
+                                            <span class="item-bullet">12.1</span>
+                                    <span>
+                                        PA00-A: Getting to Know zyLabs: The Basics
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/2" id="ember107" class="ember-view">
+                                            <span class="item-bullet">12.2</span>
+                                    <span>
+                                        PA00-B: Getting to Know zyLabs: Dealing with Input/Output
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/3" id="ember109" class="ember-view">
+                                            <span class="item-bullet">12.3</span>
+                                    <span>
+                                        PA01-W: String Input/Output (10 pts) 
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/4" id="ember111" class="ember-view">
+                                            <span class="item-bullet">12.4</span>
+                                    <span>
+                                        PA01-A: Basic Input/Output (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/5" id="ember113" class="ember-view">
+                                            <span class="item-bullet">12.5</span>
+                                    <span>
+                                        PA01-B: Eiffel Tower (15 points)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/6" id="ember115" class="ember-view">
+                                            <span class="item-bullet">12.6</span>
+                                    <span>
+                                        PA02-W1: Using Math Methods (5 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/7" id="ember117" class="ember-view">
+                                            <span class="item-bullet">12.7</span>
+                                    <span>
+                                        PA02-W2: Driving Costs (5 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/8" id="ember119" class="ember-view">
+                                            <span class="item-bullet">12.8</span>
+                                    <span>
+                                        PA02-A: Who wrote this *%@!**? (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/9" id="ember121" class="ember-view">
+                                            <span class="item-bullet">12.9</span>
+                                    <span>
+                                        PA02-B: Birthday Trivia (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/10" id="ember123" class="ember-view">
+                                            <span class="item-bullet">12.10</span>
+                                    <span>
+                                        PA03-W: Animal Kingdom (10 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/11" id="ember125" class="ember-view">
+                                            <span class="item-bullet">12.11</span>
+                                    <span>
+                                        PA03-A: Make Your Methods Work (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/12" id="ember127" class="ember-view">
+                                            <span class="item-bullet">12.12</span>
+                                    <span>
+                                        PA03-B: Painting Calculator (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/13" id="ember129" class="ember-view">
+                                            <span class="item-bullet">12.13</span>
+                                    <span>
+                                        PA04-W1: Color My World (5 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/14" id="ember131" class="ember-view">
+                                            <span class="item-bullet">12.14</span>
+                                    <span>
+                                        PA04-W2: SMS Translator (5 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/15" id="ember133" class="ember-view">
+                                            <span class="item-bullet">12.15</span>
+                                    <span>
+                                        PA04-A: Nadha Skolar Learns Decisions (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/16" id="ember135" class="ember-view">
+                                            <span class="item-bullet">12.16</span>
+                                    <span>
+                                        PA04-B: To Everything There Is A Season (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/17" id="ember137" class="ember-view">
+                                            <span class="item-bullet">12.17</span>
+                                    <span>
+                                        PA05-W: Text Message Expander (10 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/18" id="ember139" class="ember-view">
+                                            <span class="item-bullet">12.18</span>
+                                    <span>
+                                        PA05-A: Numeric Palindromes (10 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/19" id="ember141" class="ember-view">
+                                            <span class="item-bullet">12.19</span>
+                                    <span>
+                                        PA05-B: Credit Card Comparison (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/20" id="ember143" class="ember-view">
+                                            <span class="item-bullet">12.20</span>
+                                    <span>
+                                        PA06-W: Count It Up (10 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/21" id="ember145" class="ember-view">
+                                            <span class="item-bullet">12.21</span>
+                                    <span>
+                                        PA06-A: Robot Steps (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/22" id="ember147" class="active ember-view">
+                                            <span class="item-bullet">12.22</span>
+                                    <span>
+                                        PA06-B: Resizable ASCII Art (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/23" id="ember149" class="ember-view">
+                                            <span class="item-bullet">12.23</span>
+                                    <span>
+                                        PA07-W: Same Digits (10 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/24" id="ember151" class="ember-view">
+                                            <span class="item-bullet">12.24</span>
+                                    <span>
+                                        PA07-A: Great Plains Loans (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/25" id="ember153" class="ember-view">
+                                            <span class="item-bullet">12.25</span>
+                                    <span>
+                                        PA07-B: Hollaback Table (15 pts)
+                                    </span>
+                                    <div class="section-labels">
+                                            <span class="nav-item-label-lab">Lab</span>
+<!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/print" id="ember155" class="ember-view">
+                                            <i class="zb-icon material-icons med grey   item-bullet" role="img" aria-label="print">
+            print
+<!----></i>
+
+                                                                            <span>
+                                        Print chapter
+                                    </span>
+                                    <div class="section-labels">
+<!----><!----><!----><!---->                                    </div>
+                                </a>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-51="51">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">13)</span>
+                            <span class="list-toggle-title">
+                                Program Debugging
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-53="53">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">14)</span>
+                            <span class="list-toggle-title">
+                                Troubleshooting Process
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-55="55">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">15)</span>
+                            <span class="list-toggle-title">
+                                Searching and Sorting Algorithms
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-57="57">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">16)</span>
+                            <span class="list-toggle-title">
+                                Memory Management
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-59="59">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">17)</span>
+                            <span class="list-toggle-title">
+                                Recursion
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-61="61">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">18)</span>
+                            <span class="list-toggle-title">
+                                Exceptions
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-63="63">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">19)</span>
+                            <span class="list-toggle-title">
+                                Generics
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-65="65">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">20)</span>
+                            <span class="list-toggle-title">
+                                Collections
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-67="67">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">21)</span>
+                            <span class="list-toggle-title">
+                                GUI
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-69="69">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">22)</span>
+                            <span class="list-toggle-title">
+                                JavaFX
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-71="71">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">23)</span>
+                            <span class="list-toggle-title">
+                                Coding Practice Problems
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-73="73">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">24)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: Variables / Assignments
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-75="75">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">25)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: Branches
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-77="77">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">26)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: Loops
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-79="79">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">27)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: User-Defined Methods
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-81="81">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">28)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: Objects and Classes
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+            <li>
+                <button aria-expanded="false" class="list-toggle" type="button" data-ember-action="" data-ember-action-83="83">
+                    <div class="list-toggle">
+                        <div class="flex-row">
+                                    <span class="item-bullet">29)</span>
+                            <span class="list-toggle-title">
+                                Additional Labs: Recursion
+                            </span>
+                        </div>
+<!---->                            <i class="zb-icon material-icons med grey   item-icon" role="img" aria-label="expand_more" aria-hidden="true">
+            expand_more
+<!----></i>
+
+                    </div>
+                </button>
+
+<!---->            </li>
+</ul>
+</nav>
+
+    <section class="section-container">
+<!---->            <nav class="section-nav previous" aria-label="previous section">
+                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/21" id="ember84" class="ember-view nav-link">
+                    <i class="zb-icon material-icons sm secondary  " role="img" aria-label="arrow_upward" aria-hidden="true">
+            arrow_upward
+<!----></i>
+
+                    <span class="nav-text previous">
+                        12.21 PA06-A: Robot Steps (15 pts)
+                    </span>
+                </a>
+        </nav>
+
+    <div role="main" aria-label="section content">
+<!---->
+            <div class="section-announcement zb-card secondary">
+        <div class="icon-container">
+            <i class="zb-icon material-icons xl white  " role="img" aria-label="info">
+            info
+<!----></i>
+
+        </div>
+
+        <div class="message-buttons-container">
+            <div class="message-title-container">
+                <div class="announcement-title">Students:</div>
+                <div class="message">This content is controlled by your instructor, and is not zyBooks content. Direct questions or concerns about this content to your instructor. If you have any technical issues with the zyLab submission system, use the <span class="primary-font-bold">Trouble with lab</span> button at the bottom of the lab.</div>
+            </div>
+
+            <div class="flex-row">
+<!----><!---->            </div>
+        </div>
+</div>
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+        <article id="ember85" class="zb-card ember-view zybook-section"><div class="zb-card-content ">
+    
+<!----><!---->    <div class="section-header-row">
+        <h1 class="zybook-section-title" canonical_section_id="24373424">12.22 PA06-B: Resizable ASCII Art (15 pts)</h1>
+            <div class="section-action-container">
+<!---->
+<!----><!----><!----><!---->
+<!---->            </div>
+    </div>
+
+<!---->
+<!---->
+<!---->
+<!---->
+                    <div id="ember87" class="content-resource markdown-content-resource ember-view"><div id="ember88" class="ember-view"><p><img src="https://my.vanderbilt.edu/tairas/files/2021/08/academic-honesty-policy-fall-2021.png" alt="Academic honesty policy" title="The Academic Honor Policy as discussed in class and posted on Brightspace is applicable to all work you do this Fall 2021 semester in CS 1101"></p>
+<h1 id="pointsandsubmission">Points and submission</h1>
+<p><strong>This exercise is worth 15 points. You have 8 submission attempts, so use them wisely and try to pass all test cases before running out of submissions. Note also that you have to wait for at least one minute before you can submit again.</strong></p>
+<p><em>Keep in mind that the score you get from zyLabs tells us how many test cases passed and hence, is not your final score for this exercise. The TA will take this into account and will manually look at your submission. The TA will also be looking for incorrect style and other possible deductions before entering your final score on codePost. It is possible that you don't get the full points for the exercise even if you passed all the test cases.</em></p>
+<h1 id="goals">Goals</h1>
+<p>The overall goals of this exercise is to:</p>
+<ul>
+<li>Introduce you to nested <em>for-loops</em>.</li>
+<li>Give you more practice with methods and decision statements.</li>
+</ul>
+<h1 id="problemdescription">Problem description</h1>
+<p>Write a program called <strong>ResizableASCIIArt</strong> that will printout resizable ASCII Art. The program should ask the user for a size value, then print out the ASCII Art. You should exactly reproduce the format of the output given in the examples. This includes having identical characters and spacing.</p>
+<h3 id="samplerun">Sample run</h3>
+<p>Input:</p>
+<pre><code>4
+</code></pre>
+<p>Run:</p>
+<pre><code>Enter a size: 4
+
+       /**\
+      //**\\
+     ///**\\\
+    ////**\\\\
+   /////**\\\\\
+  //////**\\\\\\
+ ///////**\\\\\\\
++*=*=*=*=*=*=*=*=+
+|\/\/\/\/\/\/\/\/|
+|.\/\/\/..\/\/\/.|
+|..\/\/....\/\/..|
+|...\/......\/...|
+|.../\....../\...|
+|../\/\..../\/\..|
+|./\/\/\../\/\/\.|
+|/\/\/\/\/\/\/\/\|
++*=*=*=*=*=*=*=*=+
+</code></pre>
+<p>You must use the process outlined in class to generate the resizable ASCII art. You <strong>cannot</strong> just write <code>print</code> statements that prints each line of the figure. In lines that have repeated patterns of characters that vary in number from line to line, represent the lines and character patterns using <em>for-loops</em>. Write pseudo-code and generate tables to understand the patterns as described in class (i.e., the topic of <strong>drawing resizable ASCII art</strong>).</p>
+<p>Another significant component of this exercise is the task of generalizing the program using a single <code>size</code> variable that can be changed to adjust the size of the figure. The code to ask for the size from the user is included in the template code. The value entered by the user is stored in the <code>size</code> variable. You can pass this variable to the different functions that you will write to print out the figure. <strong>Note that this is different from the way the examples in class were given, where a global constant was used.</strong> In order for us to be able to test your solution, you will instead need to get the input from the user (the size of the ASCII art) and pass that value to each of your functions. You may assume that the value entered by the user will be an integer and the value will be three or greater.</p>
+<p>As demonstrated in class, consider coding a solution for one fixed size first. After this is done, look at the versions in the other sizes and observe the differences in terms of the number of instances of the character patterns and the number of lines. Try to find a relationship between these and the size value associated to each drawing.</p>
+<p>Avoid significant redundancy; use methods so that no substantial groups of identical statements appear in your code. Also, no <code>print</code> statements should appear in the <code>main</code> method. However, you do not need to use methods to capture redundancy in partial lines, such as the two groups of <code>\/</code> characters in the line: <code>|.\/\/..\/\/.|</code></p>
+<h3 id="requiredprogramdecomposition">Required program decomposition</h3>
+<p>For this exercise, the size of any methods in terms of the number of lines used will be restricted. A test case will check that each method you implemented (including the main method) contains at most <strong>20 lines of code</strong>. Empty lines, comment lines, and lines containing only an ending curly bracket are not counted.</p>
+<p>Our solution decomposes the figure into four parts. Each part is printed by a separate method.</p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><p>Your solution should work correctly on any positive size value. It is highly likely if you pass the available tests, your solution works correctly for other size values.</p></li>
+<li><p>You can view the output of the ASCII art based on different size values at the following links: [ <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073526/View">size 1</a> | <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073516/View">size 3</a> | <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073515/View">size 4</a> | <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073514/View">size 5</a> | <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073513/View">size 8</a> | <a href="https://brightspace.vanderbilt.edu/d2l/le/content/330645/viewContent/2073517/View">size 10</a> ].</p></li>
+<li><p>Each ASCII art output above represents one instance of the program executing. If we wanted the program to print the figure based on a different size, then the program must be re-run again.</p></li>
+</ul>
+<h3 id="tips">Tips</h3>
+<ul>
+<li><strong>Get one size working first</strong> – reiterating what was already described above, consider coding a solution for one fixed size first. After this is done, look at the versions in the other sizes and observe the differences in terms of the number of instances of the character patterns and the number of lines. Try to find a relationship between these and the size value associated to each drawing.</li>
+</ul>
+<h3 id="programmingstyleguidelines">Programming style guidelines</h3>
+<p>Be sure you are following the style guidelines as outlined in the <strong>Programming Style Guide</strong> document, which can be found on Brightspace under <strong>Content | Course Documents</strong>.</p>
+<hr>
+<p><strong>Not a Chance</strong>. Remember, copying even two lines of code or providing two lines of code to another student is a violation of the Honor Code. If you're stuck, reach out to your TA's and instructors.</p>
+<p><img src="https://my.vanderbilt.edu/tairas/files/2021/09/honor-07.png" alt="Honor Code"></p>
+</div>
+</div>
+        
+            <div class="activity-watermark">343594.2143690.qx3zqy7</div>
+
+<!---->            <div content_resource_guid="c555edae-a9c2-4188-8438-f6cc58d0f542" content_resource_id="62976069" id="ember90" class="interactive-activity-container programming-submission-content-resource lab large ember-view"><div class="activity-title-bar" role="button" data-ember-action="" data-ember-action-91="91">
+    <div aria-label="labactivity" class="activity-type">
+        lab activity
+    </div>
+
+    <div class="activity-description">
+            <div class="activity-title">
+                12.22.1:
+                    PA06-B: Resizable ASCII Art (15 pts)
+            </div>
+<!---->            <div class="title-bar-chevron-container">
+<!---->
+                    <span class="lab-score">0 / 8</span>
+
+<!---->
+                        <div aria-label="Activity not completed" class="zb-chevron  title-bar-chevron grey   outline large" role="img">
+    
+</div>
+
+            </div>
+    </div>
+</div>
+<div class="activity-payload">
+<!----><!---->
+    <div id="ember92" class="content-resource programming-submission-payload ember-view">    <div id="ember93" class="download-files ember-view"><!----></div>
+
+        <div id="ember94" class="zylab-inline-editor ember-view"><div class="inline-editor-header">
+<!---->        <div id="ember95" class="zb-truncate-text ember-view inline-editor-filename col-start-2">ResizableASCIIArt.java
+</div>
+
+            <button class="zb-button  primary false           load-default-template-button" type="button">
+<!---->            <span class="title">Load default template...</span>
+</button>
+</div>
+
+<div id="ember96" class="ace-editor-container ember-view ui-resizable">    <div class="ace-editor resizable ace_editor ace_hidpi ace-autumn" id="ace-editor" style="font-size: 14px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; transform: translate(51px, 290px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 40px;"><div class="ace_layer ace_gutter-layer" style="height: 1e+06px; transform: translate(0px, 10px); width: 40px;"><div class="ace_gutter-cell " style="height: 14px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 14px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 28px;">3<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 42px;">4<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 56px;">5<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 70px;">6<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 84px;">7<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 98px;">8<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 112px;">9<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 126px;">10<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 140px;">11<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 154px;">12<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 168px;">13<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 182px;">14<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 196px;">15<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 210px;">16<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 224px;">17<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 238px;">18<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 252px;">19<span style="display: none;"></span></div><div class="ace_gutter-cell ace_gutter-active-line " style="height: 14px; top: 266px;">20<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 14px; left: 40px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 10px); width: 906px; height: 328px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 564px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 14px; top: 266px; left: 0px; right: 0px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 14px; width: 7px; top: 266px; left: 4px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 14px; width: 7px; top: 28px; left: 221px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line" style="height: 14px; top: 0px;"><span class="ace_keyword">import</span> <span class="ace_identifier">java</span>.<span class="ace_identifier">util</span>.<span class="ace_identifier">Scanner</span>;</div><div class="ace_line" style="height: 14px; top: 14px;"></div><div class="ace_line" style="height: 14px; top: 28px;"><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">ResizableASCIIArt</span> {</div><div class="ace_line" style="height: 14px; top: 42px;">   <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {</div><div class="ace_line" style="height: 14px; top: 56px;"><span class="ace_indent-guide">   </span>   <span class="ace_comment ace_doc">/***** DO NOT EDIT THE CODE BELOW *****/</span></div><div class="ace_line" style="height: 14px; top: 70px;">   </div><div class="ace_line" style="height: 14px; top: 84px;"><span class="ace_indent-guide">   </span>   <span class="ace_identifier">Scanner</span> <span class="ace_identifier">console</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_keyword">new</span> <span class="ace_identifier">Scanner</span>(<span class="ace_support ace_function">System</span>.<span class="ace_identifier">in</span>);</div><div class="ace_line" style="height: 14px; top: 98px;"></div><div class="ace_line" style="height: 14px; top: 112px;"><span class="ace_indent-guide">   </span>   <span class="ace_comment">// Get size from user.</span></div><div class="ace_line" style="height: 14px; top: 126px;"><span class="ace_indent-guide">   </span>   <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">print</span>(<span class="ace_string">"Enter a size: "</span>);</div><div class="ace_line" style="height: 14px; top: 140px;"><span class="ace_indent-guide">   </span>   <span class="ace_keyword">int</span> <span class="ace_identifier">size</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_identifier">console</span>.<span class="ace_identifier">nextInt</span>();</div><div class="ace_line" style="height: 14px; top: 154px;"><span class="ace_indent-guide">   </span>   </div><div class="ace_line" style="height: 14px; top: 168px;"><span class="ace_indent-guide">   </span>   <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>();</div><div class="ace_line" style="height: 14px; top: 182px;">   </div><div class="ace_line" style="height: 14px; top: 196px;"><span class="ace_indent-guide">   </span>   <span class="ace_comment ace_doc">/***** DO NOT EDIT THE CODE ABOVE *****/</span></div><div class="ace_line" style="height: 14px; top: 210px;"></div><div class="ace_line" style="height: 14px; top: 224px;"><span class="ace_indent-guide">   </span>   <span class="ace_comment">// Type your code here.</span></div><div class="ace_line" style="height: 14px; top: 238px;"></div><div class="ace_line" style="height: 14px; top: 252px;">   }</div><div class="ace_line" style="height: 14px; top: 266px;">}</div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; transform: translate(11px, 266px); width: 7px; height: 14px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 300px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 40px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 946px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
+<!----><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+
+<!----></div>
+
+
+    <div class="develop-submit-control-container">
+        <div id="ember97" class="zb-segmented-control secondary ember-view">    <button class="zb-button  secondary false           first selected " aria-pressed="true" type="button">
+<!---->            <span class="title">Develop mode</span>
+</button>
+    <button class="zb-button  secondary false           last " aria-pressed="false" type="button">
+<!---->            <span class="title">Submit mode</span>
+</button>
+</div>
+        <div class="develop-submit-instructions">Run your program as often as you'd like, before submitting for grading. Below, type any needed input values in the first box, then click <span class="primary-font-bold">Run program</span> and observe the program's output in the second box.</div>
+    </div>
+
+    <div class="develop-container">
+    <div class="develop-inputs">
+            <div class="develop-column">
+                    <div class="program-label">
+                        <label for="program-input-label-ember92">
+                            Enter program input (optional)
+                        </label>
+                    </div>
+                    <textarea rows="2" placeholder="If your code requires input values, provide them here." id="program-input-label-ember92" class="ember-text-area ember-auto-resize ember-view zb-text-area" style="height: 28px; overflow: hidden;"></textarea><!---->            </div>
+<!---->    </div>
+
+        <div class="develop-program-container">
+            <div class="program-run">
+                <button class="zb-button  primary false raised          develop-button" type="button">
+<!---->            <span class="title">Run program</span>
+</button>
+
+<!---->
+<!---->            </div>
+
+            <div class="program-container">
+                    <span class="io-text">Input (from above)</span>
+                    <i class="zb-icon material-icons xl grey  " role="img" aria-label="trending_flat">
+            trending_flat
+<!----></i>
+
+                <div class="program">
+                    <div id="ember101" class="zb-truncate-text ember-view program-name">ResizableASCIIArt.java
+</div>
+                    <div class="your-program-text">(Your program)</div>
+                </div>
+                <i class="zb-icon material-icons xl grey  " role="img" aria-label="trending_flat">
+            trending_flat
+<!----></i>
+
+                <span class="io-text">Output (shown below)</span>
+            </div>
+        </div>
+
+<!---->
+
+<!---->
+            <div class="program-label">Program output displayed here</div>
+                <div class="develop-output full-width no-wrap"></div>
+                <div class="zylab-signature">
+
+        <div class="signature-header">
+            <span>Signature of your work</span>
+            <button class="zb-button  secondary false      thin-title no-padding   " data-test-show-legend-modal-button="" type="button">
+<!---->            <span class="title">What is this?</span>
+</button>
+        </div>
+
+    <div class="signature-content code-block-styling">
+                <span data-test-no-signature-text="">
+                        History of your effort will appear here once you begin working on this zyLab.
+                </span>
+            </div>
+
+<!----></div>
+
+</div>
+
+
+<!---->
+<!---->
+<!----></div>
+</div>
+
+    <div id="ember102" class="zb-feedback ember-view">    <div class="feedback-control-row">
+<!----><!---->
+<!---->
+            <button class="zb-button  secondary false           expand-feedback-button" type="button">
+<!---->            <span class="title">Trouble with lab?</span>
+</button>
+    </div>
+
+<!----><!----></div>
+</div>
+
+<!---->
+<!---->
+
+<!---->
+<!---->
+</div>
+</article>
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+<!---->
+<!---->    </div>
+
+<!---->
+        <nav class="section-nav next" aria-label="next section">
+                <a href="https://learn.zybooks.com/zybook/VANDERBILTCS1101Fall2021/chapter/12/section/23" id="ember103" class="ember-view nav-link">
+                    <i class="zb-icon material-icons sm secondary  " role="img" aria-label="arrow_downward" aria-hidden="true">
+            arrow_downward
+<!----></i>
+
+                    <span class="nav-text next">
+                        12.23 PA07-W: Same Digits (10 pts)
+                    </span>
+                </a>
+        </nav>
+
+<!---->
+<!---->
+<!---->
+<!---->
+</section>
+
+
+<!---->
+<!---->
+<!---->
+
+<!----></div>
+</div><div id="dom_ruler-text_measurer" style="position: absolute; left: -10010px; top: -10px; width: 10000px; height: 0px; overflow: hidden; visibility: hidden;"><div style=""></div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -1,5 +1,10 @@
 <?php
+session_start();
 include 'sidebar.php';
+include 'config.php';
+
+$user_id =  $user_details ['user_id'];
+
 
 ?>
                 <div class="row">
@@ -50,6 +55,7 @@ include 'sidebar.php';
                             <div class="d-flex justify-content-center ">
                                 <img src="./assets/feather/home.svg" class="m" alt="" srcset="">
                                 <h4 class="ml-4 mt-3 pl-5">Profile </h4>
+                                <?php echo $user_id ?>
                             </div>
                         </div>
                         </a>

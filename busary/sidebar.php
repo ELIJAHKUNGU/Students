@@ -127,7 +127,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./apply.php">
+                            <a class="nav-link" href="">
                                 <img src="./assets/feather/book-open.svg" alt="" srcset="">User Details
                             </a>
                         </li>

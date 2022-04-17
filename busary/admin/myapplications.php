@@ -3,13 +3,13 @@ include 'sidebar.php';
 ?>
 
 
-<div class=" d-flex flex-column justify-content-center shadow pr-3">
-                    <div class="d-flex justify-content-between">
+<div class=" d-flex flex-column justify-content-center ">
+                    <div class="d-flex p-5 justify-content-between">
                         <h5>Date Of Application</h5>
-                        <h5 class="ml-5">22/02/2022</h5>
-                    </div>
+                        <?php echo date("d-m-Y") ?>
+                            </h5>                    </div>
                     <hr>
-                    <table id="demo" class="table table-bordered mr-3" >
+                    <table id="demo" class="table table-bordered">
                         <thead>
                             <tr>
                             <td>Bursary Type</td>
@@ -20,6 +20,8 @@ include 'sidebar.php';
                                 <th>Download Statement</th>
                                 <td>Fees Structure</td>
                                 <th>Download Fees</th>
+                                <th>Send Email</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +43,6 @@ include 'sidebar.php';
                                 $result2 = mysqli_query($con, $sql4);
                                 while ($row4 = mysqli_fetch_array($result2)) {
                                 echo '<tr>';
-                                echo '<td>'   .$row4['b_id'].'</td>';
                                 echo '<td>'.$row4['b_type'].'</td>';
                                 echo '<td>'.$row['FileName'].'</td>';
                                 echo '<td><a class="btn" href="'.$row['Location'].'">
@@ -57,11 +58,46 @@ include 'sidebar.php';
                                 echo '<td><a class="btn" href="'.$row3['Location'].'">
                                                <img src="./assets/feather/arrow-down-circle.svg" class="text-center d-flex justify-content-center" alt="" srcset="">
                                 </a></td>';
+                                ?>
+                                <td>
+                                
+                                     <a href="sendemail.php?id=<?php echo $row4['b_id'] ?>"><button class="btn btn-outline-primary">SendEmail</button></a>
+                                </td>
+                                <td>
+                                <?php
+                                $status = $row4['status'];
+                                if ($status == 1 ){
+                                    ?>
+                                    <button  class="btn  btn-outline-success">Confirmed</button>
+
+                                    <?php
+
+                                }elseif ($status == 0 ){
+                                    ?>
+                                     <a href="bussaryconfirm.php?id=<?php echo $row4['b_id'] ?>"><button class="btn btn-outline-primary">Confirm</button></a>
+                                    
+                                   <?php
+
+                                }else{
+                                    ?>
+                                    <button  class="btn btn-outline-danger">Unsuccessfully</button>
+
+                                    <?php
+
+
+                                }
+
+
+                                ?>
+                                </td>
+                                <?php
+                               
                                 echo '</tr>';
                                 }
                             }
                             }
-                            }
+                            
+                        }
                                 mysqli_close($con);
                             ?>
                         </tbody>

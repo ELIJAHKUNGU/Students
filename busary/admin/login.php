@@ -3,7 +3,7 @@
 if (isset($_POST["password"])) {
     require "db.php";
     extract($_POST);
-    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $sql = "SELECT  * FROM users WHERE  email='$email' and password='$password'  and status='1'";
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if (mysqli_num_rows($result) ==1){
@@ -11,9 +11,11 @@ if (isset($_POST["password"])) {
         $info = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION["info"] = $info;
-        header("location:show.php");
+        header("location:index.php?success=You are  succesfully logged in");
     }else{
-        $message = "Wrong username or password";
+        header("location:login.php?error= Wrong Email Address or Password");
+
+
     }
 }
 ?>

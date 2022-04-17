@@ -121,11 +121,7 @@
                                 <img src="./assets/feather/file.svg" alt="" srcset=""> My Applications
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./uploadID.php">
-                                <img src="./assets/feather/file-text.svg" alt="" srcset=""> Make Application
-                            </a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="./apply.php">
                                 <img src="./assets/feather/book-open.svg" alt="" srcset="">User Details

@@ -1,5 +1,10 @@
 <?php
-    include 'sidebar.php';
+session_start();
+include 'sidebar.php';
+include 'config.php';
+ $user_id =  $user_details ['user_id'];
+
+
 ?>
                 <div class=" shadow mt-5 pt-4 pb-4">
                     <div class="text-center">
@@ -7,7 +12,7 @@
                         <span class="bg-success text-white">2</span>
                         </span>
                     </div>
-                    <div class="pl-5">
+                    <div class="p-5">
                             <?php
                                 $con = mysqli_connect("localhost","root","","bursary");
                                 if (mysqli_connect_errno()) {
@@ -32,7 +37,9 @@
                                         }
                                         $filename = $_POST['filename'];
                                         $location = "uploads/" . $files;
-                                        $user_id = '1';
+                                        include 'config.php';
+
+                                        echo  $user_id =  $user_details ['user_id'];
                                         $sqli = "INSERT INTO `Fees_structure` (`file_id`,`FileName`, `Location` , `user_id`) VALUES (null,'{$filename}','{$location}','{$user_id}' )";
                                         $result = mysqli_query($con,$sqli);
                                         if ($result) {

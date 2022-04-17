@@ -1,6 +1,6 @@
 <?php
 include 'sidebar.php';
-
+include 'security.php';
 ?>
                 <div class="row">
                     <div class="col-sm-4 Home shadow">
@@ -21,17 +21,7 @@ include 'sidebar.php';
                         </div>
 
                     </div>
-                    <div class="col-sm-4 Application shadow">
-                        <div class="p-5">
-                        <a class="nav-link active" aria-current="page" href="uploadID.php">
-                            <div class="d-flex justify-content-center ">
-                                <img src="./assets/feather/home.svg" class="m" alt="" srcset="">
-                                <h4 class="ml-4 mt-3 pl-5">Make Application</h4>
-                            </div>
-                        </div>
-                        </a>
-
-                    </div>
+                   
                     <div class="col-sm-4 MY shadow">
                         <div class="p-5">
                             
@@ -49,7 +39,7 @@ include 'sidebar.php';
                         <a class="nav-link active" aria-current="page" href="apply.php">
                             <div class="d-flex justify-content-center ">
                                 <img src="./assets/feather/home.svg" class="m" alt="" srcset="">
-                                <h4 class="ml-4 mt-3 pl-5">Profile </h4>
+                                <h4 class="ml-4 mt-3 pl-5">Profiles</h4>
                             </div>
                         </div>
                         </a>

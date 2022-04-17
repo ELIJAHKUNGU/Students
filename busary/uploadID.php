@@ -1,5 +1,11 @@
 <?php
-    include 'sidebar.php';
+session_start();
+include 'sidebar.php';
+include 'config.php';
+
+$user_id =  $user_details ['user_id'];
+
+
 ?>
                 <div class=" shadow mt-5 pt-4 pb-4">
                     <div class="text-center">
@@ -7,7 +13,7 @@
                         <span class="bg-success text-white">1</span>
                         </span>
                     </div>
-                    <div class="pl-5">
+                    <div class="p-5">
                             <?php
                                 $con = mysqli_connect("localhost","root","","bursary");
                                 if (mysqli_connect_errno()) {
@@ -32,7 +38,12 @@
                                         }
                                         $filename = $_POST['filename'];
                                         $location = "uploads/" . $files;
-                                        $user_id = '1';
+                                       
+                                                                                
+
+                                       
+                                   
+                                       
                 
                                         $sqli = "INSERT INTO `tblfiles` (`file_id`,`FileName`, `Location` , `user_id`) VALUES (null,'{$filename}','{$location}','{$user_id}' )";
                                         $result = mysqli_query($con,$sqli);
@@ -44,7 +55,22 @@
                                 
                             ?>
                         <form class="form" method="post" action="" enctype="multipart/form-data">
+                        <?php
+                            // session_start();
+
+
+                            // if(!isset($_SESSION['info']) ){
+                            //     header("location:login.php");
+                            // }else{
+                            //     $info = $_SESSION["info"];
+                            
+                            // }
+                            // $user_id =  $info ['user_data_id'];
+                            // echo $user_id;
+                            ?>
                             <div class="form-group ml-4 mt-3">
+                               
+
                                 
                                 <label class="text-center" for="">School ID</label>
                                 <input type="text" name="filename" class="form-control" required placeholder="patriciaID">

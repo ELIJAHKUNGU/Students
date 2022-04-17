@@ -3,17 +3,19 @@
 if (isset($_POST["password"])) {
     require "DB.php";
     extract($_POST);
-    $sql = "select * from users where email='$email' and password='$password' LIMIT 1";
+    $sql = "select * from `users` where email='$email' and password='$password' LIMIT 1";
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if (mysqli_num_rows($result) ==1){
         //success
-        $info = mysqli_fetch_assoc($result);
+        $user_details = mysqli_fetch_assoc($result);
         session_start();
-        $_SESSION["info"] = $info;
-        header("location:show.php");
+        $_SESSION["user_details"] = $user_details;
+        header("location:index.php?success=You are  succesfully logged in");
     }else{
-        $message = "Wrong username or password";
+        header("location:login.php?error= Wrong Email Address or Password");
+
+
     }
 }
 ?>
@@ -42,6 +44,15 @@ if (isset($_POST["password"])) {
                 <div class="card-header ">Sign In</div>
                 <div class="">
                     <form action="login.php" method="post">
+                    <?php
+
+                            if (isset($_GET['error'])) { ?>
+                            <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                            <?php } ?>
+
+                            <?php if (isset($_GET['success'])) { ?>
+                            <p class="text-success"><?php echo $_GET['success']; ?></p>
+                            <?php } ?>
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" name="email" required>
@@ -66,3 +77,7 @@ if (isset($_POST["password"])) {
 </div>
 </body>
 </html>
+<script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
