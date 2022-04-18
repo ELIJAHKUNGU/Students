@@ -28,7 +28,7 @@
                     <div class="card-body">
                    
                             
-                        <form action="" method="post">
+                    <form action="mpesa.php" method="GET" enctype="multipart/form-data">
                             
                            
                             <div class="pl-5">
@@ -37,55 +37,52 @@
                             <div class="p-5">
                             <div class="form-group">
                                 <label for="title">Order No</label>
-                                <input type="hidden" placeholder="" disabled value="<?php echo $id; ?>" class="form-control pt-4 pb-4" name="order_id" required>
+                                <input type="hidden" placeholder=""  value="<?php echo $id; ?>" class="form-control pt-4 pb-4" name="order_id" required>
                                 <?php
                                  require 'config.php';
                                 //  echo $user_id;
 
                                 ?>
-                                <input type="hidden" placeholder="" ddisabled value="<?php echo $user_id; ?>" class="form-control pt-4 pb-4" name="user_id" required>
-                                <input type="text" placeholder="" ddisabled value="<?php echo '#AP-00'.$id; ?>" class="form-control pt-4 pb-4"  required>
+                                <input type="hidden" placeholder=""  value="<?php echo $user_id; ?>" class="form-control pt-4 pb-4" name="user_id" required>
+                                <input type="text" placeholder=""  value="<?php echo '#AP-00'.$id; ?>" class="form-control pt-4 pb-4"  required>
                             </div>
                             <div class="form-group">
                                 <label for="title">Amount Expected</label>
                                 <?php
-                                   
-                                    $amount = 0;
-                                    $location = $row["pickup_location"]; 
-                                    $seats = $row["no_seats"];
-                                    if($location == "Mombasa-Nairobi"){
-                                      echo  $amount =  1000 *  $seats;
-        
-                                    }else  if($location == "Nairobi-Mombasa"){
-                                        echo  $amount =  1500 *  $seats;
-        
-                                    }else if($location == "Mombasa-Kisumu"){
-                                        echo  $amount =  3500 *  $seats;
-                                    }else{
-                                        echo  "invalid";
-                                    }
-                                    
-        
-        
-        
-                                ?>
-                                <input type="text" disabled class="form-control pt-4 pb-4"  value="<?php echo $amount; ?>"  name="amount" required>
+                            $amount = 0;
+                            $location = $row["pickup_location"]; 
+                            $seats = $row["no_seats"];
+                            if($location == "Mombasa-Nairobi"){
+                              echo  $amount =  1000 *  $seats;
+
+                            }else  if($location == "Nairobi-Mombasa"){
+                                echo  $amount =  1500 *  $seats;
+
+                            }else if($location == "Mombasa-Kisumu"){
+                                echo  $amount =  3500 *  $seats;
+                            }else{
+                                echo  "invalid";
+                            }
+
+                            ?>
+                                <input type="text"  class="form-control pt-4 pb-4"  value="<?php echo $amount; ?>"  name="amount" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="title">Full Name</label>
-                                <input type="text" value='<?php ?>'' class="form-control pt-4 pb-4" name="name" required>
+                                <input type="text" value='<?php echo $row['name']?>' class="form-control pt-4 pb-4" name="name" required>
                             </div>
                             
 
 
                             <div class="form-group">
                                 <label for="title">MPESA  Phone Number</label>
-                                <input type="text" class="form-control pt-4 pb-4" placeholder="+2545999459"  name="phone" required>
+                                <p class="border text-danger">The number should this format +2547XXXXXXX</p>
+                                <input type="text" class="form-control pt-4 pb-4" placeholder="2547XXXXXXX"  name="phone" required>
                             </div>
 
                             <div class="d-flex">
-                                <button style="text-transform: uppercase;" name="save" class="btn btn-success  mr-3 ">Submit</button>
+                                <button style="text-transform: uppercase;"  class="btn btn-success  mr-3 ">Submit</button>
                             </div>
                             </div>
 

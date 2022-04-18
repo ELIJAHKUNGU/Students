@@ -116,15 +116,6 @@ include 'header.php';
         </div>
 
     </section>
-
-
-
-
-    <div class="text-center text-white ">
-    </div>
-    </div>
-    </div>
-    </section>
     <script src="./js/jquery.min.js "></script>
     <script src="./js/bootstrap.min.js "></script>
     <script src="./owl-carousel/js/owl.carousel.min.js "></script>

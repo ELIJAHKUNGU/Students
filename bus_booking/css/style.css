@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
+
+/* body {
     background: url("/images/dot-grid.png");
-}
+} */
 
 
 /*========================
@@ -218,6 +219,7 @@ form .btn:focus {
 
 #PeopleForm {
     left: 0;
+    display: block;
 }
 
 form a {
