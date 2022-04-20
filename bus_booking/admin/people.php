@@ -109,7 +109,7 @@ include 'header.php';
 
                                 }else{
                                     ?>
-                                     <a href="editpeople.php?id=<?php echo $row['request_id'] ?>"><button class="btn btn-outline-primary">Allocate</button></a>
+                                     <a href="allocates.php?id=<?php echo $row['request_id'] ?>"><button class="btn btn-outline-primary">Allocate</button></a>
                                     
                                    <?php
 

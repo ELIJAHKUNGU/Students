@@ -46,6 +46,7 @@ include 'header.php';
                             <th>No of Seats</th>
                             <th>model</th>
                             <th>Amount</th>
+                            <th>Seats No</th>
                             <th>Cancel Order</th>
                             <th>Status</th>
 
@@ -74,7 +75,7 @@ include 'header.php';
                         <td> <?php echo $row["no_seats"] ?> </td>
 
                         <td> <?php echo $row["model"] ?> </td>
-                        <th>
+                        <td>
                             <?php
                             $amount = 0;
                             $location = $row["pickup_location"]; 
@@ -93,10 +94,45 @@ include 'header.php';
 
                             ?>
 
-                        </th>
+                        </td>
+                        <td> 
+                          <?php 
+                          $seatsNO = $row["seats"];
+                          
+                          if($seatsNO == 0){
+                            ?>
+                             <button  class="btn btn-outline-success">Processing</button>
+                             <?php
+
+
+                          }else{
+                            echo $seatsNO;
+                          }
+                          ?> 
+                        </td>
                         
                         <td> <a href="deletep.php?id=<?php echo $row["request_id"] ?>"><button class="btn btn-outline-warning">cancel</button></a>  </td>
-                        <td><a href="pay.php?id=<?php echo $row["request_id"] ?>"><button type="submit">PAY </button></a>     </tr>
+                        <td>
+                          <?php
+                                $status = $row['status'];
+                                if ($status == 1 ){
+                                    ?>
+                                    <button  class="btn btn-outline-success">Confirmed</button>
+
+                                    <?php
+
+                                }else{
+                                    ?>
+                          <a href="pay.php?id=<?php echo $row["request_id"] ?>"><button  class="btn btn-outline-primary">PAY </button></a> 
+                                    
+                                   <?php
+
+                                }
+                                ?>
+                                
+                               
+                      </td>
+                          </tr>
                       
                     <?php
                       }

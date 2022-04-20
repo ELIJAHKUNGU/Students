@@ -3,7 +3,7 @@ session_start();
 
 
 if(!isset($_SESSION['info']) ){
-    header("location:login.php");
+    header("location:register.php");
 }else{
     $info = $_SESSION["info"];
   

@@ -48,7 +48,7 @@ include 'header.php';
                            
                             <th>Cancel Order</th>
                             <th>Pay</th>
-                            <th>Status</th>
+                            
 
                         </tr>
                     </thead>
@@ -97,9 +97,32 @@ include 'header.php';
                         <td><?php echo $row['model']?></td>
                         
                         <td> <a href='deleteparcel.php?id=<?php echo $row['request_id'] ?>'><button class='btn btn-danger'>Cancel</button></a>  </td>
-                        <td> <a href='payparcel.php?id=<?php echo $row['request_id'] ?>'><button class='btn btn-success'>Pay</button></a>  </td>
+                        <!-- <
+                            td> <a href='payparcel.php?id=<?php# echo $row['request_id'] ?>'
+                            ><button class='btn btn-success'>Pay</button></a>  </td>
+                            <td> -->
+                                <td>
+                          <?php
+                                $status = $row['status'];
+                                if ($status == 1 ){
+                                    ?>
+                                    <button  class="btn btn-outline-success">Confirmed</button>
 
-                        <td><button class="btn btn-outline-warning">View Status</button></td>
+                                    <?php
+
+                                }else{
+                                    ?>
+                          <a href="payparcel.php?id=<?php echo $row["request_id"] ?>"><button  class="btn btn-outline-primary">PAY </button></a> 
+                                    
+                                   <?php
+
+                                }
+                                ?>
+                                
+                               
+                      </td>
+
+                        
                         </tr>
                         <?php
                 

@@ -14,7 +14,9 @@ include 'header.php';
                                 <button class="btn pl-5 pr-5 pt-3 pb-3 btn-primary">Learn More</button>
 
 
+                                <a href="./dashboard.php">
                                 <button class="btn btn-warning pl-5 pr-5 ml-3">Book Now</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,7 @@ include 'header.php';
             </div>
         </div>
     </section>
-    <section>
+    <!-- <section>
         <div class="servicess">
             <div class="container">
                 <div class="pt-5">
@@ -81,7 +83,7 @@ include 'header.php';
                                 <img src="./images/p1.jpg" style="min-height: 180px; min-width: 180px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
                             </div>
                             <div class="text-side pt-5 ml-4">
-                                <h3>Van Bus Rentals</h3>
+                                <h3>Parcel Delivery</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci nostrum numquam possimus repellendus architecto
 
                                     <div class="mt-4">
@@ -93,13 +95,13 @@ include 'header.php';
                     <div class="col-sm-6  ">
                         <div class="d-flex shadow">
                             <div class="side-image">
-                                <img src="./images/p2.jpg" style="min-height: 180px; min-width: 180px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
+                                <img src="./images/b5.jpg" style="max-height: 400px; width:1050px; object-fit:cover; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
                             </div>
                             <div class="text-side pt-5 ml-4">
-                                <h3>Van Bus Rentals</h3>
+                                <h3>Tours & Safaris</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci nostrum numquam possimus repellendus architecto
 
-                                    <div class="mt-4">
+                                    <div class="mt-4 mb-4">
                                         <button>Details</button>
                                     </div>
                             </div>
@@ -110,10 +112,10 @@ include 'header.php';
                     <div class="col-sm-6  ">
                         <div class="d-flex shadow">
                             <div class="side-image">
-                                <img src="./images/p3.jpg" style="min-height: 180px; min-width: 180px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
+                                <img src="./images/p3.jpg" style="max-height: 400px; max-width: 140px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
                             </div>
                             <div class="text-side pt-5 ml-4">
-                                <h3>Van Bus Rentals</h3>
+                                <h3>Private Deliveries</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci nostrum numquam possimus repellendus architecto
 
                                     <div class="mt-4">
@@ -125,10 +127,10 @@ include 'header.php';
                     <div class="col-sm-6  ">
                         <div class="d-flex shadow">
                             <div class="side-image">
-                                <img src="./images/p4.jpg" style="min-height: 180px; min-width: 180px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
+                                <img src="./images/bus.png" style="max-height: 400px; max-width: 140px; margin-left: 0px;" class="mr-2 img-fluid" alt="" srcset="">
                             </div>
                             <div class="text-side pt-5 ml-4">
-                                <h3>Van Bus Rentals</h3>
+                                <h3>Long Distance Travel</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere adipisci nostrum numquam possimus repellendus architecto
 
                                     <div class="mt-4">
@@ -140,11 +142,28 @@ include 'header.php';
                 </div>
             </div>
         </div>
+    </section> -->
+    <section>
+        <div class="container">
+                <div class="pt-5">
+                    <div class="pt-5">
+                        <div class="d-flex justify-content-center">
+                            <img src="./images/logo.png" alt="" srcset="">
+
+                        </div>
+                        <div class="text-center">
+                            <p class="mt-2">Large Growing Fleet of Bus and Vans</p>
+                            <h1 style="font-weight: 900; font-size: 3rem;">Travel in Style</h1>
+                        </div>
+                    </div>
+                </div>
+            <img src="./images/bus.png" class="img-fluid" alt="">
+        </div>
     </section>
 
 
     <div class="text-center text-white ">
-        <h6>&copysr; Powered by CursorHub Techlogies LTD &copy; 2021</h6>
+        <h6>&copysr; Powered by Autoride LTD &copy; 2021</h6>
     </div>
     </div>
     </div>

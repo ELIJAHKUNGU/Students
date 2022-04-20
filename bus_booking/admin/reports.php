@@ -1,18 +1,51 @@
 <?php
-require_once 'config.php';
 include 'header.php';
 ?>
+
+<?php
+
+//export.php  
+if(isset($_POST["export"]))  
+{  
+$connect = mysqli_connect("localhost", "root", "", "autoride");  
+header('Content-Type: text/csv; charset=utf-8');  
+header('Content-Disposition: attachment; filename=parcel.csv');  
+$output = fopen("php://output", "w");  
+fputcsv($output, array("request_id", "user_id", "username", "parcel_idno", "pickup_location", "date_m", "time_t", "model", "weight", "status"));  
+$query = "SELECT * from people_requests ORDER BY id DESC";  
+$result = mysqli_query($connect, $query);  
+while($row = mysqli_fetch_assoc($result))  
+{  
+     fputcsv($output, $row);  
+}  
+fclose($output);  
+}
+
+?>  
+
+
                         <div class="row">
                             <div class="col-sm-6  ml-5 mt-3 card gradient-bx text-white bg-danger ">
-                                <a style="text-decoration:none; color:#fff" href="parcel.php">
+                                 
                                 <div class="d-flex">
                                     <div class="d-block">
-                                        <h5>Orders</h5>
+                                        <h5>Generate Report Parcels</h5>
                                         <div class="d-flex">
                                             
                                             <div class="ml-2">
                                                 <span data-feather="file"></span> Orders Parcelss
                                             </div>
+                                            <div class="ml-5">
+                                                   
+                                                  <!-- <form action="" method="POST">
+                                                  <button name="export" class="btn btn-outline-primary">Generate</button>
+                                                  </form> -->
+                                                        <form method="post" action="export.php" align="center">  
+                                                              <input type="submit" name="export" value="CSV Export" class="btn btn-outline-success" />  
+                                                         </form>  
+                                                    
+
+                                                </div>
                                         </div>
 
                                     </div>
@@ -21,18 +54,27 @@ include 'header.php';
                                     </div>
 
                                 </div>
-                                </a>
+                               
                             </div>
                             <div class="col-sm-6 ml-5 mt-3 bg-primary  ">
-                               <a style="text-decoration:none; color:#fff" href="people.php">
+                               
                                   <div class="d-flex">
                                         <div class="d-block">
-                                            <h5>Orders Seats</h5>
+                                            <h5>Generate Report Booked Seats</h5>
                                             <div class="d-flex">
                                               
                                                   
                                                 <div class="ml-5">
                                                     <span data-feather="shopping-cart"></span>Orders Seats
+
+
+                                                </div>
+                                                <div class="ml-5">
+                                                   
+                                                <form method="post" action="export2.php" align="center">  
+                                                              <input type="submit" name="export" value="CSV Export" class="btn btn-outline-success" />  
+                                                         </form>  
+                                                    
 
                                                 </div>
                                             </div>
@@ -47,55 +89,12 @@ include 'header.php';
                                         </div>
 
                                     </div>
-                               </a>
+                              
                             </div>
 
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6  ml-5 mt-3 card gradient-bx text-white bg-success">
-                                <a style="text-decoration:none; color:#fff" href="./customers.php">
-                                <div class="d-flex">
-                                    <div class="d-block">
-                                        <h5>Customers</h5>
-                                        <div class="d-flex">
-                                            <h4>
-                                              
-                                  
-                                            </h4>
-                                            <div class="ml-2">
-                                                <span data-feather="users"></span> Customers
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="ml-auto mt-2 pl-4 border-icon-img">
-                                        <img src="./assets/icon7.svg" alt="" srcset="">
-                                    </div>
-
-                                </div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 ml-5 mt-3 bg-purple">
-                                <a style="text-decoration:none; color:#fff" href="./reports.php">
-                                  <div class="d-flex">
-                                      <div class="d-block">
-                                          <h5>Reports</h5>
-                                          <div class="d-flex">
-
-                                              <div class="ml-5">
-                                                  <span data-feather="bar-chart-2"></span> Reports
-
-                                              </div>
-                                          </div>
-
-                                      </div>
-                                      <div class="ml-auto mt-2 pl-4 border-icon-img">
-                                          <img src="./assets/icon6.svg" alt="" srcset="">
-                                      </div>
-                                  </div>
-                                </a>
-                            </div>
+                        
+                            
                         </div>
                     </div>
 

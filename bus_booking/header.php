@@ -75,12 +75,7 @@
                                 
                             </div>
                         </div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Contacts</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="index.php">
 

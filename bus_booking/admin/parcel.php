@@ -25,6 +25,8 @@ include 'header.php';
                             text-align: center;
                         }
                     </style>
+                                       
+
 
                     <table id="patient" class="display table-bordered  table-responsive  mt-2" style="border: 2px solid gray; min-width:1100px;">
                         <thead>
@@ -39,8 +41,8 @@ include 'header.php';
                                 <th>Amount</th>
                                 <th>model</th>
 
-                                <th>Cancel Order</th>
-                                <th>Pay</th>
+                                
+                            
                                 <th>Status</th>
 
                             </tr>
@@ -102,11 +104,27 @@ include 'header.php';
                                     <td>
                                         <?php echo $row['model']?>
                                     </td>
+                                     <td>
+                                    <?php
+                                        $status = $row['status'];
+                                        if ($status == 1 ){
+                                            ?>
+                                            <button  class="btn btn-outline-success">Confirmed</button>
 
-                                    <td> <a href='deleteparcel.php?id=<?php echo $row[' request_id '] ?>'><button class='btn btn-danger'>Cancel</button></a> </td>
-                                    <td> <a href='payparcel.php?id=<?php echo $row[' request_id '] ?>'><button class='btn btn-success'>Pay</button></a> </td>
+                                            <?php
 
-                                    <td><button class="btn btn-outline-warning">View Status</button></td>
+                                        }else{
+                                            ?>
+                                            <a href="confirm.php?id=<?php echo $row['request_id'] ?>"><button class="btn btn-outline-primary">Confirm</button></a>
+                                            
+                                        <?php
+
+                                        }
+                                        ?>
+                                </td>
+                                
+
+                                   
                                 </tr>
                                 <?php
                 
