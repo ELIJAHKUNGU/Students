@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* body {
+    background: url("/images/dot-grid.png");
+} */
+
+
+/*========================
+Navbar
+=====================*/
+
+.nav-colored {
+    background: white;
+    color: #000 !important;
+}
+
+.nav-colored .nav-link {
+    color: #000 !important;
+    font-weight: 900;
+}
+
+header .navbar-brand {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+
+.nav-colored .navbar-brand {
+    color: #339bfe !important;
+}
+
+.nav-transparent {
+    background-color: transparent;
+}
+
+.navlinks-color {
+    color: #000 !important;
+}
+
+#header {
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    background-image: url(../images/bg2.jpg);
+    background-position: center;
+    color: #fff;
+}
+
+#header .topbar {
+    border-bottom: 2px solid grey;
+}
+
+header .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    margin-left: 20px;
+    font-weight: 900;
+    font-family: "Allerta", sans-serif;
+}
+
+.top-secon {
+    border-bottom: 2px solid gray;
+}
+
+.nav-link::after {
+    padding-bottom: 10px;
+    transition: all ease-in-out 0.2s;
+    border-bottom: 2px solid #339bfe;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+}
+
+.nav-link:hover:after {
+    transition: all ease-in-out 0.2s;
+    border-bottom: 2px solid #339bfe;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+}
+
+header .navbar-nav .nav-item .contacts {
+    background-color: transparent;
+    border: 2px solid #3398fe;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.nav-link.contacts::after {
+    border-bottom: none !important;
+}
+
+.nav-link.contacts:hover:after {
+    border-bottom: none !important;
+}
+
+header .navbar-nav .nav-item .contacts {
+    background-color: transparent;
+    border: 2px solid #3398fe;
+    color: #666666;
+    padding: 5px 30px;
+    padding-bottom: 2px !important;
+    border-radius: 30px;
+}
+
+header nav button i {
+    font-size: 30px;
+}
+
+.banner h1 {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-top: 5rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.row .col-sm-3 select,
+.row .col-sm-3 input {
+    height: 50px;
+}
+
+.row .col-sm-3 button {
+    margin-top: 30px;
+    min-height: 50px;
+    border-radius: 15px;
+}
+
+.browser {
+    border-top: 5px solid #E9912A;
+}
+
+.services {
+    padding-top: 5rem;
+    background-color: #F5F8FA;
+    padding-top: 3rem;
+}
+
+.form-container {
+    background: #ffffff;
+    width: 600px;
+    height: 600px;
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+    /* margin: auto; */
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.form-container span {
+    font-weight: bold;
+    padding: 0 10px;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-btn {
+    display: inline-block;
+}
+
+.form-container form {
+    max-width: 600px;
+    padding: 0px 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform .5s;
+    overflow: hidden;
+}
+
+form input {
+    min-width: 550px;
+    height: 30px;
+    margin: 10px 0;
+}
+
+form .btn {
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    background-color: #012547 !important;
+    color: #fff;
+    height: 40px;
+    width: 300px !important;
+}
+
+form .btn:focus {
+    outline: none;
+}
+
+#LoginForm {
+    left: -300px;
+    display: none;
+}
+
+#RegForm {
+    left: 0;
+}
+
+#pacelForm {
+    left: -300px;
+    display: none;
+}
+
+#PeopleForm {
+    left: 0;
+    display: block;
+}
+
+form a {
+    font-size: 1.2rem;
+}
+
+.form-container label {
+    float: left;
+}
+
+#Indicator {
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(-10px);
+    transition: transform .5s;
+}
+
+#Indicator2 {
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform .5s;
+}
+
+form .btn-primary-color {
+    background-color: #012547 !important;
+    color: #fff;
+    height: 40px;
+    width: 300px !important;
+}
+
+#login-up-img {
+    display: none;
+    transition: transform .10s all ease-in-out;
+}
